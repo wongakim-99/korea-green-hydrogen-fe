@@ -1,0 +1,18 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 수소 분자 아이콘 -->
+  <g transform="translate(10, 15)">
+    <circle cx="8" cy="15" r="6" fill="#059669"/>
+    <circle cx="22" cy="15" r="6" fill="#059669"/>
+    <line x1="14" y1="15" x2="16" y2="15" stroke="#059669" stroke-width="2"/>
+    <text x="4" y="20" font-family="Arial" font-size="8" fill="white" font-weight="bold">H</text>
+    <text x="18" y="20" font-family="Arial" font-size="8" fill="white" font-weight="bold">H</text>
+  </g>
+  
+  <!-- 회사명 텍스트 -->
+  <text x="50" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#059669">
+    Korea Green Hydrogen
+  </text>
+  <text x="50" y="40" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">
+    친환경 수소 에너지 솔루션
+  </text>
+</svg>

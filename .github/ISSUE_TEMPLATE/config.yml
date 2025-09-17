@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 일반 문의
+    url: https://github.com/korea-green-hydrogen/korea-green-hydrogen-fe/discussions
+    about: 일반적인 질문이나 토론은 Discussions를 이용해주세요
+  - name: 📖 문서
+    url: https://github.com/korea-green-hydrogen/korea-green-hydrogen-fe/blob/main/README.md
+    about: 프로젝트 관련 문서 및 가이드
