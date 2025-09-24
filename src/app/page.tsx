@@ -37,7 +37,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/contact"
-                className="border-2 border-sky-600 text-sky-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-sky-600 hover:text-white transition-colors"
+                className="bg-sky-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-sky-700 transition-colors"
               >
                 문의하기
               </Link>
