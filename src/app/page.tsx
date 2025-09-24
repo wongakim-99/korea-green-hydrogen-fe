@@ -1,25 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import BackgroundSlider from "@/components/BackgroundSlider";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 min-h-[80vh] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/home/main-background.jpg"
-            alt="친환경 수소 에너지 배경"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 to-blue-900/50"></div>
-        </div>
+        {/* Background Slider */}
+        <BackgroundSlider 
+          images={[
+            "/images/home/main-background.jpg",
+            "/images/home/main-background2.jpg"
+          ]}
+          interval={5000}
+          className="z-0"
+        />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 to-blue-900/50 z-10 pointer-events-none"></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pointer-events-auto">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               미래를 향한 <span className="text-sky-300">친환경 수소</span>

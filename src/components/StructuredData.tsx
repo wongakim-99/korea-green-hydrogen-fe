@@ -9,14 +9,14 @@ export default function StructuredData() {
     "description": "대한민국의 친환경 수소 에너지 기술을 선도하는 Korea Green Hydrogen입니다. 지속가능한 미래를 위한 혁신적인 수소 솔루션을 제공합니다.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "테헤란로 123",
-      "addressLocality": "강남구",
-      "addressRegion": "서울특별시",
+      "streetAddress": "돌마로 86",
+      "addressLocality": "분당구",
+      "addressRegion": "경기도 성남시",
       "addressCountry": "KR"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+82-2-1234-5678",
+      "telephone": "+82-2-8925-2285",
       "contactType": "customer service",
       "areaServed": "KR",
       "availableLanguage": "Korean"
