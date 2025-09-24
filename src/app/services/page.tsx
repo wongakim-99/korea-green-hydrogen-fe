@@ -52,7 +52,14 @@ export default function Services() {
     setActiveTab(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // 헤더 높이를 고려한 오프셋 계산 (단일 헤더로 변경됨)
+      const headerHeight = 80; // 헤더 높이 (h-20 = 80px)
+      const elementPosition = element.offsetTop - headerHeight - 20; // 추가 여백
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -86,72 +93,78 @@ export default function Services() {
       </section>
 
       {/* Tab Navigation - HL Holdings Style */}
-      <section className="bg-white border-b border-gray-200 sticky top-[88px] z-40">
+      <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto">
-            {businessAreas.map((area, index) => (
-              <button
-                key={area.id}
-                onClick={() => scrollToSection(area.id)}
-                className={`flex-shrink-0 px-6 py-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
-                  activeTab === area.id
-                    ? 'text-sky-600 border-sky-600' 
-                    : 'text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300'
-                }`}
-              >
-                {area.title}
-              </button>
-            ))}
+                        {businessAreas.map((area, index) => (
+                          <button
+                            key={area.id}
+                            onClick={() => scrollToSection(area.id)}
+                            className={`flex-shrink-0 px-6 py-4 text-sm font-bold border-b-2 transition-colors whitespace-nowrap ${
+                              activeTab === area.id
+                                ? 'text-sky-600 border-sky-600' 
+                                : 'text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300'
+                            }`}
+                          >
+                            {area.title}
+                          </button>
+                        ))}
           </div>
         </div>
       </section>
 
       {/* Business Area Sections */}
-      {businessAreas.map((area, index) => (
-        <section key={area.id} id={area.id} className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className={`group bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-              index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-            }`}>
-              {/* Image */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="relative h-64 rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
-                  <div className={`w-full h-full bg-gradient-to-br ${area.bgColor} flex items-center justify-center`}>
-                    <div className="text-center">
-                      <div className={`w-20 h-20 bg-gradient-to-br ${area.color} rounded-full flex items-center justify-center text-3xl mb-3 mx-auto shadow-lg`}>
-                        {area.icon}
+          {businessAreas.map((area, index) => (
+            <section key={area.id} id={area.id} className="py-12 bg-white">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="group relative bg-white border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  {/* Background Overlay for Hover Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-600 to-blue-700 opacity-0 group-hover:opacity-95 transition-opacity duration-300 z-10"></div>
+                  
+                  {/* Content Container */}
+                  <div className={`relative z-20 p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
+                    index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  }`}>
+                    {/* Image */}
+                    <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                      <div className="relative h-64 rounded-lg overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-300">
+                        <div className={`w-full h-full bg-gradient-to-br ${area.bgColor} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                          <div className="text-center">
+                            <div className={`w-20 h-20 bg-gradient-to-br ${area.color} rounded-full flex items-center justify-center text-3xl mb-3 mx-auto shadow-lg group-hover:shadow-2xl group-hover:bg-white group-hover:text-sky-600 transition-all duration-300`}>
+                              {area.icon}
+                            </div>
+                            <p className="text-gray-500 text-sm group-hover:text-white transition-colors duration-300">
+                              이미지 영역<br/>
+                              <span className="text-xs">(고객 자료 제공 후 업데이트)</span>
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        이미지 영역<br/>
-                        <span className="text-xs">(고객 자료 제공 후 업데이트)</span>
+                    </div>
+
+                    {/* Content */}
+                    <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-300">
+                        {area.title}
+                      </h2>
+                      <p className="text-base text-gray-600 group-hover:text-gray-100 mb-6 leading-relaxed transition-colors duration-300">
+                        {area.detailDescription}
                       </p>
+                      <Link
+                        href={area.href}
+                        className="inline-flex items-center px-5 py-2.5 border border-sky-600 text-sky-600 font-medium rounded-lg hover:bg-sky-600 hover:text-white group-hover:border-white group-hover:text-white group-hover:bg-transparent group-hover:hover:bg-white group-hover:hover:text-sky-600 transition-all duration-300"
+                      >
+                        <span>자세히 보기</span>
+                        <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Content */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  {area.title}
-                </h2>
-                <p className="text-base text-gray-600 mb-6 leading-relaxed">
-                  {area.detailDescription}
-                </p>
-                <Link
-                  href={area.href}
-                  className="inline-flex items-center px-5 py-2.5 border border-sky-600 text-sky-600 font-medium rounded-lg hover:bg-sky-600 hover:text-white transition-colors group-hover:shadow-md"
-                >
-                  <span>자세히 보기</span>
-                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
+            </section>
+          ))}
 
 
       {/* CTA Section */}
