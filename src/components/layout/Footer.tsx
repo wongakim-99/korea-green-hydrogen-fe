@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* 회사 정보 */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-green-400 mb-4">
+            <h3 className="text-2xl font-bold text-sky-400 mb-4">
               Korea Green Hydrogen
             </h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
@@ -28,22 +28,22 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">빠른 링크</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-green-400 transition-colors">
+                <Link href="/about" className="text-gray-300 hover:text-sky-400 transition-colors">
                   회사소개
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-green-400 transition-colors">
+                <Link href="/services" className="text-gray-300 hover:text-sky-400 transition-colors">
                   서비스
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-gray-300 hover:text-green-400 transition-colors">
+                <Link href="/projects" className="text-gray-300 hover:text-sky-400 transition-colors">
                   프로젝트
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-green-400 transition-colors">
+                <Link href="/contact" className="text-gray-300 hover:text-sky-400 transition-colors">
                   연락처
                 </Link>
               </li>
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-300 hover:text-green-400 transition-colors"
+                className="text-gray-300 hover:text-sky-400 transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-green-400 transition-colors"
+                className="text-gray-300 hover:text-sky-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -83,10 +83,10 @@ const Footer = () => {
               © {currentYear} Korea Green Hydrogen. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
+              <Link href="/privacy" className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
                 개인정보처리방침
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
+              <Link href="/terms" className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
                 이용약관
               </Link>
             </div>
