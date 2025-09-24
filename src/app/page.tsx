@@ -5,13 +5,26 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-blue-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/home/main-background.jpg"
+            alt="친환경 수소 에너지 배경"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 to-blue-900/50"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              미래를 향한 <span className="text-sky-600">친환경 수소</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              미래를 향한 <span className="text-sky-300">친환경 수소</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto">
               Korea Green Hydrogen는 지속가능한 미래를 위한 
               혁신적인 수소 에너지 솔루션을 제공합니다.
             </p>

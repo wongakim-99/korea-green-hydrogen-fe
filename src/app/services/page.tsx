@@ -53,7 +53,7 @@ export default function Services() {
     const element = document.getElementById(sectionId);
     if (element) {
       // 헤더 높이를 고려한 오프셋 계산 (단일 헤더로 변경됨)
-      const headerHeight = 80; // 헤더 높이 (h-20 = 80px)
+      const headerHeight = 64; // 헤더 높이 (h-16 = 64px)
       const elementPosition = element.offsetTop - headerHeight - 20; // 추가 여백
       
       window.scrollTo({
