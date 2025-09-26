@@ -10,7 +10,7 @@ const Footer = () => {
           {/* 회사 정보 */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-sky-400 mb-4">
-              Korea Green Hydrogen
+              KGH GLOBAL
             </h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
               친환경 수소 에너지 솔루션을 통해 지속가능한 미래를 만들어가는 

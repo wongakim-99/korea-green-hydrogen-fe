@@ -83,3 +83,13 @@ body {
   opacity: 0;
   animation: slideInStagger 0.3s ease-out forwards;
 }
+
+/* 슬라이더 프로그레스 바 애니메이션 */
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

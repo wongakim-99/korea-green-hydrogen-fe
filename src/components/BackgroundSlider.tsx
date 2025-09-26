@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 interface BackgroundSliderProps {
@@ -9,18 +9,32 @@ interface BackgroundSliderProps {
   className?: string;
 }
 
-export default function BackgroundSlider({ 
-  images, 
-  interval = 5000, 
-  className = '' 
+export default function BackgroundSlider({
+  images,
+  interval = 5000,
+  className = ''
 }: BackgroundSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+
+  const resetAnimation = () => {
+    if (progressBarRef.current) {
+      progressBarRef.current.style.animation = 'none';
+      // Trigger reflow to restart animation
+      void progressBarRef.current.offsetWidth;
+      progressBarRef.current.style.animation = `progressBar ${interval / 1000}s linear forwards`;
+    }
+  }
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  }
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -30,8 +44,16 @@ export default function BackgroundSlider({
     return () => clearInterval(timer);
   }, [images.length, interval]);
 
+  // Effect to reset animation on slide change
+  useEffect(() => {
+    if (images.length > 1) {
+      resetAnimation();
+    }
+  }, [currentIndex, images.length, interval]);
+
+
   return (
-    <div 
+    <div
       className={`absolute inset-0 overflow-hidden cursor-pointer ${className}`}
       onClick={nextSlide}
       role="button"
@@ -62,29 +84,38 @@ export default function BackgroundSlider({
           />
         </div>
       ))}
-      
-      {/* 슬라이드 인디케이터 */}
+
+      {/* 슬라이드 인디케이터 & 프로그레스 바 */}
       {images.length > 1 && (
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30 pointer-events-auto">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={(e) => {
-                e.stopPropagation(); // 배경 클릭 이벤트 방지
-                e.preventDefault();
-                console.log(`인디케이터 ${index + 1} 클릭됨`); // 디버깅용
-                setCurrentIndex(index);
-              }}
-              className={`w-4 h-4 rounded-full transition-all duration-300 border-2 cursor-pointer ${
-                index === currentIndex 
-                  ? 'bg-white border-white shadow-lg' 
-                  : 'bg-white/30 border-white/60 hover:bg-white/50 hover:border-white/80'
-              }`}
-              style={{ pointerEvents: 'auto' }}
-              aria-label={`슬라이드 ${index + 1}로 이동`}
+        <>
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30 pointer-events-auto">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={(e) => {
+                  e.stopPropagation(); // 배경 클릭 이벤트 방지
+                  e.preventDefault();
+                  goToSlide(index);
+                }}
+                className={`w-4 h-4 rounded-full transition-all duration-300 border-2 cursor-pointer ${
+                  index === currentIndex
+                    ? 'bg-white border-white shadow-lg'
+                    : 'bg-white/30 border-white/60 hover:bg-white/50 hover:border-white/80'
+                }`}
+                style={{ pointerEvents: 'auto' }}
+                aria-label={`슬라이드 ${index + 1}로 이동`}
+              />
+            ))}
+          </div>
+          {/* 프로그레스 바 컨테이너 */}
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-30">
+            <div
+              ref={progressBarRef}
+              className="h-full bg-white"
+              style={{ animation: `progressBar ${interval / 1000}s linear forwards` }}
             />
-          ))}
-        </div>
+          </div>
+        </>
       )}
     </div>
   );

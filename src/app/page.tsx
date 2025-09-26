@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 min-h-[80vh] flex items-center">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
         {/* Background Slider */}
         <BackgroundSlider 
           images={[
@@ -26,8 +26,7 @@ export default function Home() {
               미래를 향한 <span className="text-sky-300">친환경 수소</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto">
-              Korea Green Hydrogen는 지속가능한 미래를 위한 
-              혁신적인 수소 에너지 솔루션을 제공합니다.
+              KGH는 지속가능한 미래를 위한 혁신적인 수소 에너지 솔루션을 제공합니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
