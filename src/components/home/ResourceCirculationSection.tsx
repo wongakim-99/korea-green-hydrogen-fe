@@ -1,8 +1,8 @@
 export default function ResourceCirculationSection() {
   return (
-    <section id="resource-circulation" className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-100 snap-start flex items-center">
+    <section id="resource-circulation" className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-100 snap-start flex items-center py-16 md:py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 lg:order-1 relative">
             <div className="bg-white rounded-2xl shadow-2xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">순환 시스템</h3>
@@ -33,17 +33,17 @@ export default function ResourceCirculationSection() {
           </div>
           <div className="order-1 lg:order-2">
             <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
                 </svg>
               </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">완벽한 자원 순환</h2>
-                <p className="text-blue-600 font-medium">Complete Resource Circulation</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">완벽한 자원 순환</h2>
+                <p className="text-blue-600 font-medium text-sm sm:text-base">Complete Resource Circulation</p>
               </div>
             </div>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
               에너지 생산 후 남은 슬러지는 <strong>고품질의 친환경 비료</strong>로 재탄생하여 
               해외 시장에 수출되며, 버려지는 것 하나 없는 자원 순환을 실현합니다.
             </p>

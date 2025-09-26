@@ -9,18 +9,18 @@ export default function ValueCards() {
   };
 
   return (
-    <section className="min-h-screen bg-gray-50 snap-start flex items-center">
+    <section className="min-h-screen bg-gray-50 snap-start flex items-center py-16 md:py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             KGH가 만들어가는 가치
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-2">
             (주)한국그린수소는 버려지는 유기성 폐기물을 가치있는 자원으로 전환하여, 환경과 경제가 상생하는 완벽한 순환 모델을 제시합니다.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* 폐기물의 자원화 카드 */}
           <div 
             className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"

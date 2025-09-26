@@ -28,7 +28,7 @@ const slideData = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center snap-start">
+    <section className="relative min-h-screen flex items-center snap-start overflow-hidden">
       {/* Background Slider */}
       <BackgroundSlider 
         slides={slideData}
@@ -54,17 +54,17 @@ export default function HeroSection() {
       </div>
 
       {/* 모바일용 하단 버튼 */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 md:hidden pointer-events-auto">
-        <div className="flex flex-row gap-3">
+      <div className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 z-20 md:hidden pointer-events-auto px-4">
+        <div className="flex flex-row gap-2 sm:gap-3">
           <Link
             href="/about"
-            className="bg-sky-600/95 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-sky-700 transition-all duration-300 shadow-xl backdrop-blur-sm transform hover:scale-105 whitespace-nowrap"
+            className="bg-sky-600/95 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold hover:bg-sky-700 transition-all duration-300 shadow-xl backdrop-blur-sm transform hover:scale-105 whitespace-nowrap"
           >
             회사 소개
           </Link>
           <Link
             href="/contact"
-            className="bg-white/10 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/20 transition-all duration-300 border border-white/80 whitespace-nowrap backdrop-blur-sm transform hover:scale-105"
+            className="bg-white/10 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold hover:bg-white/20 transition-all duration-300 border border-white/80 whitespace-nowrap backdrop-blur-sm transform hover:scale-105"
           >
             문의하기
           </Link>

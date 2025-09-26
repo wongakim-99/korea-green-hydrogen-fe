@@ -1,21 +1,21 @@
 export default function WasteToResourceSection() {
   return (
-    <section id="waste-to-resource" className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 snap-start flex items-center">
+    <section id="waste-to-resource" className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 snap-start flex items-center py-16 md:py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">폐기물의 자원화</h2>
-                <p className="text-green-600 font-medium">From Waste to Resource</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">폐기물의 자원화</h2>
+                <p className="text-green-600 font-medium text-sm sm:text-base">From Waste to Resource</p>
               </div>
             </div>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
               하수 슬러지와 음식물 폐기물을 최첨단 <strong>열가수분해(THP) 기술</strong>로 처리하여, 
               고효율의 바이오가스와 청정 수소 에너지를 생산합니다.
             </p>
