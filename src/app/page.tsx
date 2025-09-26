@@ -1,9 +1,17 @@
 'use client';
 
 import Link from "next/link";
+import { useEffect } from 'react';
 import BackgroundSlider from "@/components/BackgroundSlider";
 
 export default function Home() {
+  useEffect(() => {
+    document.documentElement.classList.add('homepage-snap');
+    return () => {
+      document.documentElement.classList.remove('homepage-snap');
+    };
+  }, []);
+
   const slideData = [
     {
       image: '/images/home/main-background1.jpg',
@@ -30,7 +38,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center snap-start">
+      <section className="relative min-h-screen flex items-center snap-start">
           {/* Background Slider */}
           <BackgroundSlider 
             slides={slideData}
@@ -75,7 +83,7 @@ export default function Home() {
         </section>
 
         {/* Value Cards Section */}
-        <section className="h-screen bg-gray-50 snap-start flex items-center">
+        <section className="min-h-screen bg-gray-50 snap-start flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -196,7 +204,7 @@ export default function Home() {
         </section>
 
         {/* 폐기물의 자원화 상세 섹션 */}
-        <section id="waste-to-resource" className="h-screen bg-gradient-to-br from-green-50 to-emerald-100 snap-start flex items-center">
+        <section id="waste-to-resource" className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 snap-start flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -263,7 +271,7 @@ export default function Home() {
         </section>
 
         {/* 완벽한 자원 순환 상세 섹션 */}
-        <section id="resource-circulation" className="h-screen bg-gradient-to-br from-blue-50 to-cyan-100 snap-start flex items-center">
+        <section id="resource-circulation" className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-100 snap-start flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 relative">
@@ -333,7 +341,7 @@ export default function Home() {
         </section>
 
         {/* 경제성과 환경성 상세 섹션 */}
-        <section id="economic-environmental" className="h-screen bg-gradient-to-br from-purple-50 to-indigo-100 snap-start flex items-center">
+        <section id="economic-environmental" className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 snap-start flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -428,7 +436,7 @@ export default function Home() {
         </section>
 
       {/* CTA Section */}
-      <section className="bg-sky-600 py-16 md:py-24 snap-none">
+      <section className="bg-sky-600 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             지속가능한 미래를 함께 만들어가세요

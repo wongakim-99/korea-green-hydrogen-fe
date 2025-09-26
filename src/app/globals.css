@@ -113,10 +113,13 @@ body {
   height: 100dvh;
 }
 
-html {
-  scroll-snap-type: y mandatory;
+/* Enable scroll snapping only on desktop */
+@media (min-width: 1024px) {
+  html.homepage-snap {
+    scroll-snap-type: y mandatory;
+  }
 }
 
-.snap-none {
-  scroll-snap-align: none;
+.snap-align-end {
+  scroll-snap-align: end;
 }
