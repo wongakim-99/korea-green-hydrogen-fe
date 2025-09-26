@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState('biogas');
@@ -67,17 +68,18 @@ export default function Services() {
     <div className="min-h-screen">
       {/* Hero Section with Main Image */}
       <section className="relative h-[40vh] min-h-[350px] bg-gradient-to-r from-sky-600 to-blue-600 flex items-center justify-center">
-        {/* Background Image Placeholder */}
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-600/90 to-blue-600/90">
-          <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 opacity-20 flex items-center justify-center">
-            <div className="text-center text-white/50">
-              <svg className="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <p className="text-sm">메인 이미지 영역</p>
-              <p className="text-xs mt-1">(고객 자료 제공 후 업데이트)</p>
-            </div>
-          </div>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/services/service-main.jpg"
+            alt="통합 순환경제 솔루션"
+            fill
+            className="object-cover"
+            priority
+            quality={95}
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-sky-600/70 to-blue-600/60"></div>
         </div>
         
         {/* Content Overlay */}

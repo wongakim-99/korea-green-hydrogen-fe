@@ -57,6 +57,8 @@ export default function BackgroundSlider({
             fill
             className="object-cover"
             priority={index === 0}
+            quality={95}
+            sizes="100vw"
           />
         </div>
       ))}

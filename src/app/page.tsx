@@ -10,8 +10,9 @@ export default function Home() {
         {/* Background Slider */}
         <BackgroundSlider 
           images={[
-            "/images/home/main-background.jpg",
-            "/images/home/main-background2.jpg"
+            "/images/home/main-background1.jpg",
+            "/images/home/main-background2.jpg",
+            "/images/home/main-background3.jpg"
           ]}
           interval={5000}
           className="z-0"

@@ -12,7 +12,6 @@ const Header = () => {
     { href: '/', label: '홈' },
     { href: '/about', label: '회사소개' },
     { href: '/services', label: '서비스' },
-    { href: '/projects', label: '프로젝트' },
     { href: '/contact', label: '연락처' },
   ];
 
