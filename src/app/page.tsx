@@ -36,11 +36,11 @@ export default function Home() {
           interval={5000}
           className="z-0"
         />
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 to-blue-900/50 z-10 pointer-events-none"></div>
+        {/* Overlay for better text readability - moved to lower z-index */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/50 to-blue-900/30 z-10 pointer-events-none"></div>
         
         {/* 데스크톱 버튼 영역 */}
-        <div className="hidden md:flex absolute inset-0 z-30 items-center justify-end pr-8 pointer-events-none">
+        <div className="hidden md:flex absolute inset-0 z-40 items-center justify-end pr-8 pointer-events-none">
           <div className="flex flex-col gap-4 pointer-events-auto">
             <Link
               href="/about"
@@ -58,7 +58,7 @@ export default function Home() {
         </div>
 
         {/* 모바일용 하단 버튼 */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 md:hidden pointer-events-auto">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 md:hidden pointer-events-auto">
           <div className="flex flex-row gap-3">
             <Link
               href="/about"

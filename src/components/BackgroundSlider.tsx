@@ -92,7 +92,7 @@ export default function BackgroundSlider({
       ))}
 
       {/* 텍스트 오버레이 */}
-      <div className="absolute inset-0 z-20 flex items-center">
+      <div className="absolute inset-0 z-30 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="relative max-w-2xl pr-4 md:pr-0">
             {/* Spacing element to prevent layout shift */}
@@ -116,10 +116,10 @@ export default function BackgroundSlider({
                 }`}
                 style={{ willChange: 'transform, opacity' }}
               >
-                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-white mb-3 md:mb-4 leading-tight text-shadow-strong">
+                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-solid-white mb-3 md:mb-4 leading-tight text-shadow-strong">
                    {slide.headline}
                  </h1>
-                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-6 md:mb-8 max-w-lg lg:max-w-xl leading-relaxed text-shadow">
+                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-solid-white mb-6 md:mb-8 max-w-lg lg:max-w-xl leading-relaxed text-shadow">
                    {slide.subheadline}
                  </p>
               </div>
