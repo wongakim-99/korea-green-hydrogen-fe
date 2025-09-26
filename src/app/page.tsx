@@ -3,45 +3,75 @@ import Link from "next/link";
 import BackgroundSlider from "@/components/BackgroundSlider";
 
 export default function Home() {
+  const slideData = [
+    {
+      image: '/images/home/main-background1.jpg',
+      headline: 'PIONEERING A GREENER TOMORROW',
+      subheadline: '(주)한국그린수소는 폐기물에서 새로운 가치를 창출하는 혁신 기술로 지속가능한 미래를 선도합니다.'
+    },
+    {
+      image: '/images/home/main-background2.jpg',
+      headline: 'CLEAN HYDROGEN SOLUTIONS',
+      subheadline: '하수 슬러지를 최첨단 열가수분해(THP) 기술로 분해하여 미래를 위한 청정 수소 에너지를 생산합니다.'
+    },
+    {
+      image: '/images/home/main-background3.jpg',
+      headline: 'REDEFINING WASTE AS A RESOURCE',
+      subheadline: '버려지는 슬러지를 고품질의 친환경 비료로 전환하여 전 세계 시장에 공급합니다.'
+    },
+    {
+      image: '/images/home/main-background4.jpg',
+      headline: 'INVESTING IN A CARBON-ZERO FUTURE',
+      subheadline: '친환경 공정을 통해 확보한 탄소배출권으로 국가의 2050 탄소중립 목표 달성에 기여합니다.'
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
         {/* Background Slider */}
         <BackgroundSlider 
-          images={[
-            "/images/home/main-background1.jpg",
-            "/images/home/main-background2.jpg",
-            "/images/home/main-background3.jpg"
-          ]}
+          slides={slideData}
           interval={5000}
           className="z-0"
         />
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 to-blue-900/50 z-10 pointer-events-none"></div>
         
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pointer-events-auto">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              미래를 향한 <span className="text-sky-300">친환경 수소</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto">
-              KGH는 지속가능한 미래를 위한 혁신적인 수소 에너지 솔루션을 제공합니다.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/about"
-                className="bg-sky-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-sky-700 transition-colors"
-              >
-                회사 소개
-              </Link>
-              <Link
-                href="/contact"
-                className="bg-sky-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-sky-700 transition-colors"
-              >
-                문의하기
-              </Link>
-            </div>
+        {/* 데스크톱 버튼 영역 */}
+        <div className="hidden md:flex absolute inset-0 z-30 items-center justify-end pr-8 pointer-events-none">
+          <div className="flex flex-col gap-4 pointer-events-auto">
+            <Link
+              href="/about"
+              className="bg-sky-600/95 text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-sky-700 transition-all duration-300 shadow-xl backdrop-blur-sm transform hover:scale-105 hover:-translate-y-1 whitespace-nowrap border border-sky-500/20"
+            >
+              회사 소개
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-white/10 text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-white/20 transition-all duration-300 border-2 border-white/80 whitespace-nowrap backdrop-blur-sm transform hover:scale-105 hover:-translate-y-1"
+            >
+              문의하기
+            </Link>
+          </div>
+        </div>
+
+        {/* 모바일용 하단 버튼 */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 md:hidden pointer-events-auto">
+          <div className="flex flex-row gap-3">
+            <Link
+              href="/about"
+              className="bg-sky-600/95 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-sky-700 transition-all duration-300 shadow-xl backdrop-blur-sm transform hover:scale-105 whitespace-nowrap"
+            >
+              회사 소개
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-white/10 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/20 transition-all duration-300 border border-white/80 whitespace-nowrap backdrop-blur-sm transform hover:scale-105"
+            >
+              문의하기
+            </Link>
           </div>
         </div>
       </section>
