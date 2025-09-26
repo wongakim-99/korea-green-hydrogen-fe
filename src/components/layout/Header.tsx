@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -8,6 +8,34 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState('KOR');
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  // 마우스 이벤트 핸들러 함수들
+  const handleMouseEnter = (itemHref: string, hasSubmenu: boolean) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    if (hasSubmenu) {
+      setActiveDropdown(itemHref);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150); // 150ms 지연
+    setHoverTimeout(timeout);
+  };
+
+  // 컴포넌트 언마운트 시 타이머 정리
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
+    };
+  }, [hoverTimeout]);
 
   const navItems = [
     {
@@ -66,8 +94,8 @@ const Header = () => {
               <div 
                 key={item.href}
                 className="relative group"
-                onMouseEnter={() => item.submenu && setActiveDropdown(item.href)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => handleMouseEnter(item.href, !!item.submenu)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={item.href}
@@ -90,7 +118,9 @@ const Header = () => {
                 
                 {/* 애니메이션이 적용된 드롭다운 메뉴 */}
                 {item.submenu && activeDropdown === item.href && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white shadow-xl border border-gray-200 rounded-lg py-2 z-50 animate-dropdown backdrop-blur-sm">
+                  <div 
+                    className="absolute top-full left-0 mt-0 w-48 bg-white shadow-xl border border-gray-200 rounded-lg py-2 z-50 animate-dropdown backdrop-blur-sm"
+                  >
                     {item.submenu.map((subItem, index) => (
                       <Link
                         key={subItem.href}
@@ -99,7 +129,13 @@ const Header = () => {
                         style={{
                           animationDelay: `${index * 50}ms`
                         }}
-                        onClick={() => setActiveDropdown(null)}
+                        onClick={() => {
+                          setActiveDropdown(null);
+                          if (hoverTimeout) {
+                            clearTimeout(hoverTimeout);
+                            setHoverTimeout(null);
+                          }
+                        }}
                       >
                         {subItem.label}
                       </Link>
