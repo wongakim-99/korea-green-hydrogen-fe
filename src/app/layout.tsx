@@ -43,7 +43,9 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
-        <Footer />
+        <footer className="snap-none">
+          <Footer />
+        </footer>
       </body>
     </html>
   );

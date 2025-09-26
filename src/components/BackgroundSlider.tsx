@@ -91,6 +91,9 @@ export default function BackgroundSlider({
         </div>
       ))}
 
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-900/50 to-blue-900/30 z-10 pointer-events-none"></div>
+
       {/* 텍스트 오버레이 */}
       <div className="absolute inset-0 z-30 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -131,7 +134,7 @@ export default function BackgroundSlider({
       {/* 슬라이드 인디케이터 & 프로그레스 바 */}
       {slides.length > 1 && (
         <>
-          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30 pointer-events-auto">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30 pointer-events-auto">
             {slides.map((_, index) => (
               <button
                 key={index}

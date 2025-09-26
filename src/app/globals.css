@@ -106,3 +106,17 @@ body {
     width: 100%;
   }
 }
+
+/* Dynamic Viewport Height for h-screen */
+.h-screen {
+  height: 100vh; /* Fallback for browsers that do not support dvh */
+  height: 100dvh;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-none {
+  scroll-snap-align: none;
+}
