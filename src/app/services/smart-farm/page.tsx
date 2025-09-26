@@ -26,7 +26,6 @@ export default function SmartFarmPage() {
       <section className="bg-gradient-to-r from-purple-600 to-indigo-600 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="text-6xl mb-6">🚜</div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Smart Farm
             </h1>
@@ -85,21 +84,18 @@ export default function SmartFarmPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link href="/services/biogas" className="group">
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="text-3xl mb-3">🔥</div>
                 <h3 className="font-semibold text-gray-900 group-hover:text-green-600">바이오가스 생산</h3>
                 <p className="text-sm text-gray-600 mt-2">친환경 바이오가스</p>
               </div>
             </Link>
             <Link href="/services/fertilizer" className="group">
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="text-3xl mb-3">🌱</div>
                 <h3 className="font-semibold text-gray-900 group-hover:text-green-600">비료화</h3>
                 <p className="text-sm text-gray-600 mt-2">친환경 비료 생산</p>
               </div>
             </Link>
             <Link href="/services/ccus" className="group">
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="text-3xl mb-3">♻️</div>
                 <h3 className="font-semibold text-gray-900 group-hover:text-green-600">CCUS</h3>
                 <p className="text-sm text-gray-600 mt-2">탄소 포집 및 활용</p>
               </div>
