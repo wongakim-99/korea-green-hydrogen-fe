@@ -49,64 +49,90 @@ export default function ResourceCirculationSection() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="order-2 lg:order-1 relative">
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">순환 시스템</h3>
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 border-4 border-blue-200 rounded-full"></div>
-                </div>
-                <div className="relative z-10 grid grid-cols-2 gap-4">
-                  <div className="bg-blue-50 p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full mx-auto mb-2"></div>
-                    <p className="text-sm font-medium">에너지 생산</p>
+          <div className="order-2 lg:order-1 relative h-full flex flex-col">
+            <div className="group bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 transition-all duration-500 ease-out hover:shadow-cyan-500/10 flex-1 flex flex-col">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">순환 시스템</h3>
+              <div className="relative flex-1 flex items-center justify-center">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-10">
+                  
+                  {/* 순환을 나타내는 중앙 화살표 */}
+                  <svg className="absolute w-14 h-14 text-blue-200 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-500 group-hover:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                  </svg>
+
+                  {/* 1. 에너지 생산 */}
+                  <div className={`text-center transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+                    <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <p className="font-bold text-gray-800 text-base">에너지 생산</p>
                   </div>
-                  <div className="bg-blue-50 p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full mx-auto mb-2"></div>
-                    <p className="text-sm font-medium">비료 제조</p>
+
+                  {/* 2. 비료 제조 */}
+                  <div className={`text-center transition-all duration-500 ease-out delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+                    <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <p className="font-bold text-gray-800 text-base">비료 제조</p>
                   </div>
-                  <div className="bg-blue-50 p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full mx-auto mb-2"></div>
-                    <p className="text-sm font-medium">해외 수출</p>
+
+                  {/* 3. 해외 수출 */}
+                  <div className={`text-center transition-all duration-500 ease-out delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+                    <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                      </svg>
+                    </div>
+                    <p className="font-bold text-gray-800 text-base">해외 수출</p>
                   </div>
-                  <div className="bg-blue-50 p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full mx-auto mb-2"></div>
-                    <p className="text-sm font-medium">수익 창출</p>
+
+                  {/* 4. 수익 창출 */}
+                  <div className={`text-center transition-all duration-500 ease-out delay-450 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+                    <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <p className="font-bold text-gray-800 text-base">수익 창출</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2">
-            <div className="flex items-center mb-6">
+          <div className="order-1 lg:order-2 h-full flex flex-col">
+            <div className="flex items-center mb-8">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
                 </svg>
               </div>
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-shadow-strong">완벽한 자원 순환</h2>
-                <p className="text-cyan-300 font-medium text-sm sm:text-base text-shadow">Complete Resource Circulation</p>
+                <h2 className="text-5xl font-bold text-white text-shadow-strong">완벽한 자원 순환</h2>
+                <p className="text-cyan-300 font-medium text-lg text-shadow">Complete Resource Circulation</p>
               </div>
             </div>
-            <p className="text-base sm:text-lg text-gray-200 mb-6 sm:mb-8 leading-relaxed text-shadow">
+            <p className="text-2xl text-gray-200 mb-8 leading-relaxed text-shadow">
               에너지 생산 후 남은 슬러지는 <strong className="text-white">고품질의 친환경 비료</strong>로 재탄생하여 
               해외 시장에 수출되며, 버려지는 것 하나 없는 자원 순환을 실현합니다.
             </p>
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h4 className="font-bold text-gray-900 mb-4">순환 효과</h4>
-              <div className="space-y-3">
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg flex-1 flex flex-col justify-center">
+              <h4 className="font-bold text-gray-900 mb-6 text-lg">순환 효과</h4>
+              <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">폐기물 재활용률</span>
-                  <span className="font-bold text-blue-600">100%</span>
+                  <span className="text-gray-600 text-base">폐기물 재활용률</span>
+                  <span className="font-bold text-blue-600 text-base">100%</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">비료 품질 등급</span>
-                  <span className="font-bold text-blue-600">A급</span>
+                  <span className="text-gray-600 text-base">비료 생산 목표</span>
+                  <span className="font-bold text-blue-600 text-base">연간 87,500톤</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">해외 수출 비율</span>
-                  <span className="font-bold text-blue-600">80%</span>
+                  <span className="text-gray-600 text-base">수출 판로</span>
+                  <span className="font-bold text-blue-600 text-base">Terramarine AS와 OEM 계약</span>
                 </div>
               </div>
             </div>
