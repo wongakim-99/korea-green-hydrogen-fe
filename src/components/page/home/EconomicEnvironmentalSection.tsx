@@ -70,7 +70,7 @@ export default function EconomicEnvironmentalSection() {
   return (
     <section 
       id="economic-environmental" 
-      className="relative min-h-screen snap-start flex items-center py-16 md:py-0"
+      className="relative min-h-screen snap-start flex items-center py-32 sm:py-24 md:py-16 lg:py-0"
     >
       <Image
         alt="경제성과 환경성 배경"

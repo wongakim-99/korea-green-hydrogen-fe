@@ -38,7 +38,7 @@ export default function WasteToResourceSection() {
   return (
     <section 
       id="waste-to-resource" 
-      className="relative min-h-screen snap-start flex items-center py-16 md:py-0"
+      className="relative min-h-screen snap-start flex items-center py-32 sm:py-24 md:py-16 lg:py-0"
     >
       <Image
         alt="폐기물 자원화 배경"

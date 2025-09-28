@@ -41,7 +41,7 @@ export default function ValueCards() {
 
   return (
     <section 
-      className="relative min-h-screen snap-start flex items-center py-24 md:py-0"
+      className="relative min-h-screen snap-start flex items-center py-32 sm:py-24 md:py-16 lg:py-0"
     >
       <Image
         alt="KGH가 만들어가는 가치 배경"

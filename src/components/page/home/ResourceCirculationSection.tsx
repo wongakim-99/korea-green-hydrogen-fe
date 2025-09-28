@@ -33,7 +33,7 @@ export default function ResourceCirculationSection() {
   }, []);
 
   return (
-    <section id="resource-circulation" className="relative min-h-screen snap-start flex items-center py-16 md:py-0">
+    <section id="resource-circulation" className="relative min-h-screen snap-start flex items-center py-32 sm:py-24 md:py-16 lg:py-0">
       <Image
         alt="자원 순환 시스템 배경"
         src="/images/home/sub-background3.jpg"
