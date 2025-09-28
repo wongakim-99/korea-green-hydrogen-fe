@@ -6,12 +6,47 @@ import { useState, useEffect, useRef } from 'react';
 export default function EconomicEnvironmentalSection() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [co2Count, setCo2Count] = useState(0);
+  const [hydrogenCount, setHydrogenCount] = useState(0);
+
+  // 숫자 카운트업 애니메이션 함수
+  const animateCount = (targetValue: number, setter: (value: number) => void, duration: number = 2000) => {
+    const startTime = Date.now();
+    const startValue = 0;
+
+    const animate = () => {
+      const currentTime = Date.now();
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // easeOutQuart 이징 함수 적용
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentValue = Math.floor(startValue + (targetValue - startValue) * easeOutQuart);
+      
+      setter(currentValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setter(targetValue);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // 카운트업 애니메이션 시작
+          setTimeout(() => {
+            animateCount(80000, setCo2Count, 2500);
+          }, 500);
+          setTimeout(() => {
+            animateCount(7085, setHydrogenCount, 2000);
+          }, 700);
           observer.unobserve(entry.target);
         }
       },
@@ -72,15 +107,15 @@ export default function EconomicEnvironmentalSection() {
               <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg flex flex-col justify-center">
                 <h4 className="font-bold text-gray-900 mb-4 text-lg">경제적 효과</h4>
                 <div className="space-y-3">
-                  <div className="flex items-center">
+                  <div className={`flex items-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
                     <span className="text-base text-gray-600">처리비용 절감</span>
                   </div>
-                  <div className="flex items-center">
+                  <div className={`flex items-center transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
                     <span className="text-base text-gray-600">에너지 판매 수익</span>
                   </div>
-                  <div className="flex items-center">
+                  <div className={`flex items-center transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
                     <span className="text-base text-gray-600">비료 수출 수익</span>
                   </div>
@@ -89,15 +124,15 @@ export default function EconomicEnvironmentalSection() {
               <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg flex flex-col justify-center">
                 <h4 className="font-bold text-gray-900 mb-4 text-lg">환경적 효과</h4>
                 <div className="space-y-3">
-                  <div className="flex items-center">
+                  <div className={`flex items-center transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                     <span className="text-base text-gray-600">CO₂ 배출 감소</span>
                   </div>
-                  <div className="flex items-center">
+                  <div className={`flex items-center transition-all duration-500 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                     <span className="text-base text-gray-600">탄소배출권 확보</span>
                   </div>
-                  <div className="flex items-center">
+                  <div className={`flex items-center transition-all duration-500 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                     <span className="text-base text-gray-600">탄소중립 기여</span>
                   </div>
@@ -120,7 +155,9 @@ export default function EconomicEnvironmentalSection() {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-gray-600">CO₂ 감축량</p>
-                        <p className="text-2xl font-bold text-purple-600">연간 80,000톤</p>
+                        <p className="text-2xl font-bold text-purple-600">
+                          연간 {co2Count.toLocaleString()}톤
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -137,7 +174,9 @@ export default function EconomicEnvironmentalSection() {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-gray-600">수소 생산량</p>
-                        <p className="text-2xl font-bold text-green-600">일일 7,085kg</p>
+                        <p className="text-2xl font-bold text-green-600">
+                          일일 {hydrogenCount.toLocaleString()}kg
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -160,10 +199,20 @@ export default function EconomicEnvironmentalSection() {
                     <div className="w-16 h-16 relative">
                       <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
                         <path className="text-gray-200" fill="none" stroke="currentColor" strokeWidth="2" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                        <path className="text-blue-500" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="100, 100" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path 
+                          className="text-blue-500 transition-all duration-2000 ease-out" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeDasharray="100" 
+                          strokeDashoffset={isVisible ? 0 : 100}
+                          d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xs font-bold text-blue-600">100%</span>
+                        <span className={`text-xs font-bold text-blue-600 transition-opacity duration-1000 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                          100%
+                        </span>
                       </div>
                     </div>
                   </div>
