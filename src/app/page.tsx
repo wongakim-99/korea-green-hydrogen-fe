@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect } from 'react';
-import HeroSection from "@/components/home/HeroSection";
-import ValueCards from "@/components/home/ValueCards";
-import WasteToResourceSection from "@/components/home/WasteToResourceSection";
-import ResourceCirculationSection from "@/components/home/ResourceCirculationSection";
-import EconomicEnvironmentalSection from "@/components/home/EconomicEnvironmentalSection";
-import CTASection from "@/components/home/CTASection";
+import HeroSection from "@/components/page/home/HeroSection";
+import ValueCards from "@/components/page/home/ValueCards";
+import WasteToResourceSection from "@/components/page/home/WasteToResourceSection";
+import ResourceCirculationSection from "@/components/page/home/ResourceCirculationSection";
+import EconomicEnvironmentalSection from "@/components/page/home/EconomicEnvironmentalSection";
+import CTASection from "@/components/page/home/CTASection";
 
 export default function Home() {
   useEffect(() => {
