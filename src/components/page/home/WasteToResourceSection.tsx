@@ -1,7 +1,59 @@
+'use client';
+
+import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+
 export default function WasteToResourceSection() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1,
+        /*ValueCards.tsx 와 마찬가지로
+        * 카드의 10%가 보일 때 애니메이션 시작
+        * */
+      }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
-    <section id="waste-to-resource" className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 snap-start flex items-center py-16 md:py-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      id="waste-to-resource" 
+      className="relative min-h-screen snap-start flex items-center py-16 md:py-0"
+    >
+      <Image
+        alt="폐기물 자원화 배경"
+        src="/images/home/sub-background2.jpg"
+        layout="fill"
+        objectFit="cover"
+        quality={95}
+        className={`transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-50 scale-100' : 'opacity-0 scale-105'}`}
+      />
+      <div className="absolute inset-0 bg-gray/20 z-10"></div>
+      <div 
+        ref={sectionRef}
+        className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 transition-all ease-out duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <div className="flex items-center mb-6">
@@ -11,31 +63,31 @@ export default function WasteToResourceSection() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">폐기물의 자원화</h2>
-                <p className="text-green-600 font-medium text-sm sm:text-base">From Waste to Resource</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-shadow-strong">폐기물의 자원화</h2>
+                <p className="text-green-300 font-medium text-sm sm:text-base text-shadow">From Waste to Resource</p>
               </div>
             </div>
-            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
-              하수 슬러지와 음식물 폐기물을 최첨단 <strong>열가수분해(THP) 기술</strong>로 처리하여, 
+            <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 leading-relaxed text-shadow">
+              하수 슬러지와 음식물 폐기물을 최첨단 <strong className="text-white">열가수분해(THP) 기술</strong>로 처리하여, 
               고효율의 바이오가스와 청정 수소 에너지를 생산합니다.
             </p>
             <div className="space-y-4">
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-gray-600">하수 슬러지 → 바이오가스 → 청정 수소</p>
+                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <p className="text-gray-200">하수 슬러지 → 바이오가스 → 청정 수소</p>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-gray-600">음식물 폐기물 → 메탄 가스 → 재생 에너지</p>
+                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <p className="text-gray-200">음식물 폐기물 → 메탄 가스 → 재생 에너지</p>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-gray-600">최첨단 THP 기술로 처리 효율 극대화</p>
+                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <p className="text-gray-200">최첨단 THP 기술로 처리 효율 극대화</p>
               </div>
             </div>
           </div>
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-8">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">기술 프로세스</h3>
               <div className="space-y-4">
                 <div className="flex items-center p-4 bg-green-50 rounded-lg">

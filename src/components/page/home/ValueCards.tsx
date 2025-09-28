@@ -52,7 +52,7 @@ export default function ValueCards() {
         priority
         className={`transition-all duration-1000 ease-in-out ${isCardsVisible ? 'opacity-50 scale-100' : 'opacity-0 scale-105'}`}
       />
-      <div className="absolute inset-0 bg-gray/40 z-10"></div>
+      <div className="absolute inset-0 bg-gray/20 z-10"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-strong">
