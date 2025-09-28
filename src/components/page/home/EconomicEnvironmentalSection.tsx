@@ -60,11 +60,11 @@ export default function EconomicEnvironmentalSection() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-shadow-strong">경제성과 환경성</h2>
-                <p className="text-purple-300 font-medium text-sm sm:text-base text-shadow">Economic & Environmental Value</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-shadow-strong">경제성과 환경성</h2>
+                <p className="text-purple-300 font-medium text-base sm:text-lg text-shadow">Economic & Environmental Value</p>
               </div>
             </div>
-            <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 leading-relaxed text-shadow">
+            <p className="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-8 leading-relaxed text-shadow">
               지자체의 폐기물 처리 비용을 절감하고, <strong className="text-white">탄소배출권 확보</strong>를 통해 
               국가의 탄소중립 목표에 기여하며 경제적, 환경적 가치를 동시에 창출합니다.
             </p>

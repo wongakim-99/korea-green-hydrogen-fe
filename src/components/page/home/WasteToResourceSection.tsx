@@ -63,52 +63,63 @@ export default function WasteToResourceSection() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-shadow-strong">폐기물의 자원화</h2>
-                <p className="text-green-300 font-medium text-sm sm:text-base text-shadow">From Waste to Resource</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-shadow-strong">폐기물의 자원화</h2>
+                <p className="text-green-300 font-medium text-base sm:text-lg text-shadow">From Waste to Resource</p>
               </div>
             </div>
-            <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 leading-relaxed text-shadow">
-              하수 슬러지와 음식물 폐기물을 최첨단 <strong className="text-white">열가수분해(THP) 기술</strong>로 처리하여, 
-              고효율의 바이오가스와 청정 수소 에너지를 생산합니다.
+            <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 leading-relaxed text-shadow">
+              하수 슬러지와 음식물 폐기물을 최첨단{' '}
+              <strong className="text-green-300 font-bold underline decoration-green-400 decoration-2 underline-offset-4">
+                열가수분해(THP) 기술
+              </strong>
+              로 처리하여, 고효율의 바이오가스와 청정 수소 에너지를 생산합니다.
             </p>
-            <div className="space-y-4">
+            <div className="space-y-5">
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-gray-200">하수 슬러지 → 바이오가스 → 청정 수소</p>
+                <svg className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <p className="text-gray-100 text-base sm:text-lg">유기성 폐기물 → 바이오가스 → 청정 수소</p>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-gray-200">음식물 폐기물 → 메탄 가스 → 재생 에너지</p>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-gray-200">최첨단 THP 기술로 처리 효율 극대화</p>
+                <svg className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <p className="text-gray-100 text-base sm:text-lg">최첨단 THP 기술로 처리 효율 극대화</p>
               </div>
             </div>
           </div>
-          <div className="relative">
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">기술 프로세스</h3>
-              <div className="space-y-4">
-                <div className="flex items-center p-4 bg-green-50 rounded-lg">
-                  <span className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">1</span>
-                  <div>
-                    <p className="font-medium text-gray-900">폐기물 수집</p>
-                    <p className="text-sm text-gray-600">하수 슬러지, 음식물 폐기물</p>
+          <div className="relative h-full flex flex-col">
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 ring-1 ring-white/20 flex-1 flex flex-col">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">기술 프로세스</h3>
+              <div className="relative flex-1">
+                {/* 단계들을 잇는 세로 점선 */}
+                <div className="absolute left-5 top-8 bottom-8 w-0.5 bg-gradient-to-b from-green-200 via-green-300 to-green-200"></div>
+
+                <div className="space-y-8 flex-1 flex flex-col justify-center">
+                  {/* 1단계: 애니메이션 지연시간 추가 */}
+                  <div className={`flex items-center transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                    <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">1</span>
+                    <div>
+                      <p className="font-bold text-gray-900 text-lg">폐기물 수집</p>
+                      <p className="text-base text-gray-600 mt-1">하수 슬러지, 음식물 폐기물</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center p-4 bg-green-50 rounded-lg">
-                  <span className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">2</span>
-                  <div>
-                    <p className="font-medium text-gray-900">THP 처리</p>
-                    <p className="text-sm text-gray-600">열가수분해 기술 적용</p>
+                  {/* 2단계: 애니메이션 지연시간 추가 */}
+                  <div className={`flex items-center transition-all duration-500 ease-out delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                    <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">2</span>
+                    <div>
+                      <p className="font-bold text-gray-900 text-lg">THP 처리</p>
+                      <p className="text-base text-gray-600 mt-1">열가수분해 기술 적용</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center p-4 bg-green-50 rounded-lg">
-                  <span className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">3</span>
-                  <div>
-                    <p className="font-medium text-gray-900">에너지 생산</p>
-                    <p className="text-sm text-gray-600">바이오가스, 청정 수소</p>
+                  {/* 3단계: 애니메이션 지연시간 추가 */}
+                  <div className={`flex items-center transition-all duration-500 ease-out delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                    <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">3</span>
+                    <div>
+                      <p className="font-bold text-gray-900 text-lg">에너지 생산</p>
+                      <p className="text-base text-gray-600 mt-1">바이오가스, 청정 수소</p>
+                    </div>
                   </div>
                 </div>
               </div>
