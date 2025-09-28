@@ -61,7 +61,15 @@ export default function BackgroundSlider({
   return (
     <div
       className={`absolute inset-0 overflow-hidden cursor-pointer ${className}`}
-      onClick={nextSlide}
+      onClick={(e) => {
+        // 버튼이나 다른 interactive 요소가 클릭된 경우 슬라이드 전환하지 않음
+        const target = e.target as HTMLElement;
+        const isButton = target.closest('button') || target.closest('a');
+        
+        if (!isButton && e.target === e.currentTarget) {
+          nextSlide();
+        }
+      }}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {

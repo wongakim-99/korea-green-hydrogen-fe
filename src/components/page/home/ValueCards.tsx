@@ -58,8 +58,8 @@ export default function ValueCards() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-strong">
             KGH가 만들어가는 가치
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed px-2 text-shadow">
-            (주)한국그린수소는 버려지는 유기성 폐기물을 가치있는 자원으로 전환하여, 환경과 경제가 상생하는 완벽한 순환 모델을 제시합니다.
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed px-2 text-shadow break-keep">
+            (주)한국그린수소는 버려지는 유기성 폐기물을 가치있는 자원으로 전환하여, 환경과&nbsp;경제가&nbsp;상생하는 완벽한 순환 모델을 제시합니다.
           </p>
         </div>
         

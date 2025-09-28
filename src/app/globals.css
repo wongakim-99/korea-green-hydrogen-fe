@@ -48,6 +48,24 @@ body {
   opacity: 1 !important;
 }
 
+/* 한국어 텍스트 줄바뀜 최적화 */
+.break-keep {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* 비파괴적 공백 유틸리티 */
+.whitespace-nowrap-sm {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .whitespace-nowrap-sm {
+    white-space: normal;
+  }
+}
+
 /* 메가메뉴 애니메이션 */
 @keyframes fadeInUp {
   from {
