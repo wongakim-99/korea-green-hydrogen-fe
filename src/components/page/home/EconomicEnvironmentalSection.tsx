@@ -1,7 +1,56 @@
+'use client';
+
+import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+
 export default function EconomicEnvironmentalSection() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
-    <section id="economic-environmental" className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 snap-start flex items-center py-16 md:py-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      id="economic-environmental" 
+      className="relative min-h-screen snap-start flex items-center py-16 md:py-0"
+    >
+      <Image
+        alt="경제성과 환경성 배경"
+        src="/images/home/sub-background4.jpg"
+        layout="fill"
+        objectFit="cover"
+        quality={95}
+        className={`transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-50 scale-100' : 'opacity-0 scale-105'}`}
+      />
+      <div className="absolute inset-0 bg-gray/20 z-10"></div>
+      <div 
+        ref={sectionRef}
+        className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 transition-all ease-out duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <div className="flex items-center mb-6">
@@ -11,16 +60,16 @@ export default function EconomicEnvironmentalSection() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">경제성과 환경성</h2>
-                <p className="text-purple-600 font-medium text-sm sm:text-base">Economic & Environmental Value</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-shadow-strong">경제성과 환경성</h2>
+                <p className="text-purple-300 font-medium text-sm sm:text-base text-shadow">Economic & Environmental Value</p>
               </div>
             </div>
-            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
-              지자체의 폐기물 처리 비용을 절감하고, <strong>탄소배출권 확보</strong>를 통해 
+            <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 leading-relaxed text-shadow">
+              지자체의 폐기물 처리 비용을 절감하고, <strong className="text-white">탄소배출권 확보</strong>를 통해 
               국가의 탄소중립 목표에 기여하며 경제적, 환경적 가치를 동시에 창출합니다.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg">
                 <h4 className="font-bold text-gray-900 mb-4">경제적 효과</h4>
                 <div className="space-y-3">
                   <div className="flex items-center">
@@ -37,7 +86,7 @@ export default function EconomicEnvironmentalSection() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg">
                 <h4 className="font-bold text-gray-900 mb-4">환경적 효과</h4>
                 <div className="space-y-3">
                   <div className="flex items-center">
@@ -57,7 +106,7 @@ export default function EconomicEnvironmentalSection() {
             </div>
           </div>
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-8">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">2050 탄소중립 기여도</h3>
               <div className="space-y-6">
                 <div>
