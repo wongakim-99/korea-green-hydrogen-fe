@@ -1,5 +1,8 @@
 'use client';
 
+import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+
 export default function ValueCards() {
   const handleScrollTo = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ 
@@ -8,19 +11,63 @@ export default function ValueCards() {
     });
   };
 
+  const cardsRef = useRef(null);
+  const [isCardsVisible, setCardsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCardsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1, // 카드의 10%가 보일 때 애니메이션 시작
+      }
+    );
+
+    const currentRef = cardsRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
-    <section className="min-h-screen bg-gray-50 snap-start flex items-center py-16 md:py-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      className="relative min-h-screen snap-start flex items-center py-24 md:py-0"
+    >
+      <Image
+        alt="KGH가 만들어가는 가치 배경"
+        src="/images/home/sub-background1.jpg"
+        layout="fill"
+        objectFit="cover"
+        quality={95}
+        priority
+        className={`transition-all duration-1000 ease-in-out ${isCardsVisible ? 'opacity-50 scale-100' : 'opacity-0 scale-105'}`}
+      />
+      <div className="absolute inset-0 bg-gray/40 z-10"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-strong">
             KGH가 만들어가는 가치
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-2">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed px-2 text-shadow">
             (주)한국그린수소는 버려지는 유기성 폐기물을 가치있는 자원으로 전환하여, 환경과 경제가 상생하는 완벽한 순환 모델을 제시합니다.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div 
+          ref={cardsRef}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 transition-all ease-out duration-1000 ${
+            isCardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           {/* 폐기물의 자원화 카드 */}
           <div 
             className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
