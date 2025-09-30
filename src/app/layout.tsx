@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StructuredData from "@/components/StructuredData";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Korea Green Hydrogen - 친환경 수소 에너지 솔루션",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className="font-pretendard antialiased min-h-screen flex flex-col">
+        <ScrollToTop />
         <Header />
         <main className="flex-grow">
           {children}
