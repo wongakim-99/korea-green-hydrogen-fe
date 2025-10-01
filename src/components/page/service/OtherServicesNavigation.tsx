@@ -10,9 +10,9 @@ export default function OtherServicesNavigation() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Link href="/services/fertilizer" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-4xl mb-4">🌱</div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2">비료화</h3>
+              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2 transition-colors">비료화</h3>
               <p className="text-gray-600 mb-4">친환경 비료 생산으로 농업 생산성 향상</p>
               <div className="flex items-center text-green-600 text-sm font-medium">
                 자세히 보기
@@ -23,9 +23,9 @@ export default function OtherServicesNavigation() {
             </div>
           </Link>
           <Link href="/services/ccus" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-4xl mb-4">♻️</div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2">CCUS</h3>
+              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2 transition-colors">CCUS</h3>
               <p className="text-gray-600 mb-4">탄소 포집 및 활용으로 탄소 중립 실현</p>
               <div className="flex items-center text-green-600 text-sm font-medium">
                 자세히 보기
@@ -36,9 +36,9 @@ export default function OtherServicesNavigation() {
             </div>
           </Link>
           <Link href="/services/smart-farm" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-4xl mb-4">🚜</div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2">Smart Farm</h3>
+              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2 transition-colors">Smart Farm</h3>
               <p className="text-gray-600 mb-4">스마트 농업 시스템으로 미래 농업 구현</p>
               <div className="flex items-center text-green-600 text-sm font-medium">
                 자세히 보기
