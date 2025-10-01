@@ -34,7 +34,7 @@ export default function ThpTechnologySection() {
                   </svg>
                   핵심 기술
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                   세계가 인정한 효율성,<br />
                   <span className="text-blue-600">최첨단 열가수분해(THP) 기술</span>
                 </h2>

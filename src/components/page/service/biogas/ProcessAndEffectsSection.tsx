@@ -16,7 +16,7 @@ export default function ProcessAndEffectsSection() {
               </svg>
               프로세스 & 성과
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
               <span className="text-orange-600">폐기물이 청정 에너지가</span><br />
               되기까지
             </h2>
