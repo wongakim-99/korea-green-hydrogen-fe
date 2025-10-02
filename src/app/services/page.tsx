@@ -98,7 +98,7 @@ export default function Services() {
       <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto">
-                        {businessAreas.map((area, index) => (
+                        {businessAreas.map((area) => (
                           <button
                             key={area.id}
                             onClick={() => scrollToSection(area.id)}

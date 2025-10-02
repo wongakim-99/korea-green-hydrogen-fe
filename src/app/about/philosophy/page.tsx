@@ -131,10 +131,10 @@ export default function PhilosophyPage() {
           
           <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-lg p-8 md:p-12">
             <blockquote className="text-xl md:text-2xl text-gray-800 leading-relaxed text-center font-medium">
-              "우리는 기술혁신을 통해 환경과 경제가 조화롭게 공존하는 
+              우리는 기술혁신을 통해 환경과 경제가 조화롭게 공존하는 
               지속가능한 미래를 만들어갑니다. 
               고객의 신뢰를 바탕으로 사회적 책임을 다하며, 
-              더 나은 세상을 위한 변화의 중심에 서겠습니다."
+              더 나은 세상을 위한 변화의 중심에 서겠습니다.
             </blockquote>
             <div className="text-center mt-8">
               <p className="text-sky-600 font-semibold text-lg">Korea Green Hydrogen</p>

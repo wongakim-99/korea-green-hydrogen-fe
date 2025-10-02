@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
 interface SlideData {
@@ -23,24 +23,15 @@ export default function BackgroundSlider({
   const [currentIndex, setCurrentIndex] = useState(0);
   const progressBarRef = useRef<HTMLDivElement>(null);
 
-  const resetAnimation = () => {
-    if (progressBarRef.current) {
-      progressBarRef.current.style.animation = 'none';
-      // Trigger reflow to restart animation
-      void progressBarRef.current.offsetWidth;
-      progressBarRef.current.style.animation = `progressBar ${interval / 1000}s linear forwards`;
-    }
-  }
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === slides.length - 1 ? 0 : prevIndex + 1
     );
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  }
+  }, [slides.length]);
 
   useEffect(() => {
     if (slides.length <= 1) return;
@@ -48,10 +39,19 @@ export default function BackgroundSlider({
     const timer = setInterval(nextSlide, interval);
 
     return () => clearInterval(timer);
-  }, [slides.length, interval]);
+  }, [slides.length, interval, nextSlide]);
 
   // Effect to reset animation on slide change
   useEffect(() => {
+    const resetAnimation = () => {
+      if (progressBarRef.current) {
+        progressBarRef.current.style.animation = 'none';
+        // Trigger reflow to restart animation
+        void progressBarRef.current.offsetWidth;
+        progressBarRef.current.style.animation = `progressBar ${interval / 1000}s linear forwards`;
+      }
+    };
+
     if (slides.length > 1) {
       resetAnimation();
     }
