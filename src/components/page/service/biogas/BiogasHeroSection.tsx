@@ -4,34 +4,53 @@ import Image from 'next/image';
 
 export default function BiogasHeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-700 via-cyan-600 to-sky-700 py-24 overflow-hidden">
+    <section className="relative bg-gray-900 py-32 md:py-40 lg:py-48 overflow-hidden">
       {/* 배경 이미지 */}
       <div className="absolute inset-0">
         <Image
           src="/images/services/biogas/service-3.jpg"
           alt="바이오가스 생산 시설"
           fill
-          className="object-cover"
+          className="object-cover opacity-40"
           sizes="100vw"
           priority
         />
       </div>
       
-      {/* 오버레이 - 텍스트 가독성을 위한 어두운 필터 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-cyan-800/70 to-sky-900/70"></div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <div className="inline-flex items-center bg-blue-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-blue-100 text-sm font-medium mb-6 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-            <span className="w-2 h-2 bg-blue-300 rounded-full mr-2"></span>
-            친환경 에너지 솔루션
+      {/* 심플한 오버레이 */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/60"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-3xl">
+          {/* 작은 라벨 */}
+          <div className="inline-block mb-6 md:mb-8">
+            <span className="text-sm md:text-base font-medium text-emerald-400 tracking-wide uppercase">
+              Solution
+            </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+          
+          {/* 메인 헤딩 */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight">
             바이오가스 생산
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
-            유기폐기물을 활용한 혁신적인 바이오가스 생산 시스템으로<br />
-            지속가능한 미래 에너지를 만들어갑니다
+          
+          {/* 서브 텍스트 */}
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed mb-8 md:mb-10">
+            유기폐기물을 활용한 친환경 바이오가스 생산 시스템과<br className="hidden sm:block" />
+            열가수분해(THP) 기술을 소개합니다.
           </p>
+          
+          {/* 간단한 통계 */}
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 md:flex md:space-x-12 pt-4">
+            <div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">7,085kg</div>
+              <div className="text-sm sm:text-base text-gray-400">일일 수소 생산량</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">65%</div>
+              <div className="text-sm sm:text-base text-gray-400">소화 효율</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
