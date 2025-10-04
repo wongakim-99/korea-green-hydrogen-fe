@@ -35,7 +35,7 @@ export default function VisionSection() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 pt-4">
                 <div>
                   <div className="flex items-center mb-3">
-                    <div className="w-1 h-12 bg-emerald-500 mr-4"></div>
+                    <div className="w-1 h-12 bg-sky-500 mr-4"></div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">순환경제</h3>
                       <p className="text-sm text-gray-600 mt-1">폐기물의 자원화</p>
@@ -44,7 +44,7 @@ export default function VisionSection() {
                 </div>
                 <div>
                   <div className="flex items-center mb-3">
-                    <div className="w-1 h-12 bg-emerald-500 mr-4"></div>
+                    <div className="w-1 h-12 bg-sky-500 mr-4"></div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">청정에너지</h3>
                       <p className="text-sm text-gray-600 mt-1">수소 생산</p>
@@ -53,7 +53,7 @@ export default function VisionSection() {
                 </div>
                 <div>
                   <div className="flex items-center mb-3">
-                    <div className="w-1 h-12 bg-emerald-500 mr-4"></div>
+                    <div className="w-1 h-12 bg-sky-500 mr-4"></div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">환경보호</h3>
                       <p className="text-sm text-gray-600 mt-1">탄소 저감</p>

@@ -63,7 +63,7 @@ export default function ProcessAndEffectsSection() {
               
               <div className="relative">
                 <div className="flex items-start space-x-4 lg:block">
-                  <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 bg-emerald-600 rounded-lg flex items-center justify-center lg:mx-auto mb-0 lg:mb-6 relative z-10">
+                  <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 bg-sky-600 rounded-lg flex items-center justify-center lg:mx-auto mb-0 lg:mb-6 relative z-10">
                     <span className="text-2xl lg:text-3xl font-bold text-white">04</span>
                   </div>
                   <div className="flex-1 lg:text-center pt-1 lg:pt-0">
@@ -83,7 +83,7 @@ export default function ProcessAndEffectsSection() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {/* 수소 생산량 카드 */}
-              <div className="bg-white border-2 border-gray-100 p-8 md:p-10 rounded-lg hover:border-emerald-500 transition-colors">
+              <div className="bg-white border-2 border-gray-100 p-8 md:p-10 rounded-lg hover:border-sky-500 transition-colors">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900">일일 수소 생산량</h3>
                   <div className="flex items-baseline space-x-3">
@@ -99,7 +99,7 @@ export default function ProcessAndEffectsSection() {
               </div>
 
               {/* 연간 매출 카드 */}
-              <div className="bg-white border-2 border-gray-100 p-8 md:p-10 rounded-lg hover:border-emerald-500 transition-colors">
+              <div className="bg-white border-2 border-gray-100 p-8 md:p-10 rounded-lg hover:border-sky-500 transition-colors">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900">연간 예상 매출</h3>
                   <div className="flex items-baseline space-x-3">

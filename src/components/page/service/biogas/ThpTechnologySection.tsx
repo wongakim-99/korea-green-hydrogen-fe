@@ -46,17 +46,17 @@ export default function ThpTechnologySection() {
 
               {/* 핵심 장점 */}
               <div className="space-y-6">
-                <div className="border-l-4 border-emerald-500 pl-6 py-2">
+                <div className="border-l-4 border-sky-500 pl-6 py-2">
                   <h4 className="text-lg font-bold text-gray-900 mb-2">에너지 생산 극대화</h4>
                   <p className="text-gray-600">소화 효율을 65%까지 높여 바이오가스 생산량을 획기적으로 늘립니다.</p>
                 </div>
                 
-                <div className="border-l-4 border-emerald-500 pl-6 py-2">
+                <div className="border-l-4 border-sky-500 pl-6 py-2">
                   <h4 className="text-lg font-bold text-gray-900 mb-2">고품질 자원 확보</h4>
                   <p className="text-gray-600">슬러지의 품질을 향상시켜 고품질의 비료를 생산할 수 있는 기반을 마련합니다.</p>
                 </div>
                 
-                <div className="border-l-4 border-emerald-500 pl-6 py-2">
+                <div className="border-l-4 border-sky-500 pl-6 py-2">
                   <h4 className="text-lg font-bold text-gray-900 mb-2">완벽한 친환경 공정</h4>
                   <p className="text-gray-600">처리 과정에서 발생하는 악취와 오염물질을 완벽하게 제거합니다.</p>
                 </div>

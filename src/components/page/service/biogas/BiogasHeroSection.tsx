@@ -24,7 +24,7 @@ export default function BiogasHeroSection() {
         <div className="max-w-3xl">
           {/* 작은 라벨 */}
           <div className="inline-block mb-6 md:mb-8">
-            <span className="text-sm md:text-base font-medium text-emerald-400 tracking-wide uppercase">
+            <span className="text-sm md:text-base font-medium text-sky-400 tracking-wide uppercase">
               Solution
             </span>
           </div>
