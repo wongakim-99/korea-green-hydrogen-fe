@@ -1,0 +1,33 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "company": "Company",
+    "companyOverview": "회사개요",
+    "ceoMessage": "CEO 메시지",
+    "philosophy": "경영철학",
+    "business": "Business",
+    "biogas": "바이오가스 생산",
+    "fertilizer": "비료화",
+    "ccus": "CCUS",
+    "smartFarm": "Smart Farm",
+    "contact": "Contact",
+    "location": "위치정보",
+    "inquiry": "문의하기"
+  },
+  "Footer": {
+    "description": "친환경 수소 에너지 솔루션을 통해 지속가능한 미래를 만들어가는 대한민국의 선도기업입니다.",
+    "address": "서울특별시 강남구 테헤란로 123",
+    "phone": "02-1234-5678",
+    "email": "info@koreagreenhyd.com",
+    "quickLinks": "빠른 링크",
+    "about": "회사소개",
+    "services": "서비스",
+    "contact": "연락처",
+    "socialMedia": "소셜 미디어",
+    "copyright": "© {currentYear} Korea Green Hydrogen. All rights reserved.",
+    "privacyPolicy": "개인정보처리방침",
+    "termsOfService": "이용약관"
+  }
+}
+
+
