@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@fontsource/pretendard";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import FooterWrapper from "@/components/layout/FooterWrapper";
 import StructuredData from "@/components/StructuredData";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -45,9 +45,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
-        <footer className="snap-align-end">
-          <Footer />
-        </footer>
+        <FooterWrapper />
       </body>
     </html>
   );
