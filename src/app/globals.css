@@ -184,7 +184,6 @@ body {
   animation: slideInFromBottom 0.8s ease-out 0.4s forwards;
   opacity: 0;
 }
-<<<<<<< HEAD
 
 /* 사선형 틀 효과 */
 @keyframes skewIn {
@@ -233,5 +232,3 @@ body {
     width: 100% !important;
   }
 }
-=======
->>>>>>> origin/feature/#5
