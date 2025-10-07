@@ -1,0 +1,90 @@
+{
+  "BiogasPage": {
+    "Hero": {
+      "label": "Solution",
+      "title": "바이오가스 생산",
+      "subtitle": "Biogas Production",
+      "description": "유기폐기물을 활용한 친환경 바이오가스 생산 시스템과 열가수분해(THP) 기술을 소개합니다.",
+      "stat1_value": "7,085kg",
+      "stat1_label": "일일 수소 생산량",
+      "stat2_value": "65%",
+      "stat2_label": "소화 효율"
+    },
+    "ThpTechnology": {
+      "title": "최첨단 열가수분해(THP) 기술",
+      "subtitle": "Thermal Hydrolysis Process",
+      "description1": "KGH 바이오가스 센터의 경쟁력은 세계적으로 가장 효율적인 기술로 검증된 열가수분해(THP, Thermal Hydrolysis) 공법에서 나옵니다.",
+      "description2": "THP는 고온·고압의 스팀으로 슬러지를 처리하여 바이오가스 생산 효율을 극대화하고, 슬러지를 고품질 자원으로 재활용하는 혁신적인 솔루션입니다.",
+      "advantage1_title": "에너지 생산 극대화",
+      "advantage1_description": "소화 효율을 65%까지 높여 바이오가스 생산량을 획기적으로 늘립니다.",
+      "advantage2_title": "고품질 자원 확보",
+      "advantage2_description": "슬러지의 품질을 향상시켜 고품질의 비료를 생산할 수 있는 기반을 마련합니다.",
+      "advantage3_title": "완벽한 친환경 공정",
+      "advantage3_description": "처리 과정에서 발생하는 악취와 오염물질을 완벽하게 제거합니다.",
+      "feature1_title": "처리 효율 증대",
+      "feature1_description": "기존 혐기성 소화 대비 30% 이상 향상",
+      "feature2_title": "고품질 바이오가스",
+      "feature2_description": "메탄 함량 60% 이상의 고효율 가스 생산",
+      "feature3_title": "슬러지 감량",
+      "feature3_description": "처리 후 슬러지 발생량 50% 이상 감소",
+      "how_it_works": "THP 작동 원리",
+      "step1_title": "고온·고압 처리",
+      "step1_description": "160-180°C, 6-8bar의 조건으로 가압 및 가열",
+      "step2_title": "세포벽 파괴",
+      "step2_description": "미생물 세포벽을 물리적으로 분해",
+      "step3_title": "생분해성 향상",
+      "step3_description": "혐기성 소화 효율 극대화"
+    },
+    "ProcessAndEffects": {
+      "process_title": "프로세스",
+      "process_subtitle": "폐기물이 청정 에너지로 전환되는 4단계 프로세스",
+      "step1_title": "원료 수집",
+      "step1_description": "하수 슬러지\n음식물 폐기물",
+      "step2_title": "THP 처리",
+      "step2_description": "열가수분해\n공정 적용",
+      "step3_title": "바이오가스 생산",
+      "step3_description": "메탄가스\n생산 극대화",
+      "step4_title": "수소 전환",
+      "step4_description": "청정 수소\n최종 생산",
+      "effects_title": "핵심 성과",
+      "stat1_title": "일일 수소 생산량",
+      "stat1_value": "7,085",
+      "stat1_unit": "kg",
+      "stat1_description": "수소차 약 <strong>14,000대</strong> 충전 가능 규모",
+      "stat2_title": "연간 예상 매출",
+      "stat2_value": "111",
+      "stat2_unit": "억 원",
+      "stat2_description": "지속가능한 <strong>수익 모델</strong> 구축"
+    },
+    "Vision": {
+      "title": "폐기물 처리의 패러다임을 바꾸다",
+      "description1": "(주)한국그린수소는 하수 슬러지를 단순 처리하는 것을 넘어 수소와 비료를 생산하는 혁신적이고 친환경적인 에너지 사업 모델을 제시합니다.",
+      "description2": "이 비전의 중심에는 지역 내 하수 슬러지, 음식물 폐기물 등 유기성 폐기물을 통합 처리하여 가치있는 자원으로 전환하는 핵심 시설, <strong>바이오가스 센터</strong>가 있습니다.",
+      "value1_title": "순환경제",
+      "value1_description": "폐기물의 자원화",
+      "value2_title": "청정에너지",
+      "value2_description": "수소 생산",
+      "value3_title": "환경보호",
+      "value3_description": "탄소 저감"
+    }
+  },
+  "OtherServices": {
+    "title": "다른 사업 분야",
+    "subtitle": "KGH의 통합 솔루션을 확인해보세요",
+    "backButton": "전체 서비스로 돌아가기",
+    "viewDetails": "자세히 보기",
+    "fertilizer": {
+      "title": "비료화",
+      "description": "친환경 비료 생산으로 농업 생산성 향상"
+    },
+    "ccus": {
+      "title": "CCUS",
+      "description": "탄소 포집 및 활용으로 탄소 중립 실현"
+    },
+    "smartFarm": {
+      "title": "Smart Farm",
+      "description": "스마트 농업 시스템으로 미래 농업 구현"
+    }
+  }
+}
+

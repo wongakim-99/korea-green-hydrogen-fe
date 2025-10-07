@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: 'Korea Green Hydrogen의 위치 정보와 연락처를 확인하세요.',
 };
 
-export default function ContactPage() {
+export default function ContactPage({params: {locale}}: {params: {locale: string}}) {
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href="/" className="hover:text-sky-600 transition-colors">홈</Link>
+            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">홈</Link>
             <span className="text-gray-400">/</span>
             <span className="text-sky-600 font-bold">Contact</span>
           </div>

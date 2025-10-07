@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function WasteToResourceSection() {
+  const t = useTranslations('HomePage.WasteToResource');
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -41,7 +43,7 @@ export default function WasteToResourceSection() {
       className="relative min-h-screen snap-start flex items-center py-32 sm:py-24 md:py-16 lg:py-0"
     >
       <Image
-        alt="폐기물 자원화 배경"
+        alt={t('title')}
         src="/images/home/sub-background2.jpg"
         layout="fill"
         objectFit="cover"
@@ -51,9 +53,7 @@ export default function WasteToResourceSection() {
       <div className="absolute inset-0 bg-gray/20 z-10"></div>
       <div 
         ref={sectionRef}
-        className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 transition-all ease-out duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 transition-all ease-out duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <div className="flex items-center mb-6">
@@ -63,62 +63,70 @@ export default function WasteToResourceSection() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-shadow-strong">폐기물의 자원화</h2>
-                <p className="text-green-300 font-medium text-base sm:text-lg text-shadow">From Waste to Resource</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-shadow-strong">{t('title')}</h2>
+                <p className="text-green-300 font-medium text-base sm:text-lg text-shadow">{t('subtitle')}</p>
               </div>
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 leading-relaxed text-shadow">
-              하수 슬러지와 음식물 폐기물을 최첨단{' '}
-              <strong className="text-green-300 font-bold underline decoration-green-400 decoration-2 underline-offset-4">
-                열가수분해(THP) 기술
-              </strong>
-              로 처리하여, 고효율의 바이오가스와 청정 수소 에너지를 생산합니다.
+              {t.rich('main_text', {
+                strong: (chunks) => <strong className="text-green-300 font-bold underline decoration-green-400 decoration-2 underline-offset-4">{chunks}</strong>,
+                highlight: (chunks) => <strong className="text-green-300 font-bold">{chunks}</strong>
+              })}
             </p>
             <div className="space-y-5">
               <div className="flex items-start">
                 <svg className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <p className="text-gray-100 text-base sm:text-lg">유기성 폐기물 → 바이오가스 → 청정 수소</p>
+                <p className="text-gray-100 text-base sm:text-lg">{t('feature1')}</p>
               </div>
               <div className="flex items-start">
                 <svg className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <p className="text-gray-100 text-base sm:text-lg">최첨단 THP 기술로 처리 효율 극대화</p>
+                <p className="text-gray-100 text-base sm:text-lg">{t('feature2')}</p>
               </div>
             </div>
           </div>
           <div className="relative h-full flex flex-col">
             <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 ring-1 ring-white/20 flex-1 flex flex-col">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">기술 프로세스</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">{t('process_title')}</h3>
               <div className="relative flex-1">
                 {/* 단계들을 잇는 세로 점선 */}
                 <div className="absolute left-5 top-8 bottom-8 w-0.5 bg-gradient-to-b from-green-200 via-green-300 to-green-200"></div>
 
                 <div className="space-y-8 flex-1 flex flex-col justify-center">
                   {/* 1단계: 애니메이션 지연시간 추가 */}
-                  <div className={`flex items-center transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  <div 
+                    className={`flex items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: isVisible ? '0ms' : '0ms' }}
+                  >
                     <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">1</span>
                     <div>
-                      <p className="font-bold text-gray-900 text-lg">폐기물 수집</p>
-                      <p className="text-base text-gray-600 mt-1">하수 슬러지, 음식물 폐기물</p>
+                      <p className="font-bold text-gray-900 text-lg">{t('step1_title')}</p>
+                      <p className="text-base text-gray-600 mt-1">{t('step1_description')}</p>
                     </div>
                   </div>
                   {/* 2단계: 애니메이션 지연시간 추가 */}
-                  <div className={`flex items-center transition-all duration-500 ease-out delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  <div 
+                    className={`flex items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: isVisible ? '300ms' : '0ms' }}
+                  >
                     <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">2</span>
                     <div>
-                      <p className="font-bold text-gray-900 text-lg">THP 처리</p>
-                      <p className="text-base text-gray-600 mt-1">열가수분해 기술 적용</p>
+                      <p className="font-bold text-gray-900 text-lg">{t('step2_title')}</p>
+                      <p className="text-base text-gray-600 mt-1">{t('step2_description')}</p>
                     </div>
                   </div>
                   {/* 3단계: 애니메이션 지연시간 추가 */}
-                  <div className={`flex items-center transition-all duration-500 ease-out delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  <div 
+                    className={`flex items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: isVisible ? '600ms' : '0ms' }}
+                  >
                     <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">3</span>
                     <div>
-                      <p className="font-bold text-gray-900 text-lg">에너지 생산</p>
-                      <p className="text-base text-gray-600 mt-1">바이오가스, 청정 수소</p>
+                      <p className="font-bold text-gray-900 text-lg">{t('step3_title')}</p>
+                      <p className="text-base text-gray-600 mt-1">{t('step3_description')}</p>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,30 @@
+{
+  "CEOPage": {
+    "metadata": {
+      "title": "CEO 메시지 - Korea Green Hydrogen",
+      "description": "Korea Green Hydrogen CEO의 메시지와 비전을 확인하세요."
+    },
+    "breadcrumb": {
+      "home": "홈",
+      "company": "Company",
+      "ceoMessage": "CEO 메시지"
+    },
+    "hero": {
+      "title": "CEO 메시지",
+      "subtitle": "지속가능한 미래를 향한 Korea Green Hydrogen의 비전"
+    },
+    "content": {
+      "photoAlt": "CEO 사진",
+      "name": "김○○",
+      "title": "대표이사 CEO",
+      "heading": "지속가능한 미래를 향한 도전",
+      "p1": "안녕하십니까. Korea Green Hydrogen 대표이사 김○○입니다.",
+      "p2": "우리는 지금 기후변화와 환경오염이라는 인류 공통의 과제 앞에 서 있습니다. 이러한 시대적 요구에 부응하여 Korea Green Hydrogen는 친환경 수소 에너지 솔루션을 통해 지속가능한 미래를 만들어가고 있습니다.",
+      "p3": "우리의 혁신적인 기술과 끊임없는 연구개발을 통해 폐기물을 에너지로 전환하는 완전한 순환경제 시스템을 구축하고 있으며, 이를 통해 환경보호와 경제성을 동시에 실현하고자 합니다.",
+      "p4": "앞으로도 Korea Green Hydrogen는 기술혁신과 지속가능한 성장을 통해 대한민국의 친환경 에너지 산업을 선도하며, 더 나은 미래를 위한 변화의 중심에 서겠습니다.",
+      "p5": "감사합니다."
+    }
+  }
+}
+
+
