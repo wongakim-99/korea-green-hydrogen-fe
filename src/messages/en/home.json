@@ -76,6 +76,11 @@
       "hydrogenProduction": "Hydrogen Production",
       "hydrogenAmount": "{amount}kg daily",
       "wasteRecycling": "Waste Recycling"
+    },
+    "CTA": {
+      "title": "Build a Sustainable Future Together",
+      "description": "Join Korea Green Hydrogen in preparing for a better tomorrow with eco-friendly hydrogen energy.",
+      "button": "Get Consultation Now"
     }
   }
 }

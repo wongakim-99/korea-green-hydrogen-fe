@@ -76,6 +76,11 @@
       "hydrogenProduction": "수소 생산량",
       "hydrogenAmount": "일일 {amount}kg",
       "wasteRecycling": "폐기물 자원화"
+    },
+    "CTA": {
+      "title": "지속가능한 미래를 함께 만들어가세요",
+      "description": "Korea Green Hydrogen와 함께 친환경 수소 에너지로 더 나은 내일을 준비하세요.",
+      "button": "지금 상담받기"
     }
   }
 }
