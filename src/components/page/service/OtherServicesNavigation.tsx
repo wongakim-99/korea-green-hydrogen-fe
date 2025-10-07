@@ -59,7 +59,7 @@ export default function OtherServicesNavigation() {
                 <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-sky-100 to-sky-50">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={t(service.titleKey)}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
