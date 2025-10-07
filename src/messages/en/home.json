@@ -38,6 +38,44 @@
       "step2_description": "Application of thermal hydrolysis technology",
       "step3_title": "Energy Production",
       "step3_description": "Biogas, clean hydrogen"
+    },
+    "ResourceCirculation": {
+      "bgAlt": "Resource Circulation System Background",
+      "systemTitle": "Circulation System",
+      "step1": "Energy Production",
+      "step2": "Fertilizer Manufacturing",
+      "step3": "Overseas Export",
+      "step4": "Revenue Generation",
+      "title": "Complete Resource Circulation",
+      "subtitle": "Complete Resource Circulation",
+      "description": "The remaining sludge after energy production is reborn as high-quality eco-friendly fertilizer and exported to overseas markets, realizing a resource circulation with nothing thrown away.",
+      "effectsTitle": "Circulation Effects",
+      "recyclingRate": "Waste Recycling Rate",
+      "recyclingRateValue": "100%",
+      "fertilizerProduction": "Fertilizer Production Target",
+      "fertilizerProductionValue": "87,500 tons annually",
+      "exportMarket": "Export Market",
+      "exportMarketValue": "OEM Contract with Terramarine AS"
+    },
+    "EconomicEnvironmental": {
+      "bgAlt": "Economic and Environmental Value Background",
+      "title": "Economic & Environmental Value",
+      "subtitle": "Economic & Environmental Value",
+      "description": "We create both economic and environmental value by reducing local governments' waste disposal costs and contributing to the national carbon neutrality goal by securing carbon credits.",
+      "economicEffects": "Economic Effects",
+      "economicItem1": "Reduced disposal costs",
+      "economicItem2": "Energy sales revenue",
+      "economicItem3": "Fertilizer export revenue",
+      "environmentalEffects": "Environmental Effects",
+      "environmentalItem1": "CO₂ emission reduction",
+      "environmentalItem2": "Carbon credit acquisition",
+      "environmentalItem3": "Carbon neutrality contribution",
+      "keyEffects": "Key Expected Effects",
+      "co2Reduction": "CO₂ Reduction",
+      "co2Amount": "{amount} tons annually",
+      "hydrogenProduction": "Hydrogen Production",
+      "hydrogenAmount": "{amount}kg daily",
+      "wasteRecycling": "Waste Recycling"
     }
   }
 }

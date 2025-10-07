@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function EconomicEnvironmentalSection() {
+  const t = useTranslations('HomePage.EconomicEnvironmental');
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [co2Count, setCo2Count] = useState(0);
@@ -73,7 +75,7 @@ export default function EconomicEnvironmentalSection() {
       className="relative min-h-screen snap-start flex items-center py-32 sm:py-24 md:py-16 lg:py-0"
     >
       <Image
-        alt="경제성과 환경성 배경"
+        alt={t('bgAlt')}
         src="/images/home/sub-background4.jpg"
         layout="fill"
         objectFit="cover"
@@ -95,46 +97,45 @@ export default function EconomicEnvironmentalSection() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-shadow-strong">경제성과 환경성</h2>
-                <p className="text-purple-300 font-medium text-base sm:text-lg text-shadow">Economic & Environmental Value</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-shadow-strong">{t('title')}</h2>
+                <p className="text-purple-300 font-medium text-base sm:text-lg text-shadow">{t('subtitle')}</p>
               </div>
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 leading-relaxed text-shadow">
-              지자체의 폐기물 처리 비용을 절감하고, <strong className="text-white">탄소배출권 확보</strong>를 통해 
-              국가의 탄소중립 목표에 기여하며 경제적, 환경적 가치를 동시에 창출합니다.
+              {t('description')}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 flex-1">
               <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg flex flex-col justify-center">
-                <h4 className="font-bold text-gray-900 mb-4 text-lg">경제적 효과</h4>
+                <h4 className="font-bold text-gray-900 mb-4 text-lg">{t('economicEffects')}</h4>
                 <div className="space-y-3">
                   <div className={`flex items-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                    <span className="text-base text-gray-600">처리비용 절감</span>
+                    <span className="text-base text-gray-600">{t('economicItem1')}</span>
                   </div>
                   <div className={`flex items-center transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                    <span className="text-base text-gray-600">에너지 판매 수익</span>
+                    <span className="text-base text-gray-600">{t('economicItem2')}</span>
                   </div>
                   <div className={`flex items-center transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                    <span className="text-base text-gray-600">비료 수출 수익</span>
+                    <span className="text-base text-gray-600">{t('economicItem3')}</span>
                   </div>
                 </div>
               </div>
               <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg flex flex-col justify-center">
-                <h4 className="font-bold text-gray-900 mb-4 text-lg">환경적 효과</h4>
+                <h4 className="font-bold text-gray-900 mb-4 text-lg">{t('environmentalEffects')}</h4>
                 <div className="space-y-3">
                   <div className={`flex items-center transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                    <span className="text-base text-gray-600">CO₂ 배출 감소</span>
+                    <span className="text-base text-gray-600">{t('environmentalItem1')}</span>
                   </div>
                   <div className={`flex items-center transition-all duration-500 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                    <span className="text-base text-gray-600">탄소배출권 확보</span>
+                    <span className="text-base text-gray-600">{t('environmentalItem2')}</span>
                   </div>
                   <div className={`flex items-center transition-all duration-500 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}>
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                    <span className="text-base text-gray-600">탄소중립 기여</span>
+                    <span className="text-base text-gray-600">{t('environmentalItem3')}</span>
                   </div>
                 </div>
               </div>
@@ -142,7 +143,7 @@ export default function EconomicEnvironmentalSection() {
           </div>
           <div className="relative h-full flex flex-col">
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 flex-1 flex flex-col">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">핵심 기대 효과</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">{t('keyEffects')}</h3>
               <div className="grid grid-cols-1 gap-6 flex-1">
                 {/* CO₂ 감축량 */}
                 <div className={`bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-6 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
@@ -154,9 +155,9 @@ export default function EconomicEnvironmentalSection() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-600">CO₂ 감축량</p>
+                        <p className="text-sm font-medium text-gray-600">{t('co2Reduction')}</p>
                         <p className="text-2xl font-bold text-purple-600">
-                          연간 {co2Count.toLocaleString()}톤
+                          {t('co2Amount', { amount: co2Count.toLocaleString() })}
                         </p>
                       </div>
                     </div>
@@ -173,9 +174,9 @@ export default function EconomicEnvironmentalSection() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-600">수소 생산량</p>
+                        <p className="text-sm font-medium text-gray-600">{t('hydrogenProduction')}</p>
                         <p className="text-2xl font-bold text-green-600">
-                          일일 {hydrogenCount.toLocaleString()}kg
+                          {t('hydrogenAmount', { amount: hydrogenCount.toLocaleString() })}
                         </p>
                       </div>
                     </div>
@@ -192,7 +193,7 @@ export default function EconomicEnvironmentalSection() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-600">폐기물 자원화</p>
+                        <p className="text-sm font-medium text-gray-600">{t('wasteRecycling')}</p>
                         <p className="text-2xl font-bold text-blue-600">100%</p>
                       </div>
                     </div>

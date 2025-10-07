@@ -38,6 +38,44 @@
       "step2_description": "열가수분해 기술 적용",
       "step3_title": "에너지 생산",
       "step3_description": "바이오가스, 청정 수소"
+    },
+    "ResourceCirculation": {
+      "bgAlt": "자원 순환 시스템 배경",
+      "systemTitle": "순환 시스템",
+      "step1": "에너지 생산",
+      "step2": "비료 제조",
+      "step3": "해외 수출",
+      "step4": "수익 창출",
+      "title": "완벽한 자원 순환",
+      "subtitle": "Complete Resource Circulation",
+      "description": "에너지 생산 후 남은 슬러지는 고품질의 친환경 비료로 재탄생하여 해외 시장에 수출되며, 버려지는 것 하나 없는 자원 순환을 실현합니다.",
+      "effectsTitle": "순환 효과",
+      "recyclingRate": "폐기물 재활용률",
+      "recyclingRateValue": "100%",
+      "fertilizerProduction": "비료 생산 목표",
+      "fertilizerProductionValue": "연간 87,500톤",
+      "exportMarket": "수출 판로",
+      "exportMarketValue": "Terramarine AS와 OEM 계약"
+    },
+    "EconomicEnvironmental": {
+      "bgAlt": "경제성과 환경성 배경",
+      "title": "경제성과 환경성",
+      "subtitle": "Economic & Environmental Value",
+      "description": "지자체의 폐기물 처리 비용을 절감하고, 탄소배출권 확보를 통해 국가의 탄소중립 목표에 기여하며 경제적, 환경적 가치를 동시에 창출합니다.",
+      "economicEffects": "경제적 효과",
+      "economicItem1": "처리비용 절감",
+      "economicItem2": "에너지 판매 수익",
+      "economicItem3": "비료 수출 수익",
+      "environmentalEffects": "환경적 효과",
+      "environmentalItem1": "CO₂ 배출 감소",
+      "environmentalItem2": "탄소배출권 확보",
+      "environmentalItem3": "탄소중립 기여",
+      "keyEffects": "핵심 기대 효과",
+      "co2Reduction": "CO₂ 감축량",
+      "co2Amount": "연간 {amount}톤",
+      "hydrogenProduction": "수소 생산량",
+      "hydrogenAmount": "일일 {amount}kg",
+      "wasteRecycling": "폐기물 자원화"
     }
   }
 }
