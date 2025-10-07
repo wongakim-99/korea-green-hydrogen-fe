@@ -1,0 +1,88 @@
+{
+  "HomePage": {
+    "Hero": {
+      "slide1_headline": "PIONEERING A GREENER TOMORROW",
+      "slide1_subheadline": "Korea Green Hydrogen leads a sustainable future with innovative technology that creates new value from waste.",
+      "slide2_headline": "CLEAN HYDROGEN SOLUTIONS",
+      "slide2_subheadline": "We produce clean hydrogen energy for the future by decomposing sewage sludge with cutting-edge Thermal Hydrolysis (THP) technology.",
+      "slide3_headline": "REDEFINING WASTE AS A RESOURCE",
+      "slide3_subheadline": "We convert discarded sludge into high-quality, eco-friendly fertilizer and supply it to the global market.",
+      "slide4_headline": "INVESTING IN A CARBON-ZERO FUTURE",
+      "slide4_subheadline": "We contribute to the nation's 2050 carbon neutrality goal with carbon credits secured through our eco-friendly process.",
+      "aboutButton": "About Us",
+      "contactButton": "Contact Us"
+    },
+    "ValueCards": {
+      "title": "The Value KGH Creates",
+      "subtitle": "Korea Green Hydrogen presents a perfect circular model where the environment and economy coexist by converting organic waste into valuable resources.",
+      "card1_title": "From Waste to Resource",
+      "card1_subtitle": "From Waste to Resource",
+      "card1_description": "We produce high-efficiency biogas and clean hydrogen energy by treating sewage sludge and food waste with cutting-edge Thermal Hydrolysis (THP) technology.",
+      "card2_title": "Resource Circulation",
+      "card2_subtitle": "Complete Resource Circulation",
+      "card2_description": "The remaining sludge after energy production is reborn as high-quality eco-friendly fertilizer and exported to overseas markets, realizing a resource circulation with nothing thrown away.",
+      "card3_title": "Economic & Environmental",
+      "card3_subtitle": "Economic & Environmental Value",
+      "card3_description": "We create economic and environmental value by reducing waste disposal costs and contributing to carbon neutrality through carbon credits."
+    },
+    "WasteToResource": {
+      "title": "From Waste to Resource",
+      "subtitle": "From Waste to Resource",
+      "main_text": "We produce high-efficiency biogas and clean hydrogen energy by treating sewage sludge and food waste with cutting-edge <highlight>Thermal Hydrolysis (THP)</highlight> technology.",
+      "feature1": "Organic Waste → Biogas → Clean Hydrogen",
+      "feature2": "Maximizing treatment efficiency with cutting-edge THP technology",
+      "process_title": "Technology Process",
+      "step1_title": "Waste Collection",
+      "step1_description": "Sewage sludge, food waste",
+      "step2_title": "THP Treatment",
+      "step2_description": "Application of thermal hydrolysis technology",
+      "step3_title": "Energy Production",
+      "step3_description": "Biogas, clean hydrogen"
+    },
+    "ResourceCirculation": {
+      "bgAlt": "Resource Circulation System Background",
+      "systemTitle": "Circulation System",
+      "step1": "Energy Production",
+      "step2": "Fertilizer Manufacturing",
+      "step3": "Overseas Export",
+      "step4": "Revenue Generation",
+      "title": "Complete Resource Circulation",
+      "subtitle": "Complete Resource Circulation",
+      "description": "The remaining sludge after energy production is reborn as high-quality eco-friendly fertilizer and exported to overseas markets, realizing a resource circulation with nothing thrown away.",
+      "effectsTitle": "Circulation Effects",
+      "recyclingRate": "Waste Recycling Rate",
+      "recyclingRateValue": "100%",
+      "fertilizerProduction": "Fertilizer Production Target",
+      "fertilizerProductionValue": "87,500 tons annually",
+      "exportMarket": "Export Market",
+      "exportMarketValue": "OEM Contract with Terramarine AS"
+    },
+    "EconomicEnvironmental": {
+      "bgAlt": "Economic and Environmental Value Background",
+      "title": "Economic & Environmental Value",
+      "subtitle": "Economic & Environmental Value",
+      "description": "We create both economic and environmental value by reducing local governments' waste disposal costs and contributing to the national carbon neutrality goal by securing carbon credits.",
+      "economicEffects": "Economic Effects",
+      "economicItem1": "Reduced disposal costs",
+      "economicItem2": "Energy sales revenue",
+      "economicItem3": "Fertilizer export revenue",
+      "environmentalEffects": "Environmental Effects",
+      "environmentalItem1": "CO₂ emission reduction",
+      "environmentalItem2": "Carbon credit acquisition",
+      "environmentalItem3": "Carbon neutrality contribution",
+      "keyEffects": "Key Expected Effects",
+      "co2Reduction": "CO₂ Reduction",
+      "co2Amount": "{amount} tons annually",
+      "hydrogenProduction": "Hydrogen Production",
+      "hydrogenAmount": "{amount}kg daily",
+      "wasteRecycling": "Waste Recycling"
+    },
+    "CTA": {
+      "title": "Build a Sustainable Future Together",
+      "description": "Join Korea Green Hydrogen in preparing for a better tomorrow with eco-friendly hydrogen energy.",
+      "button": "Get Consultation Now"
+    }
+  }
+}
+
+

@@ -1,6 +1,9 @@
-import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {
+const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // 이미지 최적화 설정
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -21,4 +24,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
+

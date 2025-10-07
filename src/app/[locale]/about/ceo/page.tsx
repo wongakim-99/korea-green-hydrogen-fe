@@ -1,23 +1,29 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import {getTranslations} from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: 'CEO 메시지 - Korea Green Hydrogen',
-  description: 'Korea Green Hydrogen CEO의 메시지와 비전을 확인하세요.',
-};
+export async function generateMetadata({params: {locale}}: {params: {locale: string}}): Promise<Metadata> {
+  const t = await getTranslations({locale, namespace: 'CEOPage.metadata'});
 
-export default function CEOPage() {
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
+
+export default async function CEOPage({params: {locale}}: {params: {locale: string}}) {
+  const t = await getTranslations({locale, namespace: 'CEOPage'});
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href="/" className="hover:text-sky-600 transition-colors">홈</Link>
+            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">{t('breadcrumb.home')}</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/about" className="hover:text-sky-600 transition-colors">Company</Link>
+            <Link href={`/${locale}/about`} className="hover:text-sky-600 transition-colors">{t('breadcrumb.company')}</Link>
             <span className="text-gray-400">/</span>
-            <span className="text-sky-600 font-bold">CEO 메시지</span>
+            <span className="text-sky-600 font-bold">{t('breadcrumb.ceoMessage')}</span>
           </div>
         </div>
       </nav>
@@ -27,10 +33,10 @@ export default function CEOPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              CEO 메시지
+              {t('hero.title')}
             </h1>
             <p className="text-xl text-sky-100 max-w-2xl mx-auto">
-              지속가능한 미래를 향한 Korea Green Hydrogen의 비전
+              {t('hero.subtitle')}
             </p>
           </div>
         </div>
@@ -48,8 +54,8 @@ export default function CEOPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">김○○</h3>
-                <p className="text-sky-600 font-semibold">대표이사 CEO</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('content.name')}</h3>
+                <p className="text-sky-600 font-semibold">{t('content.title')}</p>
               </div>
             </div>
 
@@ -57,33 +63,27 @@ export default function CEOPage() {
             <div className="lg:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  지속가능한 미래를 향한 도전
+                  {t('content.heading')}
                 </h2>
                 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  안녕하십니까. Korea Green Hydrogen 대표이사 김○○입니다.
+                  {t('content.p1')}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  우리는 지금 기후변화와 환경오염이라는 인류 공통의 과제 앞에 서 있습니다. 
-                  이러한 시대적 요구에 부응하여 Korea Green Hydrogen는 친환경 수소 에너지 
-                  솔루션을 통해 지속가능한 미래를 만들어가고 있습니다.
+                  {t('content.p2')}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  우리의 혁신적인 기술과 끊임없는 연구개발을 통해 폐기물을 에너지로 
-                  전환하는 완전한 순환경제 시스템을 구축하고 있으며, 이를 통해 
-                  환경보호와 경제성을 동시에 실현하고자 합니다.
+                  {t('content.p3')}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  앞으로도 Korea Green Hydrogen는 기술혁신과 지속가능한 성장을 통해 
-                  대한민국의 친환경 에너지 산업을 선도하며, 더 나은 미래를 위한 
-                  변화의 중심에 서겠습니다.
+                  {t('content.p4')}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed font-semibold">
-                  감사합니다.
+                  {t('content.p5')}
                 </p>
               </div>
             </div>

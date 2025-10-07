@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -6,11 +8,8 @@
   --primary-blue: #0ea5e9;
   --primary-blue-dark: #0284c7;
   --primary-blue-light: #38bdf8;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #ffffff;
+  --color-foreground: #171717;
   --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   
   /* 반응형 브레이크포인트 커스터마이징 */
@@ -140,4 +139,95 @@ body {
 
 .snap-align-end {
   scroll-snap-align: end;
+}
+
+/* 프로세스 스텝 스태거 애니메이션 */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-stagger-1 {
+  animation: slideInFromBottom 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-stagger-2 {
+  animation: slideInFromBottom 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-stagger-3 {
+  animation: slideInFromBottom 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-stagger-4 {
+  animation: slideInFromBottom 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* 성과 카드 스태거 애니메이션 */
+.animate-fade-in-up-1 {
+  animation: slideInFromBottom 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-2 {
+  animation: slideInFromBottom 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* 사선형 틀 효과 */
+@keyframes skewIn {
+  from {
+    transform: skew(0deg, 0deg) scale(1);
+  }
+  to {
+    transform: skew(-2deg, -1deg) scale(1.02);
+  }
+}
+
+.skew-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.skew-hover:hover {
+  animation: skewIn 0.4s ease-out forwards;
+}
+
+.skew-hover:hover .skew-image {
+  transform: skew(2deg, 1deg) scale(1.05);
+}
+
+.skew-image {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+/* 사선형 분할 효과 - 더 기울어진 사선 */
+.clip-path-diagonal-left {
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+}
+
+.clip-path-diagonal-right {
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* 모바일에서는 일반 레이아웃 */
+@media (max-width: 1024px) {
+  .clip-path-diagonal-left,
+  .clip-path-diagonal-right {
+    clip-path: none !important;
+    position: relative !important;
+    height: 50% !important;
+    width: 100% !important;
+  }
 }

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Korea Green Hydrogen의 경영철학과 핵심 가치를 확인하세요.',
 };
 
-export default function PhilosophyPage() {
+export default function PhilosophyPage({params: {locale}}: {params: {locale: string}}) {
   const coreValues = [
     {
       title: '혁신',
@@ -32,9 +32,9 @@ export default function PhilosophyPage() {
       <nav className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href="/" className="hover:text-sky-600 transition-colors">홈</Link>
+            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">홈</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/about" className="hover:text-sky-600 transition-colors">Company</Link>
+            <Link href={`/${locale}/about`} className="hover:text-sky-600 transition-colors">Company</Link>
             <span className="text-gray-400">/</span>
             <span className="text-sky-600 font-bold">경영철학</span>
           </div>
