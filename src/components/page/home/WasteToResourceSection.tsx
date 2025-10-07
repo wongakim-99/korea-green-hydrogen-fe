@@ -69,7 +69,8 @@ export default function WasteToResourceSection() {
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 leading-relaxed text-shadow">
               {t.rich('main_text', {
-                strong: (chunks) => <strong className="text-green-300 font-bold underline decoration-green-400 decoration-2 underline-offset-4">{chunks}</strong>
+                strong: (chunks) => <strong className="text-green-300 font-bold underline decoration-green-400 decoration-2 underline-offset-4">{chunks}</strong>,
+                highlight: (chunks) => <strong className="text-green-300 font-bold">{chunks}</strong>
               })}
             </p>
             <div className="space-y-5">
@@ -96,7 +97,10 @@ export default function WasteToResourceSection() {
 
                 <div className="space-y-8 flex-1 flex flex-col justify-center">
                   {/* 1단계: 애니메이션 지연시간 추가 */}
-                  <div className={`flex items-center transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  <div 
+                    className={`flex items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: isVisible ? '0ms' : '0ms' }}
+                  >
                     <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">1</span>
                     <div>
                       <p className="font-bold text-gray-900 text-lg">{t('step1_title')}</p>
@@ -104,7 +108,10 @@ export default function WasteToResourceSection() {
                     </div>
                   </div>
                   {/* 2단계: 애니메이션 지연시간 추가 */}
-                  <div className={`flex items-center transition-all duration-500 ease-out delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  <div 
+                    className={`flex items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: isVisible ? '300ms' : '0ms' }}
+                  >
                     <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">2</span>
                     <div>
                       <p className="font-bold text-gray-900 text-lg">{t('step2_title')}</p>
@@ -112,7 +119,10 @@ export default function WasteToResourceSection() {
                     </div>
                   </div>
                   {/* 3단계: 애니메이션 지연시간 추가 */}
-                  <div className={`flex items-center transition-all duration-500 ease-out delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                  <div 
+                    className={`flex items-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: isVisible ? '600ms' : '0ms' }}
+                  >
                     <span className="relative z-10 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-base font-bold mr-5 ring-4 ring-white">3</span>
                     <div>
                       <p className="font-bold text-gray-900 text-lg">{t('step3_title')}</p>

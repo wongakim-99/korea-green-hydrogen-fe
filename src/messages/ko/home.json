@@ -28,7 +28,7 @@
     "WasteToResource": {
       "title": "폐기물의 자원화",
       "subtitle": "From Waste to Resource",
-      "main_text": "하수 슬러지와 음식물 폐기물을 최첨단 열가수분해(THP) 기술로 처리하여, 고효율의 바이오가스와 청정 수소 에너지를 생산합니다.",
+      "main_text": "하수 슬러지와 음식물 폐기물을 최첨단 <highlight>열가수분해(THP)</highlight> 기술로 처리하여, 고효율의 바이오가스와 청정 수소 에너지를 생산합니다.",
       "feature1": "유기성 폐기물 → 바이오가스 → 청정 수소",
       "feature2": "최첨단 THP 기술로 처리 효율 극대화",
       "process_title": "기술 프로세스",
