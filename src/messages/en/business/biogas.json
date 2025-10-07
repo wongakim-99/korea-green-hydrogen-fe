@@ -1,0 +1,90 @@
+{
+  "BiogasPage": {
+    "Hero": {
+      "label": "Solution",
+      "title": "Biogas Production",
+      "subtitle": "Biogas Production",
+      "description": "Introduction to eco-friendly biogas production systems utilizing organic waste and Thermal Hydrolysis (THP) technology.",
+      "stat1_value": "7,085kg",
+      "stat1_label": "Daily Hydrogen Production",
+      "stat2_value": "65%",
+      "stat2_label": "Digestion Efficiency"
+    },
+    "ThpTechnology": {
+      "title": "Advanced Thermal Hydrolysis (THP) Technology",
+      "subtitle": "Thermal Hydrolysis Process",
+      "description1": "The competitiveness of KGH Biogas Center comes from the Thermal Hydrolysis (THP) process, proven to be one of the world's most efficient technologies.",
+      "description2": "THP is an innovative solution that maximizes biogas production efficiency by treating sludge with high-temperature, high-pressure steam and recycles sludge into high-quality resources.",
+      "advantage1_title": "Maximize Energy Production",
+      "advantage1_description": "Dramatically increase biogas production by raising digestion efficiency up to 65%.",
+      "advantage2_title": "Secure High-Quality Resources",
+      "advantage2_description": "Improve sludge quality to establish a foundation for producing high-quality fertilizer.",
+      "advantage3_title": "Perfect Eco-Friendly Process",
+      "advantage3_description": "Completely eliminate odors and pollutants generated during the treatment process.",
+      "feature1_title": "Enhanced Treatment Efficiency",
+      "feature1_description": "Over 30% improvement compared to conventional anaerobic digestion",
+      "feature2_title": "High-Quality Biogas",
+      "feature2_description": "Production of high-efficiency gas with over 60% methane content",
+      "feature3_title": "Sludge Reduction",
+      "feature3_description": "Over 50% reduction in post-treatment sludge generation",
+      "how_it_works": "How THP Works",
+      "step1_title": "High Temperature & Pressure Treatment",
+      "step1_description": "Pressurization and heating at 160-180°C, 6-8 bar",
+      "step2_title": "Cell Wall Breakdown",
+      "step2_description": "Physical decomposition of microbial cell walls",
+      "step3_title": "Enhanced Biodegradability",
+      "step3_description": "Maximizing anaerobic digestion efficiency"
+    },
+    "ProcessAndEffects": {
+      "process_title": "Process",
+      "process_subtitle": "4-step process transforming waste into clean energy",
+      "step1_title": "Material Collection",
+      "step1_description": "Sewage sludge\nFood waste",
+      "step2_title": "THP Treatment",
+      "step2_description": "Thermal hydrolysis\nprocess application",
+      "step3_title": "Biogas Production",
+      "step3_description": "Methane gas\nproduction maximization",
+      "step4_title": "Hydrogen Conversion",
+      "step4_description": "Clean hydrogen\nfinal production",
+      "effects_title": "Key Performance",
+      "stat1_title": "Daily Hydrogen Production",
+      "stat1_value": "7,085",
+      "stat1_unit": "kg",
+      "stat1_description": "Enough to fuel approximately <strong>14,000 hydrogen vehicles</strong>",
+      "stat2_title": "Annual Revenue Projection",
+      "stat2_value": "111",
+      "stat2_unit": "hundred million KRW",
+      "stat2_description": "Building a sustainable <strong>revenue model</strong>"
+    },
+    "Vision": {
+      "title": "Transforming the Paradigm of Waste Treatment",
+      "description1": "Korea Green Hydrogen goes beyond simple sewage sludge treatment to present an innovative and eco-friendly energy business model that produces hydrogen and fertilizer.",
+      "description2": "At the center of this vision is our core facility, the <strong>Biogas Center</strong>, which integrates and processes organic waste such as sewage sludge and food waste in the region, transforming it into valuable resources.",
+      "value1_title": "Circular Economy",
+      "value1_description": "Resource recovery from waste",
+      "value2_title": "Clean Energy",
+      "value2_description": "Hydrogen production",
+      "value3_title": "Environmental Protection",
+      "value3_description": "Carbon reduction"
+    }
+  },
+  "OtherServices": {
+    "title": "Other Business Areas",
+    "subtitle": "Explore KGH's Integrated Solutions",
+    "backButton": "Back to All Services",
+    "viewDetails": "View Details",
+    "fertilizer": {
+      "title": "Fertilizer Production",
+      "description": "Enhance agricultural productivity with eco-friendly fertilizer production"
+    },
+    "ccus": {
+      "title": "CCUS",
+      "description": "Achieve carbon neutrality through carbon capture and utilization"
+    },
+    "smartFarm": {
+      "title": "Smart Farm",
+      "description": "Implement future agriculture with smart farming systems"
+    }
+  }
+}
+

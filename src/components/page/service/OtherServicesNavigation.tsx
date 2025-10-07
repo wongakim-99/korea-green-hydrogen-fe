@@ -2,33 +2,34 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function OtherServicesNavigation() {
   const [ref, isVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
   const locale = useLocale();
+  const t = useTranslations('OtherServices');
 
   const services = [
     {
       href: '/services/fertilizer',
       image: '/images/services/fertilizer/fertilizer-main.jpg',
-      title: '비료화',
-      description: '친환경 비료 생산으로 농업 생산성 향상',
+      titleKey: 'fertilizer.title',
+      descriptionKey: 'fertilizer.description',
       delay: '0.1s',
     },
     {
       href: '/services/ccus',
       image: '/images/services/ccus/ccus-main.jpg',
-      title: 'CCUS',
-      description: '탄소 포집 및 활용으로 탄소 중립 실현',
+      titleKey: 'ccus.title',
+      descriptionKey: 'ccus.description',
       delay: '0.2s',
     },
     {
       href: '/services/smart-farm',
       image: '/images/services/smart-farm/smart-farm-main.jpg',
-      title: 'Smart Farm',
-      description: '스마트 농업 시스템으로 미래 농업 구현',
+      titleKey: 'smartFarm.title',
+      descriptionKey: 'smartFarm.description',
       delay: '0.3s',
     },
   ];
@@ -38,8 +39,8 @@ export default function OtherServicesNavigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 헤더 */}
         <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">다른 사업 분야</h2>
-          <p className="text-base md:text-lg text-gray-600">KGH의 통합 솔루션을 확인해보세요</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t('title')}</h2>
+          <p className="text-base md:text-lg text-gray-600">{t('subtitle')}</p>
         </div>
 
         {/* 서비스 카드 그리드 */}
@@ -84,13 +85,13 @@ export default function OtherServicesNavigation() {
                 {/* 콘텐츠 영역 */}
                 <div className="p-6 md:p-8">
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-sky-600 mb-3 transition-colors duration-300">
-                    {service.title}
+                    {t(service.titleKey)}
                   </h3>
-                  <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed">{service.description}</p>
+                  <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed">{t(service.descriptionKey)}</p>
                   
                   {/* CTA */}
                   <div className="flex items-center text-sky-600 text-sm md:text-base font-medium">
-                    자세히 보기
+                    {t('viewDetails')}
                     <svg
                       className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
                       fill="none"
@@ -115,7 +116,7 @@ export default function OtherServicesNavigation() {
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            전체 서비스로 돌아가기
+            {t('backButton')}
           </Link>
         </div>
       </div>

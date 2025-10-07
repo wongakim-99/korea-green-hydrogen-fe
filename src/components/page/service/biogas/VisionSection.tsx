@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useTranslations } from 'next-intl';
 
 export default function VisionSection() {
   const [ref, isVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+  const t = useTranslations('BiogasPage.Vision');
 
   return (
     <section ref={ref} className="py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
@@ -14,20 +16,13 @@ export default function VisionSection() {
             {/* 텍스트 영역 */}
             <div className="lg:col-span-6 space-y-8 md:space-y-10">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 md:mb-8">
-                  폐기물 처리의<br />
-                  패러다임을 바꾸다
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 md:mb-8 break-keep">
+                  {t('title')}
                 </h2>
                 
                 <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
-                  <p>
-                    (주)한국그린수소는 하수 슬러지를 단순 처리하는 것을 넘어 
-                    수소와 비료를 생산하는 혁신적이고 친환경적인 에너지 사업 모델을 제시합니다.
-                  </p>
-                  <p>
-                    이 비전의 중심에는 지역 내 하수 슬러지, 음식물 폐기물 등 유기성 폐기물을 통합 처리하여 
-                    가치있는 자원으로 전환하는 핵심 시설, <strong className="text-gray-900">바이오가스 센터</strong>가 있습니다.
-                  </p>
+                  <p className="break-keep" dangerouslySetInnerHTML={{ __html: t('description1') }} />
+                  <p className="break-keep" dangerouslySetInnerHTML={{ __html: t('description2') }} />
                 </div>
               </div>
 
@@ -37,8 +32,8 @@ export default function VisionSection() {
                   <div className="flex items-center mb-3">
                     <div className="w-1 h-12 bg-sky-500 mr-4"></div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">순환경제</h3>
-                      <p className="text-sm text-gray-600 mt-1">폐기물의 자원화</p>
+                      <h3 className="text-xl font-bold text-gray-900 break-keep">{t('value1_title')}</h3>
+                      <p className="text-sm text-gray-600 mt-1 break-keep">{t('value1_description')}</p>
                     </div>
                   </div>
                 </div>
@@ -46,8 +41,8 @@ export default function VisionSection() {
                   <div className="flex items-center mb-3">
                     <div className="w-1 h-12 bg-sky-500 mr-4"></div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">청정에너지</h3>
-                      <p className="text-sm text-gray-600 mt-1">수소 생산</p>
+                      <h3 className="text-xl font-bold text-gray-900 break-keep">{t('value2_title')}</h3>
+                      <p className="text-sm text-gray-600 mt-1 break-keep">{t('value2_description')}</p>
                     </div>
                   </div>
                 </div>
@@ -55,8 +50,8 @@ export default function VisionSection() {
                   <div className="flex items-center mb-3">
                     <div className="w-1 h-12 bg-sky-500 mr-4"></div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">환경보호</h3>
-                      <p className="text-sm text-gray-600 mt-1">탄소 저감</p>
+                      <h3 className="text-xl font-bold text-gray-900 break-keep">{t('value3_title')}</h3>
+                      <p className="text-sm text-gray-600 mt-1 break-keep">{t('value3_description')}</p>
                     </div>
                   </div>
                 </div>
