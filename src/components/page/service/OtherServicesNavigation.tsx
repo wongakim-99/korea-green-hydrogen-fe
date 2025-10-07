@@ -1,58 +1,114 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function OtherServicesNavigation() {
+  const [ref, isVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
+
+  const services = [
+    {
+      href: '/services/fertilizer',
+      image: '/images/services/fertilizer/fertilizer-main.jpg',
+      title: '비료화',
+      description: '친환경 비료 생산으로 농업 생산성 향상',
+      delay: '0.1s',
+    },
+    {
+      href: '/services/ccus',
+      image: '/images/services/ccus/ccus-main.jpg',
+      title: 'CCUS',
+      description: '탄소 포집 및 활용으로 탄소 중립 실현',
+      delay: '0.2s',
+    },
+    {
+      href: '/services/smart-farm',
+      image: '/images/services/smart-farm/smart-farm-main.jpg',
+      title: 'Smart Farm',
+      description: '스마트 농업 시스템으로 미래 농업 구현',
+      delay: '0.3s',
+    },
+  ];
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section ref={ref} className="py-16 md:py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">다른 사업 분야</h2>
-          <p className="text-gray-600">KGH의 통합 솔루션을 확인해보세요</p>
+        {/* 헤더 */}
+        <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">다른 사업 분야</h2>
+          <p className="text-base md:text-lg text-gray-600">KGH의 통합 솔루션을 확인해보세요</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Link href="/services/fertilizer" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-4xl mb-4">🌱</div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2 transition-colors">비료화</h3>
-              <p className="text-gray-600 mb-4">친환경 비료 생산으로 농업 생산성 향상</p>
-              <div className="flex items-center text-green-600 text-sm font-medium">
-                자세히 보기
-                <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+
+        {/* 서비스 카드 그리드 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service) => (
+            <Link
+              key={service.href}
+              href={service.href}
+              className={`group block transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: isVisible ? service.delay : '0s' }}
+            >
+              <div className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden h-full">
+                {/* 이미지 영역 */}
+                <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-sky-100 to-sky-50">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    unoptimized
+                    onError={(e) => {
+                      // 이미지 로드 실패 시 placeholder 표시
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  {/* 호버 오버레이 */}
+                  <div className="absolute inset-0 bg-sky-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  
+                  {/* Placeholder 아이콘 (이미지가 없을 때 표시) */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-sky-400 transition-transform duration-500 group-hover:scale-110">
+                      <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 콘텐츠 영역 */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-sky-600 mb-3 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed">{service.description}</p>
+                  
+                  {/* CTA */}
+                  <div className="flex items-center text-sky-600 text-sm md:text-base font-medium">
+                    자세히 보기
+                    <svg
+                      className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link href="/services/ccus" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-4xl mb-4">♻️</div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2 transition-colors">CCUS</h3>
-              <p className="text-gray-600 mb-4">탄소 포집 및 활용으로 탄소 중립 실현</p>
-              <div className="flex items-center text-green-600 text-sm font-medium">
-                자세히 보기
-                <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-          </Link>
-          <Link href="/services/smart-farm" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-4xl mb-4">🚜</div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 mb-2 transition-colors">Smart Farm</h3>
-              <p className="text-gray-600 mb-4">스마트 농업 시스템으로 미래 농업 구현</p>
-              <div className="flex items-center text-green-600 text-sm font-medium">
-                자세히 보기
-                <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-          </Link>
+            </Link>
+          ))}
         </div>
-        <div className="text-center mt-10">
+
+        {/* 돌아가기 버튼 */}
+        <div className={`text-center mt-12 md:mt-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <Link
             href="/services"
-            className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            className="inline-flex items-center bg-sky-600 hover:bg-sky-700 text-white font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

@@ -123,44 +123,59 @@ export default function Services() {
                   {/* Background Overlay for Hover Effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-sky-600 to-blue-700 opacity-0 group-hover:opacity-95 transition-opacity duration-300 z-10"></div>
                   
-                  {/* Content Container */}
-                  <div className={`relative z-20 p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                  }`}>
-                    {/* Image */}
-                    <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                      <div className="relative h-64 rounded-lg overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-300">
-                        <div className={`w-full h-full bg-gradient-to-br ${area.bgColor} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
-                          <div className="text-center">
-                            <div className={`w-20 h-20 bg-gradient-to-br ${area.color} rounded-full flex items-center justify-center text-3xl mb-3 mx-auto shadow-lg group-hover:shadow-2xl group-hover:bg-white group-hover:text-sky-600 transition-all duration-300`}>
-                              {area.icon}
-                            </div>
-                            <p className="text-gray-500 text-sm group-hover:text-white transition-colors duration-300">
-                              이미지 영역<br/>
-                              <span className="text-xs">(고객 자료 제공 후 업데이트)</span>
-                            </p>
+                  {/* Content Container with Diagonal Split - Zigzag Pattern */}
+                  <div className={`relative z-20 h-80 lg:h-[400px] flex ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                    {/* Image Section - Position based on index (zigzag) */}
+                    <div className="w-full lg:w-1/2 relative overflow-hidden">
+                      <div className={`absolute inset-0 ${index % 2 === 1 ? 'lg:clip-path-diagonal-left' : 'lg:clip-path-diagonal-right'}`}>
+                        {area.id === 'biogas' ? (
+                          <div className="w-full h-full relative">
+                            <Image
+                              src="/images/services/biogas/biogas-service.jpg"
+                              alt={area.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-110"
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
                           </div>
-                        </div>
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
+                            <div className="text-center transform transition-transform duration-500 group-hover:scale-110">
+                              <div className={`w-20 h-20 bg-gradient-to-br ${area.color} rounded-full flex items-center justify-center text-3xl mb-3 mx-auto shadow-lg group-hover:shadow-2xl group-hover:bg-white group-hover:text-sky-600 transition-all duration-300`}>
+                                {area.icon}
+                              </div>
+                              <p className="text-gray-500 text-sm group-hover:text-white transition-colors duration-300">
+                                이미지 영역<br/>
+                                <span className="text-xs">(고객 자료 제공 후 업데이트)</span>
+                              </p>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
 
-                    {/* Content */}
-                    <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-300">
-                        {area.title}
-                      </h2>
-                      <p className="text-base text-gray-600 group-hover:text-gray-100 mb-6 leading-relaxed transition-colors duration-300">
-                        {area.detailDescription}
-                      </p>
-                      <Link
-                        href={area.href}
-                        className="inline-flex items-center px-5 py-2.5 border border-sky-600 text-sky-600 font-medium rounded-lg hover:bg-sky-600 hover:text-white group-hover:border-white group-hover:text-white group-hover:bg-transparent group-hover:hover:bg-white group-hover:hover:text-sky-600 transition-all duration-300"
-                      >
-                        <span>자세히 보기</span>
-                        <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
+                    {/* Content Section - Position based on index (zigzag) */}
+                    <div className="w-full lg:w-1/2 relative">
+                      <div className={`absolute inset-0 ${index % 2 === 1 ? 'lg:clip-path-diagonal-right' : 'lg:clip-path-diagonal-left'} bg-white group-hover:bg-sky-600 transition-colors duration-300`}>
+                        <div className="p-6 lg:p-10 h-full flex flex-col justify-center">
+                          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-white mb-3 transition-colors duration-300">
+                            {area.title}
+                          </h2>
+                          <p className="text-base md:text-lg text-gray-600 group-hover:text-gray-100 mb-5 leading-relaxed transition-colors duration-300">
+                            {area.detailDescription}
+                          </p>
+                          <Link
+                            href={area.href}
+                            className="inline-flex items-center px-5 py-2.5 border-2 border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-900 hover:text-white group-hover:border-white group-hover:text-white group-hover:bg-transparent group-hover:hover:bg-white group-hover:hover:text-sky-600 transition-all duration-300 w-fit"
+                          >
+                            <span>자세히 보기</span>
+                            <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
