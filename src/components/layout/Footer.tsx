@@ -1,6 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 const Footer = () => {
+  const t = useTranslations('Footer');
+  const locale = useLocale();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -13,33 +18,32 @@ const Footer = () => {
               KGH GLOBAL
             </h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              친환경 수소 에너지 솔루션을 통해 지속가능한 미래를 만들어가는 
-              대한민국의 선도기업입니다.
+              {t('description')}
             </p>
             <div className="text-gray-300">
-              <p className="mb-2">📍 서울특별시 강남구 테헤란로 123</p>
-              <p className="mb-2">📞 02-1234-5678</p>
-              <p className="mb-2">✉️ info@koreagreenhyd.com</p>
+              <p className="mb-2">📍 {t('address')}</p>
+              <p className="mb-2">📞 {t('phone')}</p>
+              <p className="mb-2">✉️ {t('email')}</p>
             </div>
           </div>
 
           {/* 빠른 링크 */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">빠른 링크</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-sky-400 transition-colors">
-                  회사소개
+                <Link href={`/${locale}/about`} className="text-gray-300 hover:text-sky-400 transition-colors">
+                  {t('about')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-sky-400 transition-colors">
-                  서비스
+                <Link href={`/${locale}/services`} className="text-gray-300 hover:text-sky-400 transition-colors">
+                  {t('services')}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-sky-400 transition-colors">
-                  연락처
+                <Link href={`/${locale}/contact`} className="text-gray-300 hover:text-sky-400 transition-colors">
+                  {t('contact')}
                 </Link>
               </li>
             </ul>
@@ -47,7 +51,7 @@ const Footer = () => {
 
           {/* 소셜 미디어 */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">소셜 미디어</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('socialMedia')}</h4>
             <div className="flex space-x-4">
               <a
                 href="#"
@@ -75,14 +79,14 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Korea Green Hydrogen. All rights reserved.
+              {t('copyright', {currentYear})}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
-                개인정보처리방침
+              <Link href={`/${locale}/privacy`} className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
+                {t('privacyPolicy')}
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
-                이용약관
+              <Link href={`/${locale}/terms`} className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
+                {t('termsOfService')}
               </Link>
             </div>
           </div>

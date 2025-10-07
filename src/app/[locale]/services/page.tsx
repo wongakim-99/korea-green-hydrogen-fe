@@ -3,9 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState('biogas');
+  const locale = useLocale();
+  
   const businessAreas = [
     {
       id: 'biogas',
@@ -145,10 +148,10 @@ export default function Services() {
                               <div className={`w-20 h-20 bg-gradient-to-br ${area.color} rounded-full flex items-center justify-center text-3xl mb-3 mx-auto shadow-lg group-hover:shadow-2xl group-hover:bg-white group-hover:text-sky-600 transition-all duration-300`}>
                                 {area.icon}
                               </div>
-                              <p className="text-gray-500 text-sm group-hover:text-white transition-colors duration-300">
-                                이미지 영역<br/>
-                                <span className="text-xs">(고객 자료 제공 후 업데이트)</span>
-                              </p>
+                            <p className="text-gray-500 text-sm group-hover:text-white transition-colors duration-300">
+                              이미지 영역<br/>
+                              <span className="text-xs">(고객 자료 제공 후 업데이트)</span>
+                            </p>
                             </div>
                           </div>
                         )}
@@ -166,7 +169,7 @@ export default function Services() {
                             {area.detailDescription}
                           </p>
                           <Link
-                            href={area.href}
+                            href={`/${locale}${area.href}`}
                             className="inline-flex items-center px-5 py-2.5 border-2 border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-900 hover:text-white group-hover:border-white group-hover:text-white group-hover:bg-transparent group-hover:hover:bg-white group-hover:hover:text-sky-600 transition-all duration-300 w-fit"
                           >
                             <span>자세히 보기</span>
@@ -195,7 +198,7 @@ export default function Services() {
             환경과 경제를 동시에 살리는 사업에 참여하세요.
           </p>
           <Link
-            href="/contact"
+            href={`/${locale}/contact`}
             className="bg-white text-sky-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
             상담 문의하기

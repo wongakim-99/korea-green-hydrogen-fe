@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -6,11 +8,8 @@
   --primary-blue: #0ea5e9;
   --primary-blue-dark: #0284c7;
   --primary-blue-light: #38bdf8;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #ffffff;
+  --color-foreground: #171717;
   --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   
   /* 반응형 브레이크포인트 커스터마이징 */

@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 export default function InquiryPage() {
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,9 +34,9 @@ export default function InquiryPage() {
       <nav className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href="/" className="hover:text-sky-600 transition-colors">홈</Link>
+            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">홈</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/contact" className="hover:text-sky-600 transition-colors">Contact</Link>
+            <Link href={`/${locale}/contact`} className="hover:text-sky-600 transition-colors">Contact</Link>
             <span className="text-gray-400">/</span>
             <span className="text-sky-600 font-bold">문의하기</span>
           </div>

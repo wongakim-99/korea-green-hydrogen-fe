@@ -6,16 +6,16 @@ export const metadata: Metadata = {
   description: '첨단 기술을 활용한 스마트 농업 시스템 구축 서비스를 소개합니다.',
 };
 
-export default function SmartFarmPage() {
+export default function SmartFarmPage({params: {locale}}: {params: {locale: string}}) {
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href="/" className="hover:text-purple-600 transition-colors">홈</Link>
+            <Link href={`/${locale}`} className="hover:text-purple-600 transition-colors">홈</Link>
             <span className="text-gray-400">/</span>
-            <Link href="/services" className="hover:text-purple-600 transition-colors">서비스</Link>
+            <Link href={`/${locale}/services`} className="hover:text-purple-600 transition-colors">서비스</Link>
             <span className="text-gray-400">/</span>
             <span className="text-purple-600 font-bold">Smart Farm</span>
           </div>

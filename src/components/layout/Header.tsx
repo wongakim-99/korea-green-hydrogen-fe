@@ -1,12 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('KOR');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLanguageChange = (nextLocale: string) => {
+    // pathname에서 현재 locale을 제거하고 새로운 locale을 추가
+    const currentPath = pathname.replace(`/${locale}`, '') || '/';
+    const newPath = `/${nextLocale}${currentPath}`;
+    router.replace(newPath);
+  };
+
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -37,35 +49,37 @@ const Header = () => {
     };
   }, [hoverTimeout]);
 
+  const t = useTranslations('Navigation');
+
   const navItems = [
     {
       href: '/',
-      label: 'Home' },
+      label: t('home') },
     { 
       href: '/about', 
-      label: 'Company',
+      label: t('company'),
       submenu: [
-        { href: '/about', label: '회사개요' },
-        { href: '/about/ceo', label: 'CEO 메시지' },
-        { href: '/about/philosophy', label: '경영철학' }
+        { href: '/about', label: t('companyOverview') },
+        { href: '/about/ceo', label: t('ceoMessage') },
+        { href: '/about/philosophy', label: t('philosophy') }
       ]
     },
     { 
       href: '/services', 
-      label: 'Business',
+      label: t('business'),
       submenu: [
-        { href: '/services/biogas', label: '바이오가스 생산' },
-        { href: '/services/fertilizer', label: '비료화' },
-        { href: '/services/ccus', label: 'CCUS' },
-        { href: '/services/smart-farm', label: 'Smart Farm' }
+        { href: '/services/biogas', label: t('biogas') },
+        { href: '/services/fertilizer', label: t('fertilizer') },
+        { href: '/services/ccus', label: t('ccus') },
+        { href: '/services/smart-farm', label: t('smartFarm') }
       ]
     },
     { 
       href: '/contact', 
-      label: 'Contact',
+      label: t('contact'),
       submenu: [
-        { href: '/contact', label: '위치정보' },
-        { href: '/contact/inquiry', label: '문의하기' }
+        { href: '/contact', label: t('location') },
+        { href: '/contact/inquiry', label: t('inquiry') }
       ]
     },
   ];
@@ -76,7 +90,7 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
           {/* 로고 */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href={`/${locale}`} className="flex items-center space-x-3">
               <Image
                 src="/logo.svg"
                 alt="Korea Green Hydrogen"
@@ -98,7 +112,7 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  href={item.href}
+                  href={`/${locale}${item.href}`}
                   className="text-gray-700 hover:text-sky-600 px-3 py-2 text-sm font-bold transition-all duration-200 flex items-center transform hover:scale-105"
                 >
                   {item.label}
@@ -124,7 +138,7 @@ const Header = () => {
                     {item.submenu.map((subItem, index) => (
                       <Link
                         key={subItem.href}
-                        href={subItem.href}
+                        href={`/${locale}${subItem.href}`}
                         className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-200 transform hover:translate-x-1"
                         style={{
                           animationDelay: `${index * 50}ms`
@@ -151,9 +165,9 @@ const Header = () => {
             {/* 언어 선택 */}
             <div className="flex items-center space-x-1 text-sm">
               <button
-                onClick={() => setCurrentLanguage('KOR')}
+                onClick={() => handleLanguageChange('ko')}
                 className={`px-2 py-1 transition-colors ${
-                  currentLanguage === 'KOR'
+                  locale === 'ko'
                     ? 'text-sky-600 font-semibold'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
@@ -162,9 +176,9 @@ const Header = () => {
               </button>
               <span className="text-gray-300">|</span>
               <button
-                onClick={() => setCurrentLanguage('ENG')}
+                onClick={() => handleLanguageChange('en')}
                 className={`px-2 py-1 transition-colors ${
-                  currentLanguage === 'ENG'
+                  locale === 'en'
                     ? 'text-sky-600 font-semibold'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
@@ -214,7 +228,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <div key={item.href}>
                   <Link
-                    href={item.href}
+                    href={`/${locale}${item.href}`}
                     className="text-gray-700 hover:text-sky-600 block px-3 py-2 text-base font-bold transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -225,7 +239,7 @@ const Header = () => {
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.href}
-                          href={subItem.href}
+                          href={`/${locale}${subItem.href}`}
                           className="text-gray-600 hover:text-sky-600 block px-3 py-1 text-sm transition-colors"
                           onClick={() => setIsMenuOpen(false)}
                         >
@@ -241,9 +255,9 @@ const Header = () => {
               <div className="border-t border-gray-200 pt-3 mt-3">
                 <div className="flex items-center justify-center space-x-1 text-sm">
                   <button
-                    onClick={() => setCurrentLanguage('KOR')}
+                    onClick={() => handleLanguageChange('ko')}
                     className={`px-3 py-2 transition-colors ${
-                      currentLanguage === 'KOR'
+                      locale === 'ko'
                         ? 'text-sky-600 font-semibold'
                         : 'text-gray-500 hover:text-gray-700'
                     }`}
@@ -252,9 +266,9 @@ const Header = () => {
                   </button>
                   <span className="text-gray-300">|</span>
                   <button
-                    onClick={() => setCurrentLanguage('ENG')}
+                    onClick={() => handleLanguageChange('en')}
                     className={`px-3 py-2 transition-colors ${
-                      currentLanguage === 'ENG'
+                      locale === 'en'
                         ? 'text-sky-600 font-semibold'
                         : 'text-gray-500 hover:text-gray-700'
                     }`}

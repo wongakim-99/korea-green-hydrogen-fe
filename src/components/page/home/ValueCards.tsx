@@ -2,10 +2,12 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ValueCards() {
+  const t = useTranslations('HomePage.ValueCards');
   const handleScrollTo = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ 
+    document.getElementById(sectionId)?.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
@@ -44,7 +46,7 @@ export default function ValueCards() {
       className="relative min-h-screen snap-start flex items-center py-32 sm:py-24 md:py-16 lg:py-0"
     >
       <Image
-        alt="KGH가 만들어가는 가치 배경"
+        alt={t('title')}
         src="/images/home/sub-background1.jpg"
         layout="fill"
         objectFit="cover"
@@ -56,10 +58,10 @@ export default function ValueCards() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-strong">
-            KGH가 만들어가는 가치
+            {t('title')}
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed px-2 text-shadow break-keep">
-            (주)한국그린수소는 버려지는 유기성 폐기물을 가치있는 자원으로 전환하여, 환경과&nbsp;경제가&nbsp;상생하는 완벽한 순환 모델을 제시합니다.
+            {t('subtitle')}
           </p>
         </div>
         
@@ -82,15 +84,15 @@ export default function ValueCards() {
                 </svg>
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-lg group-hover:mb-3 transition-all duration-500">
-                폐기물의 자원화
+                {t('card1_title')}
               </h3>
               <p className="text-sm text-gray-500 text-center mb-4 group-hover:mb-2 transition-all duration-500">
-                From Waste to Resource
+                {t('card1_subtitle')}
               </p>
               
               <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:delay-200">
                 <p className="text-gray-700 leading-relaxed text-sm">
-                  하수 슬러지와 음식물 폐기물을 최첨단 열가수분해(THP) 기술로 처리하여, 고효율의 바이오가스와 청정 수소 에너지를 생산합니다.
+                  {t('card1_description')}
                 </p>
               </div>
             </div>
@@ -110,15 +112,15 @@ export default function ValueCards() {
                 </svg>
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-lg group-hover:mb-3 transition-all duration-500">
-                완벽한 자원 순환
+                {t('card2_title')}
               </h3>
               <p className="text-sm text-gray-500 text-center mb-4 group-hover:mb-2 transition-all duration-500">
-                Complete Resource Circulation
+                {t('card2_subtitle')}
               </p>
               
               <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:delay-200">
                 <p className="text-gray-700 leading-relaxed text-sm">
-                  에너지 생산 후 남은 슬러지는 고품질의 친환경 비료로 재탄생하여 해외 시장에 수출되며, 버려지는 것 하나 없는 자원 순환을 실현합니다.
+                  {t('card2_description')}
                 </p>
               </div>
             </div>
@@ -138,15 +140,15 @@ export default function ValueCards() {
                 </svg>
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-lg group-hover:mb-3 transition-all duration-500">
-                경제성과 환경성
+                {t('card3_title')}
               </h3>
               <p className="text-sm text-gray-500 text-center mb-4 group-hover:mb-2 transition-all duration-500">
-                Economic & Environmental Value
+                {t('card3_subtitle')}
               </p>
               
               <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:delay-200">
                 <p className="text-gray-700 leading-relaxed text-sm">
-                  지자체의 폐기물 처리 비용을 절감하고, 탄소배출권 확보를 통해 국가의 탄소중립 목표에 기여하며 경제적, 환경적 가치를 동시에 창출합니다.
+                  {t('card3_description')}
                 </p>
               </div>
             </div>

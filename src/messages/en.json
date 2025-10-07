@@ -1,0 +1,98 @@
+{
+  "CEOPage": {
+    "metadata": {
+      "title": "CEO Message - Korea Green Hydrogen",
+      "description": "Check out the message and vision of the CEO of Korea Green Hydrogen."
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "company": "Company",
+      "ceoMessage": "CEO Message"
+    },
+    "hero": {
+      "title": "CEO Message",
+      "subtitle": "Korea Green Hydrogen's vision for a sustainable future"
+    },
+    "content": {
+      "photoAlt": "CEO Photo",
+      "name": "Kim ○○",
+      "title": "CEO, President",
+      "heading": "A Challenge for a Sustainable Future",
+      "p1": "Hello. I am Kim ○○, CEO of Korea Green Hydrogen.",
+      "p2": "We are now facing the common human challenges of climate change and environmental pollution. In response to these demands of the times, Korea Green Hydrogen is creating a sustainable future through eco-friendly hydrogen energy solutions.",
+      "p3": "Through our innovative technology and continuous research and development, we are building a complete circular economy system that converts waste into energy, thereby realizing both environmental protection and economic feasibility.",
+      "p4": "Korea Green Hydrogen will continue to lead the eco-friendly energy industry in Korea through technological innovation and sustainable growth, and will stand at the center of change for a better future.",
+      "p5": "Thank you."
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "company": "Company",
+    "companyOverview": "Company Overview",
+    "ceoMessage": "CEO Message",
+    "philosophy": "Philosophy",
+    "business": "Business",
+    "biogas": "Biogas Production",
+    "fertilizer": "Fertilization",
+    "ccus": "CCUS",
+    "smartFarm": "Smart Farm",
+    "contact": "Contact",
+    "location": "Location",
+    "inquiry": "Inquiry"
+  },
+  "Footer": {
+    "description": "A leading Korean company creating a sustainable future through eco-friendly hydrogen energy solutions.",
+    "address": "123 Teheran-ro, Gangnam-gu, Seoul",
+    "phone": "+82-2-1234-5678",
+    "email": "info@koreagreenhyd.com",
+    "quickLinks": "Quick Links",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact",
+    "socialMedia": "Social Media",
+    "copyright": "© {currentYear} Korea Green Hydrogen. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "HomePage": {
+    "Hero": {
+      "slide1_headline": "PIONEERING A GREENER TOMORROW",
+      "slide1_subheadline": "Korea Green Hydrogen leads a sustainable future with innovative technology that creates new value from waste.",
+      "slide2_headline": "CLEAN HYDROGEN SOLUTIONS",
+      "slide2_subheadline": "We produce clean hydrogen energy for the future by decomposing sewage sludge with cutting-edge Thermal Hydrolysis (THP) technology.",
+      "slide3_headline": "REDEFINING WASTE AS A RESOURCE",
+      "slide3_subheadline": "We convert discarded sludge into high-quality, eco-friendly fertilizer and supply it to the global market.",
+      "slide4_headline": "INVESTING IN A CARBON-ZERO FUTURE",
+      "slide4_subheadline": "We contribute to the nation's 2050 carbon neutrality goal with carbon credits secured through our eco-friendly process.",
+      "aboutButton": "About Us",
+      "contactButton": "Contact Us"
+    },
+    "ValueCards": {
+      "title": "The Value KGH Creates",
+      "subtitle": "Korea Green Hydrogen presents a perfect circular model where the environment and economy coexist by converting organic waste into valuable resources.",
+      "card1_title": "From Waste to Resource",
+      "card1_subtitle": "From Waste to Resource",
+      "card1_description": "We produce high-efficiency biogas and clean hydrogen energy by treating sewage sludge and food waste with cutting-edge Thermal Hydrolysis (THP) technology.",
+      "card2_title": "Complete Resource Circulation",
+      "card2_subtitle": "Complete Resource Circulation",
+      "card2_description": "The remaining sludge after energy production is reborn as high-quality eco-friendly fertilizer and exported to overseas markets, realizing a resource circulation with nothing thrown away.",
+      "card3_title": "Economic & Environmental Value",
+      "card3_subtitle": "Economic & Environmental Value",
+      "card3_description": "We create both economic and environmental value by reducing local governments' waste disposal costs and contributing to the national carbon neutrality goal by securing carbon credits."
+    },
+    "WasteToResource": {
+      "title": "From Waste to Resource",
+      "subtitle": "From Waste to Resource",
+      "main_text": "We produce high-efficiency biogas and clean hydrogen energy by treating sewage sludge and food waste with cutting-edge Thermal Hydrolysis (THP) technology.",
+      "feature1": "Organic Waste → Biogas → Clean Hydrogen",
+      "feature2": "Maximizing treatment efficiency with cutting-edge THP technology",
+      "process_title": "Technology Process",
+      "step1_title": "Waste Collection",
+      "step1_description": "Sewage sludge, food waste",
+      "step2_title": "THP Treatment",
+      "step2_description": "Application of thermal hydrolysis technology",
+      "step3_title": "Energy Production",
+      "step3_description": "Biogas, clean hydrogen"
+    }
+  }
+}
