@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import FertilizerHeroSection from '@/components/page/service/fertilizer/FertilizerHeroSection';
 import ProcessSection from '@/components/page/service/fertilizer/ProcessSection';
+import ProcessDetailSection from '@/components/page/service/fertilizer/ProcessDetailSection';
 import PartnerSection from '@/components/page/service/fertilizer/PartnerSection';
 import OtherServicesNavigation from '@/components/page/service/OtherServicesNavigation';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -30,6 +31,7 @@ export default async function FertilizerPage({params: {locale}}: {params: {local
 
       <FertilizerHeroSection />
       <ProcessSection />
+      <ProcessDetailSection />
       <PartnerSection />
       <OtherServicesNavigation />
     </div>
