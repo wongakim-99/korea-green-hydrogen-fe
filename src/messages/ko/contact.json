@@ -1,0 +1,21 @@
+{
+  "title": "위치정보",
+  "subtitle": "Korea Green Hydrogen의 위치와 연락처 정보",
+  "contactInfo": "연락 정보",
+  "headquarters": "본사 주소",
+  "phone": "전화번호",
+  "email": "이메일",
+  "hours": "운영시간",
+  "directions": "오시는 길",
+  "transportInfo": "대중교통 이용 시 분당선 정자역 3번 출구에서 도보 5분",
+  "mapArea": "지도 영역",
+  "mapNote": "Google Maps 또는 네이버 지도 API 연동 예정",
+  "mainPhone": "대표전화",
+  "techSupport": "기술지원",
+  "generalInquiry": "일반문의",
+  "techInquiry": "기술문의",
+  "weekdays": "평일",
+  "saturday": "토요일",
+  "sunday": "일요일 및 공휴일 휴무",
+  "building": "Korea Green Hydrogen 빌딩 10층"
+}
