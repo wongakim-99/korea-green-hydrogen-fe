@@ -1,0 +1,43 @@
+{
+  "FertilizerPage": {
+    "Hero": {
+      "label": "Solution",
+      "title": "비료화",
+      "subtitle": "Fertilizer Production",
+      "description": "폐슬러지를 활용한 친환경 고품질 비료 생산 시스템과 글로벌 파트너십을 소개합니다.",
+      "headline": "버려지는 것에서 가치를, 폐슬러지에서 지속가능한 농업의 미래를.",
+      "subMessage": "KGH GLOBAL 은 폐기물의 완벽한 자원 선순환을 통해 깨끗한 환경과 풍요로운 농업을 동시에 실현합니다."
+    },
+    "Process": {
+      "title": "우리의 프로세스",
+      "subtitle": "폐슬러지의 혁신적인 재탄생",
+      "description": "3단계 프로세스를 통해 폐슬러지를 고품질 비료로 전환합니다",
+      "step1_title": "고품질 원료 확보",
+      "step1_label": "친환경 전처리",
+      "step1_description1": "하수처리장에서 나온 건조슬러지를 주원료로 사용합니다.",
+      "step1_description2": "혁신적인 열가수분해(THP) 기술을 통해 슬러지 품질을 향상시키고 악취와 유해물질을 완벽하게 제거합니다.",
+      "step2_title": "맞춤형 영양 배합",
+      "step2_label": "가치 상승",
+      "step2_description1": "비료화 공장에서 유기물 및 필요 영양분을 정밀하게 배합하여 고품질 비료를 만듭니다.",
+      "step2_description2": "이를 통해 단순 슬러지가 아닌, 작물 생육에 최적화된 상품으로 재탄생합니다.",
+      "step3_title": "제품화 및 포장",
+      "step3_label": "글로벌 스탠다드",
+      "step3_description1": "사용과 운반이 용이하도록 고밀도 펠릿(Pellet) 형태로 가공합니다.",
+      "step3_description2": "글로벌 파트너사의 OEM(주문자 상표 부착 생산) 방식으로 제품을 포장하여 수출 준비를 마칩니다."
+    },
+    "Partner": {
+      "title": "우리의 글로벌 파트너",
+      "subtitle": "Terramarine AS",
+      "description1": "노르웨이에 본사를 둔 Terramarine AS는 유기성 폐기물을 기반으로 한 비료 제조 및 글로벌 판매 전문 기업입니다.",
+      "description2": "KGH GLOBAL은 Terramarine AS의 동남아시아 핵심 생산 파트너로서, 검증된 현지 판매망과 비료 규제 노하우를 공유합니다.",
+      "description3": "Terramarine AS는 우리 공장에서 생산하는 모든 물량을 수용할 수 있어, 안정적이고 지속적인 사업 운영이 가능합니다.",
+      "value1_title": "글로벌 네트워크",
+      "value1_description": "노르웨이 본사 및 글로벌 판매망",
+      "value2_title": "검증된 기술",
+      "value2_description": "유기성 폐기물 비료화 전문성",
+      "value3_title": "안정적 판로",
+      "value3_description": "전량 수용 가능한 파트너십"
+    }
+  }
+}
+

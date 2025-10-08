@@ -1,0 +1,43 @@
+{
+  "FertilizerPage": {
+    "Hero": {
+      "label": "Solution",
+      "title": "Fertilizer Production",
+      "subtitle": "Fertilizer Production",
+      "description": "Introduction to eco-friendly high-quality fertilizer production systems utilizing waste sludge and global partnerships.",
+      "headline": "From Waste to Value, From Sludge to the Future of Sustainable Agriculture.",
+      "subMessage": "KGH GLOBAL realizes both a clean environment and prosperous agriculture through the perfect resource circulation of waste."
+    },
+    "Process": {
+      "title": "Our Process",
+      "subtitle": "Innovative Rebirth of Waste Sludge",
+      "description": "Transform waste sludge into high-quality fertilizer through our 3-step process",
+      "step1_title": "Securing High-Quality Raw Materials",
+      "step1_label": "Eco-Friendly Pretreatment",
+      "step1_description1": "We use dried sludge from sewage treatment plants as the main raw material.",
+      "step1_description2": "Through innovative Thermal Hydrolysis Process (THP) technology, we improve sludge quality and completely eliminate odors and harmful substances.",
+      "step2_title": "Customized Nutrient Blending",
+      "step2_label": "Value Enhancement",
+      "step2_description1": "At our fertilizer plant, we precisely blend organic matter and essential nutrients to create high-quality fertilizer.",
+      "step2_description2": "Through this process, simple sludge is reborn as a product optimized for crop growth.",
+      "step3_title": "Product Manufacturing & Packaging",
+      "step3_label": "Global Standard",
+      "step3_description1": "We process into high-density pellet form for easy use and transport.",
+      "step3_description2": "Products are packaged using OEM (Original Equipment Manufacturer) method for our global partners, ready for export."
+    },
+    "Partner": {
+      "title": "Our Global Partner",
+      "subtitle": "Terramarine AS",
+      "description1": "Headquartered in Norway, Terramarine AS is a specialized company in manufacturing and global sales of fertilizer based on organic waste.",
+      "description2": "KGH GLOBAL serves as Terramarine AS's key production partner in Southeast Asia, sharing proven local distribution networks and fertilizer regulation expertise.",
+      "description3": "Terramarine AS can accommodate all production volumes from our facility, enabling stable and continuous business operations.",
+      "value1_title": "Global Network",
+      "value1_description": "Norway headquarters and global distribution",
+      "value2_title": "Proven Technology",
+      "value2_description": "Expertise in organic waste fertilization",
+      "value3_title": "Stable Sales Channel",
+      "value3_description": "Partnership with full volume capacity"
+    }
+  }
+}
+
