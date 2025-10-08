@@ -65,17 +65,13 @@ export default function PartnerSection() {
             {/* 이미지 영역 */}
             <div className="lg:col-span-6">
               <div className="relative rounded-lg overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
-                {/* TODO: 사용자가 제공하는 이미지로 교체 */}
-                {/* <Image
-                  src="/images/services/fertilizer/partner.jpg"
+                <Image
+                  src="/images/services/fertilizer/fer-partner-2.jpg"
                   alt="Terramarine AS - 글로벌 파트너십"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                /> */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">이미지 준비 중</span>
-                </div>
+                />
               </div>
             </div>
           </div>

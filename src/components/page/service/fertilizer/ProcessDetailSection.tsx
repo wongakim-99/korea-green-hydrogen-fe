@@ -23,17 +23,13 @@ export default function ProcessDetailSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* 이미지 */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
-                {/* TODO: 사용자가 제공하는 이미지로 교체 */}
-                {/* <Image
-                  src="/images/services/fertilizer/detail-1.jpg"
+                <Image
+                  src="/images/services/fertilizer/fer-fir-1.jpg"
                   alt="고품질 원료 확보 - 친환경 전처리"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                /> */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">이미지 준비 중</span>
-                </div>
+                />
               </div>
 
               {/* 텍스트 */}
@@ -200,17 +196,13 @@ export default function ProcessDetailSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* 이미지 */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
-                {/* TODO: 사용자가 제공하는 이미지로 교체 */}
-                {/* <Image
-                  src="/images/services/fertilizer/detail-3.jpg"
+                <Image
+                  src="/images/services/fertilizer/fer-third-3.jpg"
                   alt="제품화 및 포장 - 글로벌 스탠다드"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                /> */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">이미지 준비 중</span>
-                </div>
+                />
               </div>
 
               {/* 텍스트 */}

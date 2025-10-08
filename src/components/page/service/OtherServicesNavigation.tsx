@@ -13,21 +13,21 @@ export default function OtherServicesNavigation() {
   const services = [
     {
       href: '/services/fertilizer',
-      image: '/images/services/fertilizer/fertilizer-main.jpg',
+      image: '/images/services/fertilizer/fer-main.jpg',
       titleKey: 'fertilizer.title',
       descriptionKey: 'fertilizer.description',
       delay: '0.1s',
     },
     {
       href: '/services/ccus',
-      image: '/images/services/ccus/ccus-main.jpg',
+      image: '/images/services/ccus/ccus-main.jpg', // TODO: 이미지 추가 필요
       titleKey: 'ccus.title',
       descriptionKey: 'ccus.description',
       delay: '0.2s',
     },
     {
       href: '/services/smart-farm',
-      image: '/images/services/smart-farm/smart-farm-main.jpg',
+      image: '/images/services/smart-farm/smart-farm-main.jpg', // TODO: 이미지 추가 필요
       titleKey: 'smartFarm.title',
       descriptionKey: 'smartFarm.description',
       delay: '0.3s',
