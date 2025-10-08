@@ -1,0 +1,42 @@
+{
+  "ServicePage": {
+    "Hero": {
+      "title": "Integrated Circular Economy Solution",
+      "subtitle": "From Waste to Energy, Complete Circular Economy System",
+      "description": "Realizing Environmental Protection and Economic Efficiency Simultaneously"
+    },
+    "BusinessAreas": {
+      "biogas": {
+        "title": "Biogas Production",
+        "description": "Generate energy and protect the environment with eco-friendly biogas production systems utilizing organic waste.",
+        "detailDescription": "An eco-friendly energy production system that converts organic waste such as livestock manure and food waste into biogas through anaerobic digestion. The produced biogas is utilized as electricity and thermal energy, realizing sustainable energy circulation."
+      },
+      "fertilizer": {
+        "title": "Fertilizer Production",
+        "description": "Eco-friendly fertilizer production utilizing by-products from biogas production",
+        "detailDescription": "Process the remaining digestate after biogas production into high-quality liquid fertilizer for agricultural use. Replace chemical fertilizers with eco-friendly alternatives to improve soil health and support sustainable agriculture."
+      },
+      "ccus": {
+        "title": "CCUS",
+        "description": "Achieving carbon neutrality through carbon capture, storage, and utilization technology",
+        "detailDescription": "Capture atmospheric carbon dioxide and convert it into useful resources through Carbon Capture, Utilization and Storage technology. Contribute to climate change response as a core technology for achieving carbon neutrality."
+      },
+      "smartFarm": {
+        "title": "Smart Farm",
+        "description": "Building smart agricultural systems utilizing advanced technology",
+        "detailDescription": "Provide optimal cultivation environments with intelligent agricultural systems utilizing IoT, AI, and big data technology. Increase productivity and optimize resource usage through automated management systems."
+      }
+    },
+    "Common": {
+      "viewDetails": "View Details",
+      "imagePlaceholder": "Image Area",
+      "imageNote": "(To be updated after client material provided)"
+    },
+    "CTA": {
+      "title": "Create a Sustainable Future Together",
+      "description": "Join the business that saves both the environment and economy with Korea Green Hydrogen's integrated circular economy solution.",
+      "button": "Request Consultation"
+    }
+  }
+}
+
