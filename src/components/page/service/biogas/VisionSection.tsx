@@ -21,8 +21,16 @@ export default function VisionSection() {
                 </h2>
                 
                 <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
-                  <p className="break-keep" dangerouslySetInnerHTML={{ __html: t('description1') }} />
-                  <p className="break-keep" dangerouslySetInnerHTML={{ __html: t('description2') }} />
+                  <p className="break-keep">
+                    {t.rich('description1', {
+                      strong: (chunks) => <strong>{chunks}</strong>
+                    })}
+                  </p>
+                  <p className="break-keep">
+                    {t.rich('description2', {
+                      strong: (chunks) => <strong>{chunks}</strong>
+                    })}
+                  </p>
                 </div>
               </div>
 

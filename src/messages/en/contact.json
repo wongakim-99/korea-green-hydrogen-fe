@@ -1,0 +1,21 @@
+{
+  "title": "Contact",
+  "subtitle": "Location and contact information for Korea Green Hydrogen",
+  "contactInfo": "Contact Information",
+  "headquarters": "Headquarters Address",
+  "phone": "Phone Number",
+  "email": "Email",
+  "hours": "Business Hours",
+  "directions": "Directions",
+  "transportInfo": "Public Transportation: 5-minute walk from Jeongja Station Exit 3 on Bundang Line",
+  "mapArea": "Map Area",
+  "mapNote": "Google Maps or Naver Maps API integration planned",
+  "mainPhone": "Main Phone",
+  "techSupport": "Technical Support",
+  "generalInquiry": "General Inquiry",
+  "techInquiry": "Technical Inquiry",
+  "weekdays": "Weekdays",
+  "saturday": "Saturday",
+  "sunday": "Closed on Sundays and Public Holidays",
+  "building": "Korea Green Hydrogen Building 10F"
+}
