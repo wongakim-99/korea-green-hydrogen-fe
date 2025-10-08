@@ -8,22 +8,20 @@ export default function FertilizerHeroSection() {
   
   return (
     <section className="relative bg-gray-900 min-h-[60vh] md:min-h-[70vh] lg:min-h-[87vh] flex items-center overflow-hidden">
-      {/* 배경 이미지 - 사용자가 이미지를 추가하면 여기에 넣을 수 있습니다 */}
+      {/* 배경 이미지 */}
       <div className="absolute inset-0">
-        {/* TODO: 사용자가 제공하는 이미지로 교체 */}
-        {/* <Image
-          src="/images/services/fertilizer/hero-bg.jpg"
+        <Image
+          src="/images/services/fertilizer/fer-main.jpg"
           alt="비료화 시설"
           fill
           className="object-cover opacity-40"
           sizes="100vw"
           priority
-        /> */}
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-900/95 via-sky-900/80 to-blue-900/60"></div>
+        />
       </div>
       
       {/* 그라데이션 오버레이 */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/75 via-gray-900/60 to-gray-900/45"></div>
       
       <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mr-auto">

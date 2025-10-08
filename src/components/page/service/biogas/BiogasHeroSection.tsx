@@ -20,7 +20,7 @@ export default function BiogasHeroSection() {
       </div>
       
       {/* 심플한 오버레이 */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/75 via-gray-900/60 to-gray-900/45"></div>
       
       <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mr-auto">
