@@ -32,7 +32,7 @@ export default function ProcessSection() {
               <div className="lg:col-span-6 space-y-6">
                 <div className="inline-block">
                   <span className="inline-block bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold mb-3">
-                    1단계
+                    {t('step1_number')}
                   </span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 break-keep">
@@ -83,7 +83,7 @@ export default function ProcessSection() {
               <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
                 <div className="inline-block">
                   <span className="inline-block bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold mb-3">
-                    2단계
+                    {t('step2_number')}
                   </span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 break-keep">
@@ -104,7 +104,7 @@ export default function ProcessSection() {
               <div className="lg:col-span-6 space-y-6">
                 <div className="inline-block">
                   <span className="inline-block bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold mb-3">
-                    3단계
+                    {t('step3_number')}
                   </span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 break-keep">
