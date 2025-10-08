@@ -184,17 +184,13 @@ export default function ProcessDetailSection() {
 
               {/* 이미지 - 모바일에서 상단, 데스크톱에서 오른쪽 */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100 order-1 lg:order-2">
-                {/* TODO: 사용자가 제공하는 이미지로 교체 */}
-                {/* <Image
-                  src="/images/services/fertilizer/detail-2.jpg"
+                <Image
+                  src="/images/services/fertilizer/fer-sec-2.jpg"
                   alt="맞춤형 영양 배합 - 가치 상승"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                /> */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">이미지 준비 중</span>
-                </div>
+                />
               </div>
             </div>
           </div>

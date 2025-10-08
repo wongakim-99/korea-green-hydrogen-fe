@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 export default function BiogasHeroSection() {
   const t = useTranslations('BiogasPage.Hero');
   return (
-    <section className="relative bg-gray-900 py-32 md:py-40 lg:py-48 overflow-hidden">
+    <section className="relative bg-gray-900 min-h-[60vh] md:min-h-[70vh] lg:min-h-[87vh] flex items-center overflow-hidden">
       {/* 배경 이미지 */}
       <div className="absolute inset-0">
         <Image
@@ -22,8 +22,8 @@ export default function BiogasHeroSection() {
       {/* 심플한 오버레이 */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/60"></div>
       
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="max-w-3xl">
+      <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-3xl mr-auto">
           {/* 작은 라벨 */}
           <div className="inline-block mb-6 md:mb-8">
             <span className="text-sm md:text-base font-medium text-sky-400 tracking-wide uppercase">
