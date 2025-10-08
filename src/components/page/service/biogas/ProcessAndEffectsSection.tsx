@@ -93,7 +93,11 @@ export default function ProcessAndEffectsSection() {
                     <span className="text-2xl md:text-3xl font-medium text-gray-600">{t('stat1_unit')}</span>
                   </div>
                   <div className="pt-4 border-t border-gray-100">
-                    <p className="text-base text-gray-600 break-keep" dangerouslySetInnerHTML={{ __html: t('stat1_description') }} />
+                    <p className="text-base text-gray-600 break-keep">
+                      {t.rich('stat1_description', {
+                        strong: (chunks) => <strong>{chunks}</strong>
+                      })}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -107,7 +111,11 @@ export default function ProcessAndEffectsSection() {
                     <span className="text-2xl md:text-3xl font-medium text-gray-600 break-keep">{t('stat2_unit')}</span>
                   </div>
                   <div className="pt-4 border-t border-gray-100">
-                    <p className="text-base text-gray-600 break-keep" dangerouslySetInnerHTML={{ __html: t('stat2_description') }} />
+                    <p className="text-base text-gray-600 break-keep">
+                      {t.rich('stat2_description', {
+                        strong: (chunks) => <strong>{chunks}</strong>
+                      })}
+                    </p>
                   </div>
                 </div>
               </div>

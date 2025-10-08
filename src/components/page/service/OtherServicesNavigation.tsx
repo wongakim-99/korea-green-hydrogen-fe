@@ -4,35 +4,52 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { usePathname } from 'next/navigation';
 
 export default function OtherServicesNavigation() {
   const [ref, isVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
   const locale = useLocale();
+  const pathname = usePathname();
   const t = useTranslations('OtherServices');
 
-  const services = [
+  // 전체 서비스 목록
+  const allServices = [
     {
+      id: 'biogas',
+      href: '/services/biogas',
+      image: '/images/services/biogas/biogas-service.jpg',
+      titleKey: 'biogas.title',
+      descriptionKey: 'biogas.description',
+      delay: '0.1s',
+    },
+    {
+      id: 'fertilizer',
       href: '/services/fertilizer',
-      image: '/images/services/fertilizer/fertilizer-main.jpg',
+      image: '/images/services/fertilizer/fer-main.jpg',
       titleKey: 'fertilizer.title',
       descriptionKey: 'fertilizer.description',
       delay: '0.1s',
     },
     {
+      id: 'ccus',
       href: '/services/ccus',
-      image: '/images/services/ccus/ccus-main.jpg',
+      image: '/images/services/ccus/ccus-main.jpg', // TODO: 이미지 추가 필요
       titleKey: 'ccus.title',
       descriptionKey: 'ccus.description',
       delay: '0.2s',
     },
     {
+      id: 'smart-farm',
       href: '/services/smart-farm',
-      image: '/images/services/smart-farm/smart-farm-main.jpg',
+      image: '/images/services/smart-farm/smart-farm-main.jpg', // TODO: 이미지 추가 필요
       titleKey: 'smartFarm.title',
       descriptionKey: 'smartFarm.description',
       delay: '0.3s',
     },
   ];
+
+  // 현재 페이지를 제외한 나머지 서비스만 필터링
+  const services = allServices.filter(service => !pathname.includes(service.href));
 
   return (
     <section ref={ref} className="py-16 md:py-20 bg-gray-50 overflow-hidden">
@@ -72,14 +89,16 @@ export default function OtherServicesNavigation() {
                   {/* 호버 오버레이 */}
                   <div className="absolute inset-0 bg-sky-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   
-                  {/* Placeholder 아이콘 (이미지가 없을 때 표시) */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-sky-400 transition-transform duration-500 group-hover:scale-110">
-                      <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                  {/* Placeholder 아이콘 (이미지가 없는 서비스에만 표시) */}
+                  {(service.id === 'ccus' || service.id === 'smart-farm') && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-sky-400 transition-transform duration-500 group-hover:scale-110">
+                        <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* 콘텐츠 영역 */}
