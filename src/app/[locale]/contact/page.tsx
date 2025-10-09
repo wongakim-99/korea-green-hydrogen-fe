@@ -3,6 +3,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
+
+// Google Maps 컴포넌트를 동적 로드 (SSR 방지)
+const GoogleMapComponent = dynamic(() => import('@/components/GoogleMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center bg-gray-100 h-full">
+      <div className="text-center p-8">
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-sky-600 border-t-transparent mb-4"></div>
+        <p className="text-gray-600 font-medium">지도 로딩 중...</p>
+      </div>
+    </div>
+  ),
+});
 
 export default function ContactPage({params: {locale}}: {params: {locale: string}}) {
   const t = useTranslations('Contact');
@@ -150,27 +164,13 @@ export default function ContactPage({params: {locale}}: {params: {locale: string
                 </p>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="relative h-[500px] lg:h-[600px] bg-gray-200 rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-700 mb-2">{t('mapArea')}</h3>
-                    <p className="text-gray-500 text-sm max-w-xs mx-auto">
-                      Google Maps API 연동 예정
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Map Overlay for Future Integration */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-sm">
-                  <p className="text-xs text-gray-600 font-medium">지도 로딩 중...</p>
-                </div>
+              {/* Google Map */}
+              <div className="relative h-[500px] lg:h-[600px] rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <GoogleMapComponent 
+                  address={tCommon('address')}
+                  className="h-full w-full"
+                  locale={locale}
+                />
               </div>
 
               {/* Additional Info */}
