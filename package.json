@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@fontsource/pretendard": "^5.2.5",
+    "@react-google-maps/api": "^2.20.7",
     "next": "14.2.3",
     "next-intl": "^3.5.4",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.58.1",
     "@types/node": "^20",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.1",
