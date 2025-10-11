@@ -10,7 +10,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -18,7 +18,26 @@ interface AdminLayoutProps {
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const isLoginPage = pathname === '/admin/login';
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/admin/logout', {
+        method: 'POST',
+        credentials: 'include'
+      });
+
+      if (response.ok) {
+        router.push('/admin/login');
+        router.refresh();
+      }
+    } catch (error) {
+      console.error('로그아웃 오류:', error);
+      // 에러가 있어도 로그인 페이지로 이동
+      router.push('/admin/login');
+    }
+  };
 
   // 로그인 페이지에서는 네비게이션 없이 children만 렌더링
   if (isLoginPage) {
@@ -57,10 +76,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             {/* 로그아웃 버튼 */}
             <div className="flex items-center space-x-4">
               <button
-                onClick={() => {
-                  // TODO: 로그아웃 로직 구현
-                  alert('로그아웃 기능은 추후 구현 예정입니다.');
-                }}
+                onClick={handleLogout}
                 className="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 로그아웃

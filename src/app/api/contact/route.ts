@@ -57,7 +57,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 5. 저장할 문서 생성
+    // 5. locale 추출 (URL에서 우선, 없으면 accept-language 헤더 사용)
+    const url = new URL(request.url);
+    const pathSegments = url.pathname.split('/');
+    const localeFromUrl = pathSegments[1]; // /ko/api/contact 또는 /en/api/contact
+    const locale = (localeFromUrl === 'ko' || localeFromUrl === 'en') 
+      ? localeFromUrl 
+      : (request.headers.get('accept-language')?.includes('ko') ? 'ko' : 'en');
+
+    // 6. 저장할 문서 생성
     const inquiryDoc: Omit<InquiryDocument, '_id'> = {
       name,
       email,
@@ -65,7 +73,7 @@ export async function POST(request: NextRequest) {
       phone: body.phone || '',
       subject,
       message,
-      locale: request.headers.get('accept-language')?.includes('ko') ? 'ko' : 'en',
+      locale,
       status: 'pending',
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -73,13 +81,13 @@ export async function POST(request: NextRequest) {
       userAgent: request.headers.get('user-agent') || ''
     };
 
-    // 6. MongoDB에 저장
+    // 7. MongoDB에 저장
     const collection = await getCollection<InquiryDocument>('inquiries');
     const result = await collection.insertOne(inquiryDoc as InquiryDocument);
 
     console.log('✅ 문의 저장 성공:', result.insertedId);
 
-    // 7. 성공 응답
+    // 8. 성공 응답
     return NextResponse.json<ApiResponse>(
       {
         success: true,

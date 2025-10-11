@@ -33,11 +33,11 @@ export default function AdminLoginPage() {
     setError('');
 
     try {
-      // TODO: 실제 로그인 API 호출
       const response = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
+        credentials: 'include' // 쿠키 포함
       });
 
       const result = await response.json();
@@ -45,6 +45,7 @@ export default function AdminLoginPage() {
       if (result.success) {
         // 로그인 성공 시 대시보드로 이동
         router.push('/admin/dashboard');
+        router.refresh(); // 페이지 새로고침으로 상태 업데이트
       } else {
         setError(result.message || '로그인에 실패했습니다.');
       }
@@ -135,11 +136,17 @@ export default function AdminLoginPage() {
           </form>
 
           {/* 개발용 안내 */}
-          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
-            <p className="text-sm text-yellow-800">
-              <strong>개발 모드:</strong> 현재 로그인 API가 구현되지 않았습니다.
+          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
+            <p className="text-sm text-blue-800">
+              <strong>관리자 계정:</strong> 
               <br />
-              임시로 <code className="bg-yellow-100 px-1 rounded">admin / admin123</code>을 사용하세요.
+              아이디: <code className="bg-blue-100 px-1 rounded">admin</code>
+              <br />
+              비밀번호: <code className="bg-blue-100 px-1 rounded">admin123</code>
+              <br />
+              <span className="text-xs text-blue-600">
+                * 최초 로그인 후 비밀번호를 변경해주세요.
+              </span>
             </p>
           </div>
         </div>
