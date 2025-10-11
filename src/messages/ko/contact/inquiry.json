@@ -1,0 +1,60 @@
+{
+  "breadcrumb": {
+    "home": "홈",
+    "contact": "Contact",
+    "inquiry": "문의하기"
+  },
+  "hero": {
+    "title": "문의하기",
+    "subtitle": "궁금한 점이 있으시면 언제든지 연락해주세요"
+  },
+  "contactInfo": {
+    "title": "연락 정보",
+    "description": "언제든지 연락주시면 빠르게 답변드리겠습니다.",
+    "address": {
+      "title": "본사 주소",
+      "line1": "서울특별시 강남구 테헤란로 123",
+      "line2": "Korea Green Hydrogen 빌딩 10층"
+    },
+    "phone": {
+      "title": "전화번호",
+      "main": "대표전화: 02-1234-5678",
+      "support": "기술지원: 02-1234-5679"
+    },
+    "email": {
+      "title": "이메일",
+      "general": "일반문의: info@koreagreenhyd.com",
+      "tech": "기술문의: tech@koreagreenhyd.com"
+    },
+    "hours": {
+      "title": "운영시간",
+      "weekdays": "평일: 09:00 - 18:00",
+      "saturday": "토요일: 09:00 - 13:00",
+      "sunday": "일요일 및 공휴일 휴무"
+    }
+  },
+  "form": {
+    "title": "문의하기",
+    "description": "궁금하신 내용을 작성해주시면 빠르게 연락드리겠습니다.",
+    "fields": {
+      "name": "이름",
+      "email": "이메일",
+      "company": "회사명",
+      "phone": "전화번호",
+      "subject": "문의 유형",
+      "message": "문의 내용"
+    },
+    "subjectOptions": {
+      "placeholder": "선택해주세요",
+      "general": "일반 문의",
+      "technical": "기술 문의",
+      "partnership": "파트너십 문의",
+      "investment": "투자 문의",
+      "career": "채용 문의"
+    },
+    "messagePlaceholder": "문의하실 내용을 상세히 작성해주세요.",
+    "submitButton": "문의하기",
+    "successMessage": "문의사항이 접수되었습니다. 빠른 시일 내에 연락드리겠습니다."
+  }
+}
+

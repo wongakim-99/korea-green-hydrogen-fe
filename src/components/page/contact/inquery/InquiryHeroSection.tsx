@@ -6,7 +6,13 @@
  * - 페이지 제목과 간단한 설명 표시
  */
 
+'use client';
+
+import { useTranslations } from 'next-intl';
+
 export default function InquiryHeroSection() {
+  const t = useTranslations('Inquiry.hero');
+
   return (
     <section className="relative bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 py-24 overflow-hidden">
       {/* 배경 패턴 */}
@@ -21,10 +27,10 @@ export default function InquiryHeroSection() {
       {/* 컨텐츠 */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
-          문의하기
+          {t('title')}
         </h1>
         <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-          궁금한 점이 있으시면 언제든지 연락해주세요
+          {t('subtitle')}
         </p>
       </div>
     </section>
