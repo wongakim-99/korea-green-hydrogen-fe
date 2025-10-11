@@ -9,13 +9,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import InquiryHeroSection from '@/components/page/contact/inquery/InquiryHeroSection';
 import ContactInformationCard from '@/components/page/contact/inquery/ContactInformationCard';
 import InquiryForm from '@/components/page/contact/inquery/InquiryForm';
 
 export default function InquiryPage() {
   const locale = useLocale();
+  const t = useTranslations('Inquiry.breadcrumb');
 
   return (
     <div className="min-h-screen">
@@ -24,14 +25,14 @@ export default function InquiryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
             <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">
-              홈
+              {t('home')}
             </Link>
             <span className="text-gray-400">/</span>
             <Link href={`/${locale}/contact`} className="hover:text-sky-600 transition-colors">
-              Contact
+              {t('contact')}
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="text-sky-600 font-bold">문의하기</span>
+            <span className="text-sky-600 font-bold">{t('inquiry')}</span>
           </div>
         </div>
       </nav>

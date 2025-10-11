@@ -1,0 +1,61 @@
+{
+  "breadcrumb": {
+    "home": "Home",
+    "contact": "Contact",
+    "inquiry": "Inquiry"
+  },
+  "hero": {
+    "title": "Contact Us",
+    "subtitle": "Feel free to reach out to us anytime"
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "description": "We'll respond to your inquiry as soon as possible.",
+    "address": {
+      "title": "Headquarters Address",
+      "line1": "123 Teheran-ro, Gangnam-gu, Seoul",
+      "line2": "Korea Green Hydrogen Building 10F"
+    },
+    "phone": {
+      "title": "Phone Number",
+      "main": "Main: 02-1234-5678",
+      "support": "Tech Support: 02-1234-5679"
+    },
+    "email": {
+      "title": "Email",
+      "general": "General: info@koreagreenhyd.com",
+      "tech": "Technical: tech@koreagreenhyd.com"
+    },
+    "hours": {
+      "title": "Business Hours",
+      "weekdays": "Weekdays: 09:00 - 18:00",
+      "saturday": "Saturday: 09:00 - 13:00",
+      "sunday": "Closed on Sundays and Public Holidays"
+    }
+  },
+  "form": {
+    "title": "Inquiry Form",
+    "description": "Please fill out the form below and we'll get back to you soon.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "phone": "Phone",
+      "subject": "Inquiry Type",
+      "message": "Message"
+    },
+    "subjectOptions": {
+      "placeholder": "Please select",
+      "general": "General Inquiry",
+      "technical": "Technical Inquiry",
+      "partnership": "Partnership Inquiry",
+      "investment": "Investment Inquiry",
+      "career": "Career Inquiry"
+    },
+    "messagePlaceholder": "Please provide details about your inquiry.",
+    "submitButton": "Submit",
+    "submitting": "Submitting...",
+    "successMessage": "Your inquiry has been submitted. We'll contact you soon."
+  }
+}
+

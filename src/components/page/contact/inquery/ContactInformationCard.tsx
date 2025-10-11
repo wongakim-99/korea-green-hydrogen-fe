@@ -6,15 +6,21 @@
  * - 각 항목에 아이콘과 호버 애니메이션 효과 적용
  */
 
+'use client';
+
+import { useTranslations } from 'next-intl';
+
 export default function ContactInformationCard() {
+  const t = useTranslations('Inquiry.contactInfo');
+
   return (
     <div>
       <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 h-full hover:shadow-2xl transition-shadow duration-300">
         {/* 헤더 */}
         <div className="mb-8">
           <div className="w-12 h-1 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full mb-4"></div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">연락 정보</h2>
-          <p className="text-gray-600 mt-3">언제든지 연락주시면 빠르게 답변드리겠습니다.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t('title')}</h2>
+          <p className="text-gray-600 mt-3">{t('description')}</p>
         </div>
         
         {/* 연락처 정보 목록 */}
@@ -27,11 +33,11 @@ export default function ContactInformationCard() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </>
             }
-            title="본사 주소"
+            title={t('address.title')}
             content={
               <>
-                서울특별시 강남구 테헤란로 123<br />
-                Korea Green Hydrogen 빌딩 10층
+                {t('address.line1')}<br />
+                {t('address.line2')}
               </>
             }
           />
@@ -41,11 +47,11 @@ export default function ContactInformationCard() {
             icon={
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             }
-            title="전화번호"
+            title={t('phone.title')}
             content={
               <>
-                대표전화: 02-1234-5678<br />
-                기술지원: 02-1234-5679
+                {t('phone.main')}<br />
+                {t('phone.support')}
               </>
             }
           />
@@ -55,11 +61,11 @@ export default function ContactInformationCard() {
             icon={
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             }
-            title="이메일"
+            title={t('email.title')}
             content={
               <>
-                일반문의: info@koreagreenhyd.com<br />
-                기술문의: tech@koreagreenhyd.com
+                {t('email.general')}<br />
+                {t('email.tech')}
               </>
             }
           />
@@ -69,12 +75,12 @@ export default function ContactInformationCard() {
             icon={
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             }
-            title="운영시간"
+            title={t('hours.title')}
             content={
               <>
-                평일: 09:00 - 18:00<br />
-                토요일: 09:00 - 13:00<br />
-                일요일 및 공휴일 휴무
+                {t('hours.weekdays')}<br />
+                {t('hours.saturday')}<br />
+                {t('hours.sunday')}
               </>
             }
           />
