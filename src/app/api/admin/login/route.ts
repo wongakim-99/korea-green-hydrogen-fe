@@ -13,6 +13,9 @@ import { AdminDocument, AdminLoginData, ApiResponse } from '@/app/api/lib/types'
 import { verifyPassword, cookieOptions } from '@/app/api/lib/auth';
 import { generateTokenEdge } from '@/app/api/lib/jwt-edge';
 
+// 동적 렌더링 강제 (쿠키 및 인증 처리로 인해)
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
   try {
     const body: AdminLoginData = await request.json();
@@ -91,7 +94,7 @@ export async function POST(request: NextRequest) {
         $set: { 
           loginAttempts: 0,
           lastLoginAt: new Date(),
-          lockedUntil: null
+          lockedUntil: undefined
         } 
       }
     );

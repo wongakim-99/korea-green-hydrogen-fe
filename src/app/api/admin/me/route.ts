@@ -12,6 +12,9 @@ import { extractTokenFromRequest } from '@/app/api/lib/auth';
 import { verifyTokenEdge } from '@/app/api/lib/jwt-edge';
 import { ObjectId } from 'mongodb';
 
+// 동적 렌더링 강제 (request.headers 사용으로 인해)
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
   try {
     // 인증 확인
