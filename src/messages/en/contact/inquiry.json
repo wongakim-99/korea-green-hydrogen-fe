@@ -54,6 +54,7 @@
     },
     "messagePlaceholder": "Please provide details about your inquiry.",
     "submitButton": "Submit",
+    "submitting": "Submitting...",
     "successMessage": "Your inquiry has been submitted. We'll contact you soon."
   }
 }
