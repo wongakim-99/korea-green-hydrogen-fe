@@ -32,18 +32,44 @@ export default function InquiryForm() {
     });
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // TODO: API 연동
-    // const response = await fetch('/api/contact', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(formData)
-    // });
-    
-    alert(t('successMessage'));
-    console.log('Form submitted:', formData);
+    try {
+      // API 호출
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // 성공
+        alert(t('successMessage'));
+        // 폼 초기화
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        // 실패
+        alert(result.message || '문의 접수에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('문의 제출 오류:', error);
+      alert('문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -163,9 +189,10 @@ export default function InquiryForm() {
         {/* 제출 버튼 */}
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-sky-500 to-sky-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-sky-600 hover:to-sky-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          disabled={isSubmitting}
+          className="w-full bg-gradient-to-r from-sky-500 to-sky-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-sky-600 hover:to-sky-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
         >
-          {t('submitButton')}
+          {isSubmitting ? '전송 중...' : t('submitButton')}
         </button>
       </form>
     </div>
