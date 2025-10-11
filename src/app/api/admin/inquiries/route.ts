@@ -9,6 +9,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getCollection } from '@/app/api/lib/mongodb';
 import { InquiryDocument, ApiResponse } from '@/app/api/lib/types';
 
+// 동적 렌더링 강제 (request.url 사용으로 인해)
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
   try {
     // URL 파라미터에서 페이징 정보 가져오기
