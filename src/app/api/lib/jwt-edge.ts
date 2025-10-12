@@ -7,8 +7,12 @@
 import { SignJWT, jwtVerify } from 'jose';
 import type { JWTPayload } from './types';
 
-// JWT 시크릿 키 (환경변수에서 가져오거나 기본값 사용)
-const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production';
+// JWT 시크릿 키 (환경변수에서 가져오기 - 필수)
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET 환경변수가 설정되지 않았습니다.');
+}
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '24h';
 
 // 시크릿 키를 TextEncoder로 변환

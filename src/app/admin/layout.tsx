@@ -65,12 +65,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               >
                 대시보드
               </a>
-              <a
-                href="/admin/inquiries"
-                className="text-gray-700 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                문의 관리
-              </a>
             </nav>
 
             {/* 로그아웃 버튼 */}

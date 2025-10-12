@@ -18,7 +18,7 @@ interface Inquiry {
   email: string;
   subject: string;
   message: string;
-  status: 'pending' | 'read' | 'replied';
+  status: 'pending' | 'read';
   createdAt: string;
   company?: string;
   phone?: string;
@@ -28,6 +28,7 @@ export default function AdminDashboard() {
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [updatingStatus, setUpdatingStatus] = useState<string | null>(null);
 
   useEffect(() => {
     fetchInquiries();
@@ -53,9 +54,8 @@ export default function AdminDashboard() {
 
   const getStatusBadge = (status: string) => {
     const statusMap = {
-      pending: { text: '대기', color: 'bg-yellow-100 text-yellow-800' },
-      read: { text: '확인', color: 'bg-blue-100 text-blue-800' },
-      replied: { text: '답변', color: 'bg-green-100 text-green-800' }
+      pending: { text: '대기', color: 'bg-yellow-50 text-yellow-700' },
+      read: { text: '확인', color: 'bg-blue-50 text-blue-700' }
     };
     
     const statusInfo = statusMap[status as keyof typeof statusMap] || statusMap.pending;
@@ -77,6 +77,34 @@ export default function AdminDashboard() {
     });
   };
 
+  const updateStatus = async (inquiryId: string, newStatus: 'pending' | 'read') => {
+    setUpdatingStatus(inquiryId);
+    try {
+      const response = await fetch(`/api/admin/inquiries/${inquiryId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: newStatus })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setInquiries(inquiries.map(inquiry => 
+          inquiry.id === inquiryId 
+            ? { ...inquiry, status: newStatus }
+            : inquiry
+        ));
+      } else {
+        alert('상태 변경에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('상태 변경 오류:', error);
+      alert('상태 변경 중 오류가 발생했습니다.');
+    } finally {
+      setUpdatingStatus(null);
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -94,7 +122,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 bg-slate-50 min-h-screen -mx-6 -my-6 px-6 py-6">
       {/* 헤더 */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900">문의 관리</h1>
@@ -104,7 +132,7 @@ export default function AdminDashboard() {
       </div>
 
       {/* 통계 카드 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-white overflow-hidden shadow rounded-lg">
           <div className="p-5">
             <div className="flex items-center">
@@ -152,30 +180,6 @@ export default function AdminDashboard() {
             </div>
           </div>
         </div>
-
-        <div className="bg-white overflow-hidden shadow rounded-lg">
-          <div className="p-5">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-green-600 text-sm font-bold">
-                    {inquiries.filter(i => i.status === 'replied').length}
-                  </span>
-                </div>
-              </div>
-              <div className="ml-5 w-0 flex-1">
-                <dl>
-                  <dt className="text-sm font-medium text-gray-500 truncate">
-                    답변 완료
-                  </dt>
-                  <dd className="text-lg font-medium text-gray-900">
-                    {inquiries.filter(i => i.status === 'replied').length}건
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* 문의 목록 */}
@@ -217,28 +221,41 @@ export default function AdminDashboard() {
             <tbody className="bg-white divide-y divide-gray-200">
               {inquiries.map((inquiry) => (
                 <tr key={inquiry.id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <td className="px-6 py-6 whitespace-nowrap text-sm font-medium text-gray-900">
                     {inquiry.name}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="px-6 py-6 whitespace-nowrap text-sm text-gray-400">
                     {inquiry.email}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="px-6 py-6 whitespace-nowrap text-sm text-gray-400">
                     {inquiry.subject}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-6 py-6 whitespace-nowrap">
                     {getStatusBadge(inquiry.status)}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="px-6 py-6 whitespace-nowrap text-sm text-gray-400">
                     {formatDate(inquiry.createdAt)}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <Link
-                      href={`/admin/inquiries/${inquiry.id}`}
-                      className="text-sky-600 hover:text-sky-900"
-                    >
-                      상세보기
-                    </Link>
+                  <td className="px-6 py-6 whitespace-nowrap text-sm font-medium">
+                    <div className="flex items-center space-x-2">
+                      <Link
+                        href={`/admin/inquiries/${inquiry.id}`}
+                        className="text-sky-600 hover:text-sky-900 text-xs"
+                      >
+                        상세보기
+                      </Link>
+                      <button
+                        onClick={() => updateStatus(inquiry.id, 'read')}
+                        disabled={updatingStatus === inquiry.id || inquiry.status === 'read'}
+                        className={`px-2 py-1 text-xs rounded-md font-medium ${
+                          inquiry.status === 'read'
+                            ? 'bg-blue-100 text-blue-800 cursor-not-allowed'
+                            : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
+                        } disabled:opacity-50`}
+                      >
+                        {updatingStatus === inquiry.id ? '처리중...' : '확인처리'}
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -251,40 +268,43 @@ export default function AdminDashboard() {
           <ul className="divide-y divide-gray-200">
             {inquiries.map((inquiry) => (
               <li key={inquiry.id}>
-                <Link
-                  href={`/admin/inquiries/${inquiry.id}`}
-                  className="block hover:bg-gray-50 px-4 py-4"
-                >
+                <div className="block hover:bg-gray-50 px-4 py-5">
                   <div className="flex items-center justify-between">
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-gray-900 truncate">
                         {inquiry.name}
                       </p>
-                      <p className="text-sm text-gray-500 truncate">
+                      <p className="text-sm text-gray-400 truncate">
                         {inquiry.email}
                       </p>
                       <p className="text-xs text-gray-400">
                         {inquiry.subject} • {formatDate(inquiry.createdAt)}
                       </p>
+                      <div className="mt-4 flex space-x-2">
+                        <Link
+                          href={`/admin/inquiries/${inquiry.id}`}
+                          className="text-sky-600 hover:text-sky-900 text-xs"
+                        >
+                          상세보기
+                        </Link>
+                        <button
+                          onClick={() => updateStatus(inquiry.id, 'read')}
+                          disabled={updatingStatus === inquiry.id || inquiry.status === 'read'}
+                          className={`px-2 py-1 text-xs rounded-md font-medium ${
+                            inquiry.status === 'read'
+                              ? 'bg-blue-100 text-blue-800 cursor-not-allowed'
+                              : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
+                          } disabled:opacity-50`}
+                        >
+                          {updatingStatus === inquiry.id ? '처리중...' : '확인처리'}
+                        </button>
+                      </div>
                     </div>
                     <div className="flex items-center space-x-2">
                       {getStatusBadge(inquiry.status)}
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
                     </div>
                   </div>
-                </Link>
+                </div>
               </li>
             ))}
           </ul>
@@ -299,3 +319,4 @@ export default function AdminDashboard() {
     </div>
   );
 }
+

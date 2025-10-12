@@ -135,20 +135,6 @@ export default function AdminLoginPage() {
             </div>
           </form>
 
-          {/* 개발용 안내 */}
-          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
-            <p className="text-sm text-blue-800">
-              <strong>관리자 계정:</strong> 
-              <br />
-              아이디: <code className="bg-blue-100 px-1 rounded">admin</code>
-              <br />
-              비밀번호: <code className="bg-blue-100 px-1 rounded">admin123</code>
-              <br />
-              <span className="text-xs text-blue-600">
-                * 최초 로그인 후 비밀번호를 변경해주세요.
-              </span>
-            </p>
-          </div>
         </div>
       </div>
     </div>
