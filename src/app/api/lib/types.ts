@@ -22,7 +22,7 @@ export interface InquiryFormData {
 export interface InquiryDocument extends InquiryFormData {
   _id?: ObjectId;
   locale: string;          // 'ko' | 'en'
-  status: 'pending' | 'read' | 'replied';
+  status: 'pending' | 'read';
   createdAt: Date;
   updatedAt: Date;
   ipAddress?: string;      // 요청 IP (선택)

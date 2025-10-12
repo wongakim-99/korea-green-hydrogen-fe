@@ -100,7 +100,7 @@ export async function PATCH(
     }
 
     // 상태 값 유효성 검사
-    if (!status || !['pending', 'read', 'replied'].includes(status)) {
+    if (!status || !['pending', 'read'].includes(status)) {
       return NextResponse.json<ApiResponse>(
         {
           success: false,
