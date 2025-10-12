@@ -1,13 +1,15 @@
 /**
  * 개별 문의 조회 및 업데이트 API
  * 
- * GET /api/admin/inquiries/[id] - 개별 문의 조회
- * PATCH /api/admin/inquiries/[id] - 문의 상태 업데이트
+ * GET /api/admin/inquiries/[id] - 개별 문의 조회 (인증 필요)
+ * PATCH /api/admin/inquiries/[id] - 문의 상태 업데이트 (인증 필요)
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getCollection } from '@/app/api/lib/mongodb';
 import { InquiryDocument, ApiResponse } from '@/app/api/lib/types';
+import { extractTokenFromRequest } from '@/app/api/lib/auth';
+import { verifyTokenEdge } from '@/app/api/lib/jwt-edge';
 import { ObjectId } from 'mongodb';
 
 // 개별 문의 조회
@@ -16,6 +18,29 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
+    // 인증 확인
+    const token = extractTokenFromRequest(request);
+    if (!token) {
+      return NextResponse.json<ApiResponse>(
+        {
+          success: false,
+          message: '인증이 필요합니다.'
+        },
+        { status: 401 }
+      );
+    }
+
+    const tokenPayload = await verifyTokenEdge(token);
+    if (!tokenPayload) {
+      return NextResponse.json<ApiResponse>(
+        {
+          success: false,
+          message: '인증이 필요합니다.'
+        },
+        { status: 401 }
+      );
+    }
+
     const { id } = params;
 
     // ObjectId 유효성 검사
@@ -84,6 +109,29 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
+    // 인증 확인
+    const token = extractTokenFromRequest(request);
+    if (!token) {
+      return NextResponse.json<ApiResponse>(
+        {
+          success: false,
+          message: '인증이 필요합니다.'
+        },
+        { status: 401 }
+      );
+    }
+
+    const tokenPayload = await verifyTokenEdge(token);
+    if (!tokenPayload) {
+      return NextResponse.json<ApiResponse>(
+        {
+          success: false,
+          message: '인증이 필요합니다.'
+        },
+        { status: 401 }
+      );
+    }
+
     const { id } = params;
     const body = await request.json();
     const { status } = body;
