@@ -1,19 +1,44 @@
 /**
- * 문의 목록 조회 API (임시 - 추후 인증 추가 필요)
+ * 문의 목록 조회 API
  * 
  * GET /api/admin/inquiries
- * - 모든 문의 목록 조회
+ * - 모든 문의 목록 조회 (인증 필요)
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getCollection } from '@/app/api/lib/mongodb';
 import { InquiryDocument, ApiResponse } from '@/app/api/lib/types';
+import { extractTokenFromRequest } from '@/app/api/lib/auth';
+import { verifyTokenEdge } from '@/app/api/lib/jwt-edge';
 
 // 동적 렌더링 강제 (request.url 사용으로 인해)
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
+    // 인증 확인
+    const token = extractTokenFromRequest(request);
+    if (!token) {
+      return NextResponse.json<ApiResponse>(
+        {
+          success: false,
+          message: '인증이 필요합니다.'
+        },
+        { status: 401 }
+      );
+    }
+
+    const tokenPayload = await verifyTokenEdge(token);
+    if (!tokenPayload) {
+      return NextResponse.json<ApiResponse>(
+        {
+          success: false,
+          message: '인증이 필요합니다.'
+        },
+        { status: 401 }
+      );
+    }
+
     // URL 파라미터에서 페이징 정보 가져오기
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get('limit') || '10');

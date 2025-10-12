@@ -3,8 +3,7 @@
  * 
  * 개별 문의의 상세 정보를 표시
  * - 문의 내용 전체 표시
- * - 상태 변경 기능
- * - 답변 작성 기능 (추후)
+ * - 상태 변경 기능 (대기, 확인만)
  */
 
 'use client';
@@ -19,7 +18,7 @@ interface Inquiry {
   email: string;
   subject: string;
   message: string;
-  status: 'pending' | 'read' | 'replied';
+  status: 'pending' | 'read';
   createdAt: string;
   company?: string;
   phone?: string;
@@ -59,7 +58,7 @@ export default function InquiryDetailPage() {
     }
   };
 
-  const updateStatus = async (newStatus: 'pending' | 'read' | 'replied') => {
+  const updateStatus = async (newStatus: 'pending' | 'read') => {
     if (!inquiry) return;
 
     setUpdatingStatus(true);
@@ -87,9 +86,8 @@ export default function InquiryDetailPage() {
 
   const getStatusBadge = (status: string) => {
     const statusMap = {
-      pending: { text: '대기', color: 'bg-yellow-100 text-yellow-800' },
-      read: { text: '확인', color: 'bg-blue-100 text-blue-800' },
-      replied: { text: '답변', color: 'bg-green-100 text-green-800' }
+      pending: { text: '대기', color: 'bg-yellow-50 text-yellow-700' },
+      read: { text: '확인', color: 'bg-blue-50 text-blue-700' }
     };
     
     const statusInfo = statusMap[status as keyof typeof statusMap] || statusMap.pending;
@@ -128,7 +126,7 @@ export default function InquiryDetailPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 bg-slate-50 min-h-screen -mx-6 -my-6 px-6 py-6">
       {/* 헤더 */}
       <div className="flex items-center justify-between">
         <div>
@@ -164,18 +162,7 @@ export default function InquiryDetailPage() {
                       : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
                   }`}
                 >
-                  확인 처리
-                </button>
-                <button
-                  onClick={() => updateStatus('replied')}
-                  disabled={updatingStatus || inquiry.status === 'replied'}
-                  className={`px-3 py-1 text-xs rounded-md font-medium ${
-                    inquiry.status === 'replied'
-                      ? 'bg-green-100 text-green-800 cursor-not-allowed'
-                      : 'bg-green-100 text-green-800 hover:bg-green-200'
-                  }`}
-                >
-                  답변 완료
+                  {updatingStatus ? '처리중...' : '확인 처리'}
                 </button>
               </div>
             </div>
@@ -185,15 +172,15 @@ export default function InquiryDetailPage() {
         <div className="border-t border-gray-200">
           <dl>
             {/* 기본 정보 */}
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">이름</dt>
+            <div className="bg-gray-50 px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-400">이름</dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {inquiry.name}
               </dd>
             </div>
 
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">이메일</dt>
+            <div className="bg-white px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-400">이메일</dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 <a href={`mailto:${inquiry.email}`} className="text-sky-600 hover:text-sky-900">
                   {inquiry.email}
@@ -202,8 +189,8 @@ export default function InquiryDetailPage() {
             </div>
 
             {inquiry.phone && (
-              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">전화번호</dt>
+              <div className="bg-gray-50 px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-400">전화번호</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   <a href={`tel:${inquiry.phone}`} className="text-sky-600 hover:text-sky-900">
                     {inquiry.phone}
@@ -213,55 +200,36 @@ export default function InquiryDetailPage() {
             )}
 
             {inquiry.company && (
-              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">회사명</dt>
+              <div className="bg-white px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt className="text-sm font-medium text-gray-400">회사명</dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   {inquiry.company}
                 </dd>
               </div>
             )}
 
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">문의 유형</dt>
+            <div className="bg-gray-50 px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-400">문의 유형</dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {inquiry.subject}
               </dd>
             </div>
 
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">접수일</dt>
+            <div className="bg-white px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-400">접수일</dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {formatDate(inquiry.createdAt)}
               </dd>
             </div>
 
             {/* 문의 내용 */}
-            <div className="bg-gray-50 px-4 py-5 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500 mb-3">문의 내용</dt>
+            <div className="bg-gray-50 px-4 py-6 sm:px-6">
+              <dt className="text-sm font-medium text-gray-400 mb-4">문의 내용</dt>
               <dd className="text-sm text-gray-900 whitespace-pre-wrap bg-white p-4 rounded-md border">
                 {inquiry.message}
               </dd>
             </div>
           </dl>
-        </div>
-      </div>
-
-      {/* 답변 섹션 (추후 구현) */}
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-        <div className="px-4 py-5 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">
-            답변 관리
-          </h3>
-          <p className="mt-1 text-sm text-gray-500">
-            답변 작성 기능은 추후 구현 예정입니다.
-          </p>
-        </div>
-        <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
-          <div className="text-center py-8">
-            <div className="text-gray-400 text-sm">
-              답변 작성 기능 준비 중...
-            </div>
-          </div>
         </div>
       </div>
     </div>
