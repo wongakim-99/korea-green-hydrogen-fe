@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {getTranslations} from 'next-intl/server';
 
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}): Promise<Metadata> {
@@ -14,77 +15,119 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
 export default async function CEOPage({params: {locale}}: {params: {locale: string}}) {
   const t = await getTranslations({locale, namespace: 'CEOPage'});
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">{t('breadcrumb.home')}</Link>
+            <Link href={`/${locale}`} className="hover:text-blue-600 transition-colors">{t('breadcrumb.home')}</Link>
             <span className="text-gray-400">/</span>
-            <Link href={`/${locale}/about`} className="hover:text-sky-600 transition-colors">{t('breadcrumb.company')}</Link>
+            <Link href={`/${locale}/about`} className="hover:text-blue-600 transition-colors">{t('breadcrumb.company')}</Link>
             <span className="text-gray-400">/</span>
-            <span className="text-sky-600 font-bold">{t('breadcrumb.ceoMessage')}</span>
+            <span className="text-blue-600 font-bold">{t('breadcrumb.ceoMessage')}</span>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-sky-600 to-blue-600 py-20">
+      {/* CEO Message Content - HL Holdings Style */}
+      <section className="py-16 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('hero.title')}
-            </h1>
-            <p className="text-xl text-sky-100 max-w-2xl mx-auto">
-              {t('hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            
+            {/* Left Column - Text Content */}
+            <div className="flex-1 lg:flex-[2]">
+              {/* Main Header */}
+              <div className="mb-8">
+                <h1 
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+                  style={{ color: 'var(--primary-blue)' }}
+                >
+                  {t('content.brandSlogan')}
+                </h1>
+                
+                {/* Greeting */}
+                <p className="text-lg md:text-xl text-gray-800 mb-8 leading-relaxed">
+                  {t('content.greeting')}
+                </p>
+              </div>
 
-      {/* CEO Message Content */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-            {/* CEO Photo Placeholder */}
-            <div className="lg:col-span-1">
-              <div className="bg-gradient-to-br from-sky-100 to-blue-100 rounded-lg p-8 text-center">
-                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-24 h-24 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
+              {/* Content Paragraphs */}
+              <div className="space-y-6 md:space-y-8">
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed break-keep">
+                  {t.rich('content.p1', {
+                    b: (chunks) => <strong className="font-bold text-gray-900">{chunks}</strong>
+                  })}
+                </p>
+
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed break-keep">
+                  {t.rich('content.p2', {
+                    b: (chunks) => <strong className="font-bold text-gray-900">{chunks}</strong>
+                  })}
+                </p>
+
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed break-keep">
+                  {t.rich('content.p3', {
+                    b: (chunks) => <strong className="font-bold text-gray-900">{chunks}</strong>
+                  })}
+                </p>
+
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed break-keep">
+                  {t.rich('content.p4', {
+                    b: (chunks) => <strong className="font-bold text-gray-900">{chunks}</strong>
+                  })}
+                </p>
+
+                {/* Signature Section */}
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <p className="text-base md:text-lg text-gray-800 font-semibold mb-4">
+                    {t('content.closing')}
+                  </p>
+                  
+                  {/* Signature Block */}
+                  <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+                    {/* Signature Placeholder */}
+                    <div className="flex-1 max-w-xs">
+                      <div className="text-2xl md:text-3xl font-bold text-gray-800" style={{ fontFamily: 'cursive' }}>
+                        {t('content.signature')}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('content.name')}</h3>
-                <p className="text-sky-600 font-semibold">{t('content.title')}</p>
               </div>
             </div>
 
-            {/* CEO Message */}
-            <div className="lg:col-span-2">
-              <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {t('content.heading')}
-                </h2>
+            {/* Right Column - CEO Photo */}
+            <div className="w-full lg:w-64 xl:w-72 flex-shrink-0">
+              <div className="relative">
+                {/* Photo Container */}
+                <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-xl">
+                  <Image
+                    src="/images/about/message/ceo.jpg"
+                    alt={t('content.photoAlt')}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 288px"
+                    priority
+                  />
+                  {/* Subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
+                </div>
                 
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  {t('content.p1')}
-                </p>
-
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  {t('content.p2')}
-                </p>
-
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  {t('content.p3')}
-                </p>
-
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  {t('content.p4')}
-                </p>
-
-                <p className="text-gray-700 leading-relaxed font-semibold">
-                  {t('content.p5')}
-                </p>
+                {/* Photo Frame Effect */}
+                <div className="absolute -inset-2 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg -z-10 opacity-30" />
+                
+                {/* CEO Name and Title - Below Photo */}
+                <div className="mt-6 text-center">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                    {t('content.name')}
+                  </h3>
+                  <p 
+                    className="text-base md:text-lg font-semibold"
+                    style={{ color: 'var(--primary-blue-dark)' }}
+                  >
+                    {t('content.title')}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
