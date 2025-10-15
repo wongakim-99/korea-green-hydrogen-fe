@@ -1,0 +1,49 @@
+{
+  "About": {
+    "hero": {
+      "headline": "From Waste to Value, Engineering a Sustainable Future.",
+      "description": "KGH Global is a global energy solutions company leading a sustainable future by giving new value to waste. With <b>decades of experience</b> and <b>unparalleled technological capabilities</b>, we present innovative answers to energy and environmental challenges worldwide."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Improving the environment by transforming waste and organic materials into valuable bioresources through reliable solutions that benefit local communities."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "Transforming the world by facilitating a swift transition to sustainable communities, as a trusted leader in solutions for anaerobic digestion and organics recycling."
+    },
+    "philosophy": {
+      "title": "Our Philosophy",
+      "description": "Customer focus, quality, and integrity are the guiding lights of all our operations. Sustainable value creation for our customers is at the heart of everything we do. We only pursue projects with a clear business and environmental case, optimizing plant performance for maximum potential."
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "In all settings, we strive to be",
+      "proactive": {
+        "title": "Proactive",
+        "description": "We are passionate about innovative technology and strive to inspire people to make the world more sustainable. We take preemptive action against potential problems."
+      },
+      "responsive": {
+        "title": "Responsive",
+        "description": "We respond to market changes with agility and reply to enquiries quickly and directly. We approach every conversation with an open mind, focusing on finding optimal solutions."
+      },
+      "teamwork": {
+        "title": "Team Oriented",
+        "description": "One company, one team. Teamwork defines all interaction with colleagues and customers, making cooperation effective and productive."
+      },
+      "innovative": {
+        "title": "Innovative",
+        "description": "We practice ingenuity and creativity in all problem-solving. By anticipating customer needs and meeting demanding expectations, we identify and explore new opportunities."
+      },
+      "accountable": {
+        "title": "Accountable",
+        "description": "We act with integrity, never compromising the truth. We take responsibility for our performance in all decisions and actions."
+      }
+    },
+    "metadata": {
+      "title": "About Us - KGH Global",
+      "description": "KGH Global is a global energy solutions company leading a sustainable future by giving new value to waste."
+    }
+  }
+}
+
