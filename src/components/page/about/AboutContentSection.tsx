@@ -9,14 +9,21 @@ import {
   Lightbulb, 
   Shield 
 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutContentSection = () => {
   const t = useTranslations('About');
 
+  // 각 섹션에 대한 스크롤 애니메이션 ref
+  const [missionRef, missionVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+  const [visionRef, visionVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+  const [philosophyRef, philosophyVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+  const [valuesRef, valuesVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
+
   const sections = [
-    { number: '01', key: 'mission' as const, imagePath: '/images/about/mission.jpg' },
-    { number: '02', key: 'vision' as const, imagePath: '/images/about/vision.jpg' },
-    { number: '03', key: 'philosophy' as const, imagePath: '/images/about/philosophy.jpg' },
+    { number: '01', key: 'mission' as const, imagePath: '/images/about/our-mission.jpg', ref: missionRef, visible: missionVisible },
+    { number: '02', key: 'vision' as const, imagePath: '/images/about/out-vision.jpg', ref: visionRef, visible: visionVisible },
+    { number: '03', key: 'philosophy' as const, imagePath: '/images/about/our-trust.jpg', ref: philosophyRef, visible: philosophyVisible },
   ];
 
   const values = [
@@ -36,12 +43,13 @@ const AboutContentSection = () => {
             {sections.map((section, index) => (
               <div 
                 key={section.key}
+                ref={section.ref}
                 className={`flex flex-col ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 } gap-8 md:gap-10 lg:gap-16 items-center`}
               >
                 {/* Image Section */}
-                <div className="w-full lg:w-1/2">
+                <div className={`w-full lg:w-1/2 ${section.visible ? 'scroll-fade-in' : 'opacity-0'}`}>
                   <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent z-10" />
                     <Image
@@ -60,7 +68,9 @@ const AboutContentSection = () => {
                     {/* Number */}
                     <div className="flex-shrink-0">
                       <div 
-                        className="text-6xl md:text-7xl lg:text-8xl font-bold opacity-10"
+                        className={`text-6xl md:text-7xl lg:text-8xl font-bold opacity-10 ${
+                          section.visible ? 'scroll-fade-in delay-100' : 'opacity-0'
+                        }`}
                         style={{ color: 'var(--primary-blue)' }}
                       >
                         {section.number}
@@ -70,12 +80,16 @@ const AboutContentSection = () => {
                     {/* Text Content */}
                     <div className="flex-1 pt-2 md:pt-4">
                       <h2 
-                        className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
+                        className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 ${
+                          section.visible ? 'scroll-fade-in delay-200' : 'opacity-0'
+                        }`}
                         style={{ color: 'var(--primary-blue-dark)' }}
                       >
                         {t(`${section.key}.title`)}
                       </h2>
-                      <p className="text-base md:text-lg text-gray-700 leading-relaxed break-keep">
+                      <p className={`text-base md:text-lg text-gray-700 leading-relaxed break-keep ${
+                        section.visible ? 'scroll-fade-in delay-300' : 'opacity-0'
+                      }`}>
                         {t(`${section.key}.description`)}
                       </p>
                     </div>
@@ -91,14 +105,21 @@ const AboutContentSection = () => {
       <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-12 md:mb-16">
+          <div 
+            ref={valuesRef}
+            className="text-center mb-12 md:mb-16"
+          >
             <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+              className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
+                valuesVisible ? 'scroll-fade-in' : 'opacity-0'
+              }`}
               style={{ color: 'var(--primary-blue-dark)' }}
             >
               {t('values.title')}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600">
+            <p className={`text-lg md:text-xl text-gray-600 ${
+              valuesVisible ? 'scroll-fade-in delay-100' : 'opacity-0'
+            }`}>
               {t('values.subtitle')}
             </p>
           </div>
@@ -110,8 +131,13 @@ const AboutContentSection = () => {
               return (
                 <div 
                   key={value.key}
-                  className="bg-white rounded-lg p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 border-t-4 group"
-                  style={{ borderTopColor: 'var(--primary-blue)' }}
+                  className={`bg-white rounded-lg p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 group hover:-translate-y-2 ${
+                    valuesVisible ? 'scroll-fade-in' : 'opacity-0'
+                  }`}
+                  style={{ 
+                    borderTopColor: 'var(--primary-blue)',
+                    animationDelay: valuesVisible ? `${0.2 + index * 0.1}s` : '0s'
+                  }}
                 >
                   {/* Icon */}
                   <div 
