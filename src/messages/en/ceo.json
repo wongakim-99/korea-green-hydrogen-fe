@@ -1,8 +1,8 @@
 {
   "CEOPage": {
     "metadata": {
-      "title": "CEO Message - Korea Green Hydrogen",
-      "description": "Check out the message and vision of the CEO of Korea Green Hydrogen."
+      "title": "CEO Message - KGH Global",
+      "description": "Check out the message and vision of the CEO of KGH Global."
     },
     "breadcrumb": {
       "home": "Home",
@@ -11,18 +11,20 @@
     },
     "hero": {
       "title": "CEO Message",
-      "subtitle": "Korea Green Hydrogen's vision for a sustainable future"
+      "subtitle": "KGH Global's vision for a sustainable future"
     },
     "content": {
       "photoAlt": "CEO Photo",
-      "name": "Kim ○○",
+      "brandSlogan": "KGH Global \"Green Future\"",
+      "greeting": "Hello, I am Kim Seong-cheon, CEO of KGH Global.",
+      "name": "Kim Seong-cheon",
       "title": "CEO, President",
-      "heading": "A Challenge for a Sustainable Future",
-      "p1": "Hello. I am Kim ○○, CEO of Korea Green Hydrogen.",
-      "p2": "We are now facing the common human challenges of climate change and environmental pollution. In response to these demands of the times, Korea Green Hydrogen is creating a sustainable future through eco-friendly hydrogen energy solutions.",
-      "p3": "Through our innovative technology and continuous research and development, we are building a complete circular economy system that converts waste into energy, thereby realizing both environmental protection and economic feasibility.",
-      "p4": "Korea Green Hydrogen will continue to lead the eco-friendly energy industry in Korea through technological innovation and sustainable growth, and will stand at the center of change for a better future.",
-      "p5": "Thank you."
+      "signature": "Kim Seong-cheon",
+      "closing": "We ask for your warm interest and support for KGH Global's challenges and growth.",
+      "p1": "KGH Global is a <b>global energy solutions company that leads a sustainable future by giving new value to waste</b>. With decades of experience and unparalleled technological capabilities, we present innovative answers to energy and environmental challenges worldwide.",
+      "p2": "We are now facing the common human challenges of climate change and environmental pollution. In response to these demands of the times, KGH Global provides <b>reliable solutions that transform waste and organic materials into valuable bioresources</b>, improving the environment and benefiting local communities.",
+      "p3": "Through our innovative technology and continuous research and development, we are <b>building a complete circular economy system</b> that converts waste into energy, thereby realizing both environmental protection and economic feasibility. Customer focus, quality, and integrity are the guiding lights of all our operations, and sustainable value creation for our customers is at the heart of everything we do.",
+      "p4": "KGH Global will continue to <b>facilitate a swift transition to sustainable communities</b> through technological innovation and sustainable growth, becoming a trusted leader in anaerobic digestion and organics recycling solutions. We will stand at the center of change for a better future."
     }
   }
 }
