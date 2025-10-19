@@ -1,28 +1,46 @@
+'use client';
+
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { useState } from 'react';
+import Image from 'next/image';
 
-export const metadata: Metadata = {
-  title: '경영철학 - Korea Green Hydrogen',
-  description: 'Korea Green Hydrogen의 경영철학과 핵심 가치를 확인하세요.',
-};
+// export const metadata: Metadata = {
+//   title: '팀 프로필 - Korea Green Hydrogen',
+//   description: 'Meet the Korea Green Hydrogen management team.',
+// };
 
-export default function PhilosophyPage({params: {locale}}: {params: {locale: string}}) {
-  const coreValues = [
+type TabType = 'korea' | 'nz';
+
+interface TeamMember {
+  name: string;
+  position: string;
+  bio: string;
+  image: string;
+}
+
+export default function OurTeamPage({params: {locale}}: {params: {locale: string}}) {
+  const [activeTab, setActiveTab] = useState<TabType>('korea');
+
+  // 한국 팀원 데이터 (플레이스홀더)
+  const koreaTeam: TeamMember[] = [
     {
-      title: '혁신',
-      description: '지속적인 기술혁신을 통해 친환경 에너지 솔루션의 새로운 패러다임을 제시합니다.'
+      name: 'John Kim',
+      position: 'Chief Executive Officer',
+      bio: 'Over 20 years of experience in renewable energy sector, leading KGH Global\'s strategic vision.',
+      image: '/images/about/message/ceo.jpg'
     },
     {
-      title: '지속가능성',
-      description: '환경보호와 경제성을 동시에 추구하는 지속가능한 비즈니스 모델을 구축합니다.'
+      name: 'Sarah Lee',
+      position: 'Chief Technology Officer',
+      bio: 'Expert in biogas technology and green hydrogen production with multiple patents in the field.',
+      image: '/images/about/message/ceo.jpg'
     },
     {
-      title: '신뢰',
-      description: '고객과 파트너와의 신뢰를 바탕으로 투명하고 윤리적인 경영을 실천합니다.'
-    },
-    {
-      title: '책임',
-      description: '기업의 사회적 책임을 다하며 더 나은 미래를 위해 끊임없이 노력합니다.'
+      name: 'Michael Park',
+      position: 'Chief Operating Officer',
+      bio: 'Specializing in operational excellence and sustainable business development.',
+      image: '/images/about/message/ceo.jpg'
     }
   ];
 
@@ -32,117 +50,206 @@ export default function PhilosophyPage({params: {locale}}: {params: {locale: str
       <nav className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">홈</Link>
+            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors">
+              {locale === 'ko' ? '홈' : 'Home'}
+            </Link>
             <span className="text-gray-400">/</span>
-            <Link href={`/${locale}/about`} className="hover:text-sky-600 transition-colors">Company</Link>
+            <Link href={`/${locale}/about`} className="hover:text-sky-600 transition-colors">
+              Company
+            </Link>
             <span className="text-gray-400">/</span>
-            <span className="text-sky-600 font-bold">경영철학</span>
+            <span className="text-sky-600 font-bold">
+              {locale === 'ko' ? '팀 프로필' : 'Our Team'}
+            </span>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-emerald-600 to-green-600 py-20">
+      <section className="bg-gradient-to-r from-sky-600 to-blue-700 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              경영철학
+              {locale === 'ko' ? '팀 프로필' : 'Our Team'}
             </h1>
-            <p className="text-xl text-emerald-100 max-w-2xl mx-auto">
-              Korea Green Hydrogen의 핵심 가치와 경영 철학
+            <p className="text-xl text-sky-100 max-w-2xl mx-auto">
+              {locale === 'ko' 
+                ? '세계 각지에서 지속가능한 미래를 만들어가는 KGH Global의 리더십' 
+                : 'Meet the leadership driving sustainable innovation across the globe'}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <section className="py-20 bg-white">
+      {/* Visual Tab Menu Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Vision */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-sky-100 to-blue-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-8">
-                <svg className="w-12 h-12 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Vision</h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                친환경 수소 에너지 솔루션을 통해<br/>
-                <span className="text-sky-600 font-semibold">지속가능한 미래를 선도하는</span><br/>
-                글로벌 에너지 기업
-              </p>
-            </div>
-
-            {/* Mission */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-emerald-100 to-green-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-8">
-                <svg className="w-12 h-12 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Mission</h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                혁신적인 기술과 완전한 순환경제 시스템으로<br/>
-                <span className="text-emerald-600 font-semibold">환경보호와 경제성을 동시에 실현</span><br/>
-                하는 에너지 솔루션 제공
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Core Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Korea Green Hydrogen가 추구하는 핵심 가치들
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreValues.map((value, index) => (
-              <div key={index} className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-sky-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {index === 0 && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />}
-                    {index === 1 && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />}
-                    {index === 2 && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />}
-                    {index === 3 && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />}
-                  </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Korea Tab */}
+            <button
+              onClick={() => setActiveTab('korea')}
+              className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 group ${
+                activeTab === 'korea' 
+                  ? 'ring-4 ring-sky-500 shadow-2xl transform scale-105' 
+                  : 'hover:shadow-xl hover:scale-102'
+              }`}
+            >
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/about/our-mission.jpg"
+                  alt="South Korea Branch"
+                  fill
+                  className="object-cover"
+                />
+                <div className={`absolute inset-0 transition-colors ${
+                  activeTab === 'korea' 
+                    ? 'bg-gradient-to-t from-sky-900/90 via-sky-800/70 to-sky-600/50' 
+                    : 'bg-gradient-to-t from-gray-900/80 via-gray-800/60 to-gray-700/40 group-hover:from-sky-900/70 group-hover:via-sky-800/50 group-hover:to-sky-600/30'
+                }`}></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
+                  <div className={`mb-4 transition-transform ${activeTab === 'korea' ? 'scale-110' : 'group-hover:scale-105'}`}>
+                    <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
+                    </svg>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                    South Korea
+                  </h2>
+                  <p className="text-lg md:text-xl text-gray-100 font-medium">
+                    {locale === 'ko' ? 'KGH 글로벌 본사' : 'KGH Global Headquarters'}
+                  </p>
+                  {activeTab === 'korea' && (
+                    <div className="mt-4 flex items-center text-sky-200">
+                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="font-semibold">{locale === 'ko' ? '선택됨' : 'Selected'}</span>
+                    </div>
+                  )}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
-            ))}
+            </button>
+
+            {/* New Zealand Tab */}
+            <button
+              onClick={() => setActiveTab('nz')}
+              className={`relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 group ${
+                activeTab === 'nz' 
+                  ? 'ring-4 ring-emerald-500 shadow-2xl transform scale-105' 
+                  : 'hover:shadow-xl hover:scale-102'
+              }`}
+            >
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/about/out-vision.jpg"
+                  alt="New Zealand Branch"
+                  fill
+                  className="object-cover"
+                />
+                <div className={`absolute inset-0 transition-colors ${
+                  activeTab === 'nz' 
+                    ? 'bg-gradient-to-t from-emerald-900/90 via-emerald-800/70 to-emerald-600/50' 
+                    : 'bg-gradient-to-t from-gray-900/80 via-gray-800/60 to-gray-700/40 group-hover:from-emerald-900/70 group-hover:via-emerald-800/50 group-hover:to-emerald-600/30'
+                }`}></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
+                  <div className={`mb-4 transition-transform ${activeTab === 'nz' ? 'scale-110' : 'group-hover:scale-105'}`}>
+                    <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                    New Zealand
+                  </h2>
+                  <p className="text-lg md:text-xl text-gray-100 font-medium text-center leading-relaxed">
+                    The Southern Hemisphere Branch<br />for KGH Global
+                  </p>
+                  {activeTab === 'nz' && (
+                    <div className="mt-4 flex items-center text-emerald-200">
+                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="font-semibold">{locale === 'ko' ? '선택됨' : 'Selected'}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </button>
+          </div>
+
+          {/* Content Section */}
+          <div className="min-h-[500px]">
+            {activeTab === 'korea' ? (
+              <div>
+                <div className="text-center mb-12">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                    {locale === 'ko' ? '한국 지사 경영진' : 'South Korea Leadership Team'}
+                  </h3>
+                  <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    {locale === 'ko' 
+                      ? '지속 가능한 에너지 솔루션으로 미래를 선도하는 KGH Global의 핵심 리더십' 
+                      : 'Our core leadership team driving sustainable energy solutions and innovation'}
+                  </p>
+                </div>
+
+                {/* Team Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {koreaTeam.map((member, index) => (
+                    <div 
+                      key={index} 
+                      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group"
+                    >
+                      <div className="relative aspect-[4/5] overflow-hidden">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                          {member.name}
+                        </h4>
+                        <p className="text-sky-600 font-semibold mb-4 text-lg">
+                          {member.position}
+                        </p>
+                        <p className="text-gray-600 leading-relaxed">
+                          {member.bio}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="flex items-center justify-center min-h-[500px]">
+                <div className="text-center max-w-2xl mx-auto p-12">
+                  <div className="mb-8">
+                    <svg className="w-24 h-24 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {locale === 'ko' ? '곧 공개됩니다' : 'Coming Soon'}
+                  </h3>
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    {locale === 'ko' 
+                      ? '남반구 지사의 팀 프로필이 곧 공개될 예정입니다.' 
+                      : 'Our team profiles for the Southern Hemisphere branch are coming soon.'}
+                  </p>
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <p className="text-gray-500 italic">
+                      {locale === 'ko' 
+                        ? 'The Southern Hemisphere Branch for KGH Global' 
+                        : 'The Southern Hemisphere Branch for KGH Global'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
-
-      {/* Philosophy Statement */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">경영철학</h2>
-          </div>
-          
-          <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-lg p-8 md:p-12">
-            <blockquote className="text-xl md:text-2xl text-gray-800 leading-relaxed text-center font-medium">
-              우리는 기술혁신을 통해 환경과 경제가 조화롭게 공존하는 
-              지속가능한 미래를 만들어갑니다. 
-              고객의 신뢰를 바탕으로 사회적 책임을 다하며, 
-              더 나은 세상을 위한 변화의 중심에 서겠습니다.
-            </blockquote>
-            <div className="text-center mt-8">
-              <p className="text-sky-600 font-semibold text-lg">Korea Green Hydrogen</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 }
