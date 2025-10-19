@@ -1,26 +1,25 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Breadcrumb from '@/components/Breadcrumb';
+import { getTranslations } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'CCUS - Korea Green Hydrogen',
   description: '탄소 포집, 저장 및 활용 기술(CCUS)을 통한 탄소중립 실현 서비스를 소개합니다.',
 };
 
-export default function CCUSPage({params: {locale}}: {params: {locale: string}}) {
+export default async function CCUSPage({params: {locale}}: {params: {locale: string}}) {
+  const tNav = await getTranslations({ locale, namespace: 'Navigation' });
+  
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
-      <nav className="bg-gray-50 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href={`/${locale}`} className="hover:text-blue-600 transition-colors">홈</Link>
-            <span className="text-gray-400">/</span>
-            <Link href={`/${locale}/services`} className="hover:text-blue-600 transition-colors">서비스</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-blue-600 font-bold">CCUS</span>
-          </div>
-        </div>
-      </nav>
+      <Breadcrumb 
+        items={[
+          { label: tNav('business'), href: '/services' },
+          { label: tNav('ccus') }
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-cyan-600 py-20">
