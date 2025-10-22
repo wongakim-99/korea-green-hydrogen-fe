@@ -10,6 +10,21 @@ interface BenefitsSectionProps {
   imageUrls?: string[];
 }
 
+interface BenefitItem {
+  id: string;
+  icon: React.ReactNode;
+  color: string;
+  bgColor: string;
+  textColor: string;
+  stats?: Array<{
+    label: string;
+    value: string;
+    subtext: string;
+  }>;
+  crops?: string[];
+  conversion?: string;
+}
+
 export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
   const [ref, isVisible] = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
   const t = useTranslations();
@@ -75,7 +90,7 @@ export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
     }
   }, [isVisible]);
 
-  const benefits = [
+  const benefits: BenefitItem[] = [
     {
       id: 'productivity',
       icon: (
@@ -157,7 +172,7 @@ export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
                 <div className="text-center">
                   {benefit.id === 'productivity' && (
                     <div className="space-y-4">
-                      {benefit.stats.map((stat, statIndex) => (
+                      {benefit.stats?.map((stat, statIndex) => (
                         <div key={statIndex} className="bg-white/50 rounded-lg p-4">
                           <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
                             {stat.value}
@@ -252,7 +267,7 @@ export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
 
                       {/* 작물 태그 */}
                       <div className="flex flex-wrap justify-center gap-2">
-                        {benefit.crops.map((crop, cropIndex) => (
+                        {benefit.crops?.map((crop, cropIndex) => (
                           <span key={cropIndex} className="bg-white/50 px-3 py-1 rounded-full text-sm font-medium text-gray-700">
                             {crop}
                           </span>
