@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
+import Breadcrumb from '@/components/Breadcrumb';
 
 // Google Maps 컴포넌트를 동적 로드 (SSR 방지)
 const GoogleMapComponent = dynamic(() => import('@/components/GoogleMap'), {
@@ -23,20 +24,14 @@ export default function ContactPage({params: {locale}}: {params: {locale: string
   const tCommon = useTranslations('Footer');
   const tNav = useTranslations('Navigation');
 
+  const breadcrumbItems = [
+    { label: t('title') }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Breadcrumb */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-sm text-gray-600 py-4">
-            <Link href={`/${locale}`} className="hover:text-sky-600 transition-colors font-medium">
-              {tNav('home')}
-            </Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-sky-600 font-semibold">{t('title')}</span>
-          </div>
-        </div>
-      </nav>
+      <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero Section with Background Image */}
       <section className="relative h-[50vh] min-h-[400px]">
