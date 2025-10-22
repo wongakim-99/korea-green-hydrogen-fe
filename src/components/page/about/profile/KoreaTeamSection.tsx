@@ -55,8 +55,8 @@ export default function KoreaTeamSection({ koreaTeam, locale }: KoreaTeamSection
 
       {/* 상세 프로필 섹션 */}
       {selectedMember && (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+        <div className="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-0">
             {/* 왼쪽: 이미지 */}
             <div className="relative aspect-[3/4] lg:aspect-[3/4] lg:col-span-1">
               <Image
@@ -68,7 +68,7 @@ export default function KoreaTeamSection({ koreaTeam, locale }: KoreaTeamSection
             </div>
             
             {/* 오른쪽: 텍스트 정보 */}
-            <div className="p-8 lg:p-12 flex flex-col justify-center lg:col-span-2">
+            <div className="p-8 lg:p-12 flex flex-col justify-center lg:col-span-3">
               <div className="mb-6">
                 <p className="text-sm text-gray-500 mb-2">
                   {selectedMember.position}
