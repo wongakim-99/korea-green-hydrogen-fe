@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
 import {getTranslations} from 'next-intl/server';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}): Promise<Metadata> {
   const t = await getTranslations({locale, namespace: 'CEOPage.metadata'});
@@ -14,20 +14,16 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
 
 export default async function CEOPage({params: {locale}}: {params: {locale: string}}) {
   const t = await getTranslations({locale, namespace: 'CEOPage'});
+  
+  const breadcrumbItems = [
+    { label: t('breadcrumb.company'), href: '/about' },
+    { label: t('breadcrumb.ceoMessage') }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
-      <nav className="bg-gray-50 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
-            <Link href={`/${locale}`} className="hover:text-blue-600 transition-colors">{t('breadcrumb.home')}</Link>
-            <span className="text-gray-400">/</span>
-            <Link href={`/${locale}/about`} className="hover:text-blue-600 transition-colors">{t('breadcrumb.company')}</Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-blue-600 font-bold">{t('breadcrumb.ceoMessage')}</span>
-          </div>
-        </div>
-      </nav>
+      <Breadcrumb items={breadcrumbItems} />
 
       {/* CEO Message Content - HL Holdings Style */}
       <section className="py-16 md:py-20 lg:py-24">
