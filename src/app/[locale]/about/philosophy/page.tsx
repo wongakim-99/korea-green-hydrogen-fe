@@ -19,25 +19,18 @@ interface TeamMember {
 export default function OurTeamPage({params: {locale}}: {params: {locale: string}}) {
   const [activeTab, setActiveTab] = useState<TabType>('korea');
 
-  // 한국 팀원 데이터 (플레이스홀더)
+  // 한국 팀원 데이터
   const koreaTeam: TeamMember[] = [
     {
-      name: 'John Kim',
-      position: 'Chief Executive Officer',
-      bio: 'Over 20 years of experience in renewable energy sector, leading KGH Global\'s strategic vision.',
-      image: '/images/about/message/ceo.jpg'
-    },
-    {
-      name: 'Sarah Lee',
-      position: 'Chief Technology Officer',
-      bio: 'Expert in biogas technology and green hydrogen production with multiple patents in the field.',
-      image: '/images/about/message/ceo.jpg'
-    },
-    {
-      name: 'Michael Park',
-      position: 'Chief Operating Officer',
-      bio: 'Specializing in operational excellence and sustainable business development.',
-      image: '/images/about/message/ceo.jpg'
+      name: 'Sungchun Kim',
+      position: 'CEO',
+      bio: locale === 'ko' 
+        ? 'KGH Global의 비전을 이끌어가는 최고경영자로서 지속가능한 에너지 솔루션의 미래를 설계합니다.'
+        : 'Leading KGH Global\'s vision and designing the future of sustainable energy solutions.',
+      image: '/images/about/message/ceo.jpg',
+      detailedBio: locale === 'ko' 
+        ? '김성천 CEO는 20년 이상의 재생에너지 분야 경험을 바탕으로 KGH Global의 전략적 비전을 이끌고 있습니다. 친환경 수소 기술의 혁신과 지속가능한 미래를 위한 리더십을 발휘하고 있습니다.'
+        : 'CEO Sungchun Kim leads KGH Global\'s strategic vision with over 20 years of experience in the renewable energy sector. He demonstrates leadership in green hydrogen technology innovation and building a sustainable future.'
     }
   ];
 
