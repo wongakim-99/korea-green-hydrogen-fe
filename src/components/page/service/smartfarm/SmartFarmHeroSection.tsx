@@ -1,57 +1,82 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import Image from 'next/image';
 
-export default function SmartFarmHeroSection() {
-  const [ref, isVisible] = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
+interface SmartFarmHeroSectionProps {
+  imageUrl?: string;
+}
+
+export default function SmartFarmHeroSection({ imageUrl }: SmartFarmHeroSectionProps) {
   const t = useTranslations();
-
+  
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative bg-gray-900 min-h-[60vh] md:min-h-[70vh] lg:min-h-[87vh] flex items-center overflow-hidden">
       {/* 배경 이미지 */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800">
-          {/* 임시 배경 - 실제 이미지로 교체 예정 */}
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+      <div className="absolute inset-0">
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt="스마트팜 시설"
+            fill
+            className="object-cover opacity-40"
+            sizes="100vw"
+            priority
+          />
+        ) : (
+          /* 폴백 그라데이션 배경 */
+          <div className="w-full h-full bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800"></div>
+        )}
       </div>
-
-      {/* 콘텐츠 */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className={`transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          {/* 메인 타이틀 */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
-            <span className="block mb-2">{t('hero.title')}</span>
-          </h1>
-
-          {/* 서브 타이틀 */}
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-green-100 mb-8 md:mb-12 leading-relaxed">
-            {t('hero.subtitle')}
-          </h2>
-
-          {/* 설명 */}
-          <div className="max-w-4xl mx-auto">
-            <p className="text-base sm:text-lg md:text-xl text-gray-100 leading-relaxed mb-8 md:mb-12">
-              {t('hero.description')}
-            </p>
+      
+      {/* 그라데이션 오버레이 */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/75 via-gray-900/60 to-gray-900/45"></div>
+      
+      <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-3xl mr-auto">
+          {/* 작은 라벨 */}
+          <div className="inline-block mb-6 md:mb-8">
+            <span className="text-sm md:text-base font-medium text-emerald-400 tracking-wide uppercase">
+              스마트 농업 솔루션
+            </span>
           </div>
-
-          {/* 스크롤 인디케이터 */}
-          <div className="flex justify-center">
-            <div className="animate-bounce">
-              <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
+          
+          {/* 메인 헤드라인 */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight break-keep">
+            {t('hero.title')}
+          </h1>
+          
+          {/* 서브 헤드라인 */}
+          <p className="text-2xl sm:text-3xl md:text-4xl text-emerald-300 font-semibold mb-6 md:mb-8 leading-tight break-keep">
+            {t('hero.subtitle')}
+          </p>
+          
+          {/* 핵심 가치 포인트들 */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 pt-4">
+            <div className="flex items-center">
+              <div className="w-1 h-12 bg-emerald-500 mr-4"></div>
+              <div>
+                <h3 className="text-lg font-bold text-white break-keep">{t('hero.benefits.productivity.title')}</h3>
+                <p className="text-sm text-gray-400 mt-1 break-keep">{t('hero.benefits.productivity.subtitle')}</p>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="w-1 h-12 bg-emerald-500 mr-4"></div>
+              <div>
+                <h3 className="text-lg font-bold text-white break-keep">{t('hero.benefits.quality.title')}</h3>
+                <p className="text-sm text-gray-400 mt-1 break-keep">{t('hero.benefits.quality.subtitle')}</p>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="w-1 h-12 bg-emerald-500 mr-4"></div>
+              <div>
+                <h3 className="text-lg font-bold text-white break-keep">{t('hero.benefits.oxygen.title')}</h3>
+                <p className="text-sm text-gray-400 mt-1 break-keep">{t('hero.benefits.oxygen.subtitle')}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* 하단 그라데이션 오버레이 */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-5"></div>
     </section>
   );
 }

@@ -1,8 +1,22 @@
 {
   "hero": {
-    "title": "KGH goes beyond capturing carbon - we cultivate the future with carbon utilization.",
-    "subtitle": "Zero-Waste Completion: KGH's Resource Circulation Hub, Smart Farm",
-    "description": "KGH's Smart Farm is the core of our decarbonization solution, utilizing all byproducts from biogas plants (carbon dioxide, heat, fertilizer, water) to produce high-value crops and oxygen (O₂)."
+    "title": "KGH: Cultivating the Future with Carbon",
+    "subtitle": "Zero-Waste Completion, Smart Farm",
+    "description": "A decarbonization solution that utilizes all byproducts from biogas plants to produce high-value crops and oxygen.",
+    "benefits": {
+      "productivity": {
+        "title": "2x Productivity",
+        "subtitle": "CO₂ Concentration Optimization"
+      },
+      "quality": {
+        "title": "High-Quality Crops",
+        "subtitle": "Strawberries, Tomatoes, etc."
+      },
+      "oxygen": {
+        "title": "Oxygen Production",
+        "subtitle": "Carbon Neutrality Realization"
+      }
+    }
   },
   "resourceCycle": {
     "title": "Circulation of 4 Resources",

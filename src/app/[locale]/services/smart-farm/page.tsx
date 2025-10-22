@@ -15,6 +15,12 @@ export const metadata: Metadata = {
 export default async function SmartFarmPage({params: {locale}}: {params: {locale: string}}) {
   const tNav = await getTranslations({ locale, namespace: 'Navigation' });
   
+  // TODO: 나중에 실제 이미지 URL로 교체
+  // 예시: const heroImageUrl = '/images/services/smart-farm/hero-background.jpg';
+  // 예시: const cropImageUrls = ['/images/services/smart-farm/strawberry.jpg', '/images/services/smart-farm/tomato.jpg'];
+  const heroImageUrl = undefined; // 이미지를 받기 전까지는 undefined로 설정 (폴백 그라데이션 사용)
+  const cropImageUrls = undefined; // 이미지를 받기 전까지는 undefined로 설정 (플레이스홀더 표시)
+  
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
@@ -25,14 +31,14 @@ export default async function SmartFarmPage({params: {locale}}: {params: {locale
         ]}
       />
 
-      {/* Hero Section */}
-      <SmartFarmHeroSection />
+      {/* Hero Section - 배경 이미지 prop 전달 */}
+      <SmartFarmHeroSection imageUrl={heroImageUrl} />
 
       {/* Resource Cycle Section */}
       <ResourceCycleSection />
 
-      {/* Benefits Section */}
-      <BenefitsSection />
+      {/* Benefits Section - 작물 이미지 배열 prop 전달 */}
+      <BenefitsSection imageUrls={cropImageUrls} />
 
       {/* Summary Section */}
       <SummarySection />

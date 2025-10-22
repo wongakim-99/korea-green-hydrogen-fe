@@ -1,8 +1,22 @@
 {
   "hero": {
-    "title": "KGH는 탄소를 포집(Capture)하는 것을 넘어, 탄소로 미래를 재배(Utilization)합니다.",
-    "subtitle": "폐기물 제로(Zero-Waste)의 완성: KGH의 자원순환 허브, 스마트팜",
-    "description": "KGH의 스마트팜은 바이오가스 플랜트에서 발생하는 모든 부산물(이산화탄소, 열, 비료, 물)을 활용하여 고부가가치 작물과 산소(O₂)를 생산하는 KGH 탈탄소 솔루션의 핵심입니다."
+    "title": "KGH, 탄소로 미래를 재배합니다",
+    "subtitle": "폐기물 제로의 완성, 스마트팜",
+    "description": "바이오가스 플랜트의 모든 부산물을 활용하여 고부가가치 작물과 산소를 생산하는 탈탄소 솔루션입니다.",
+    "benefits": {
+      "productivity": {
+        "title": "2배 생산성",
+        "subtitle": "CO₂ 농도 최적화"
+      },
+      "quality": {
+        "title": "고품질 작물",
+        "subtitle": "딸기, 토마토 등"
+      },
+      "oxygen": {
+        "title": "산소 생산",
+        "subtitle": "탄소 중립 실현"
+      }
+    }
   },
   "resourceCycle": {
     "title": "4가지 자원의 순환",

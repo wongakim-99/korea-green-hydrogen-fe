@@ -2,15 +2,47 @@
 
 import { useTranslations } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Image from 'next/image';
 
-export default function BenefitsSection() {
+interface BenefitsSectionProps {
+  imageUrls?: string[];
+}
+
+export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
   const [ref, isVisible] = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
   const t = useTranslations();
   
   // 카운트업 애니메이션을 위한 상태
   const [co2Count, setCo2Count] = useState(400);
   const [harvestCount, setHarvestCount] = useState(1);
+
+  // Embla Carousel 설정
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   useEffect(() => {
     if (isVisible) {
@@ -143,13 +175,91 @@ export default function BenefitsSection() {
 
                   {benefit.id === 'quality' && (
                     <div className="space-y-4">
-                      <div className="flex flex-wrap justify-center gap-2 mb-4">
+                      {/* 이미지 캐러셀 */}
+                      {imageUrls && imageUrls.length > 0 ? (
+                        <div className="relative">
+                          {/* Embla Carousel Container */}
+                          <div className="overflow-hidden rounded-lg" ref={emblaRef}>
+                            <div className="flex">
+                              {imageUrls.map((url, index) => (
+                                <div key={index} className="flex-[0_0_100%] min-w-0">
+                                  <div className="relative w-full h-48 md:h-64 bg-white/50 rounded-lg overflow-hidden">
+                                    <Image
+                                      src={url}
+                                      alt={`고부가가치 작물 ${index + 1}`}
+                                      fill
+                                      className="object-cover"
+                                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* 캐러셀 컨트롤 버튼 */}
+                          {imageUrls.length > 1 && (
+                            <>
+                              <button
+                                onClick={scrollPrev}
+                                className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-purple-600 transition-all hover:scale-110"
+                                aria-label="이전 이미지"
+                              >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                              </button>
+                              <button
+                                onClick={scrollNext}
+                                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-purple-600 transition-all hover:scale-110"
+                                aria-label="다음 이미지"
+                              >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </button>
+
+                              {/* 인디케이터 점들 */}
+                              <div className="flex justify-center gap-2 mt-4">
+                                {imageUrls.map((_, index) => (
+                                  <button
+                                    key={index}
+                                    onClick={() => emblaApi?.scrollTo(index)}
+                                    className={`w-2 h-2 rounded-full transition-all ${
+                                      index === selectedIndex
+                                        ? 'bg-purple-600 w-6'
+                                        : 'bg-purple-300 hover:bg-purple-400'
+                                    }`}
+                                    aria-label={`이미지 ${index + 1}로 이동`}
+                                  />
+                                ))}
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      ) : (
+                        /* 플레이스홀더 - 이미지가 없을 때 */
+                        <div className="relative w-full h-48 md:h-64 bg-white/50 rounded-lg overflow-hidden flex items-center justify-center">
+                          <div className="text-center">
+                            <svg className="w-16 h-16 text-purple-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <p className="text-sm text-gray-500 font-medium">이미지 준비 중</p>
+                            <p className="text-xs text-gray-400 mt-1">곧 고품질 작물 이미지가 추가됩니다</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 작물 태그 */}
+                      <div className="flex flex-wrap justify-center gap-2">
                         {benefit.crops.map((crop, cropIndex) => (
                           <span key={cropIndex} className="bg-white/50 px-3 py-1 rounded-full text-sm font-medium text-gray-700">
                             {crop}
                           </span>
                         ))}
                       </div>
+
+                      {/* 설명 텍스트 */}
                       <p className="text-gray-600 leading-relaxed">
                         {t('benefits.quality.description')}
                       </p>
