@@ -20,7 +20,7 @@ export default function Breadcrumb({ items, colorClass = 'sky-600' }: Breadcrumb
   return (
     <nav className="bg-gray-50 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center space-x-2 text-base text-gray-700 font-semibold">
+        <div className="flex items-center space-x-2 text-base text-gray-700">
           <Link href={`/${locale}`} className={`hover:text-${colorClass} transition-colors`}>
             {t('home')}
           </Link>
