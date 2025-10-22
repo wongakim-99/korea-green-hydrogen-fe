@@ -24,7 +24,7 @@ export default function TeamTabMenu({ activeTab, setActiveTab, locale }: TeamTab
       >
         <div className="aspect-[16/10] relative">
           <Image
-            src="/images/about/our-mission.jpg"
+            src="/images/about/profile/korea.jpg"
             alt="South Korea Branch"
             fill
             className="object-cover"
@@ -69,7 +69,7 @@ export default function TeamTabMenu({ activeTab, setActiveTab, locale }: TeamTab
       >
         <div className="aspect-[16/10] relative">
           <Image
-            src="/images/about/out-vision.jpg"
+            src="/images/about/profile/new-zealand.jpg"
             alt="New Zealand Branch"
             fill
             className="object-cover"
