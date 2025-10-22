@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "title": "KGH는 탄소를 포집(Capture)하는 것을 넘어, 탄소로 미래를 재배(Utilization)합니다.",
+    "subtitle": "폐기물 제로(Zero-Waste)의 완성: KGH의 자원순환 허브, 스마트팜",
+    "description": "KGH의 스마트팜은 바이오가스 플랜트에서 발생하는 모든 부산물(이산화탄소, 열, 비료, 물)을 활용하여 고부가가치 작물과 산소(O₂)를 생산하는 KGH 탈탄소 솔루션의 핵심입니다."
+  },
+  "resourceCycle": {
+    "title": "4가지 자원의 순환",
+    "subtitle": "바이오가스/수소 공정의 '부산물'을 '자원'으로 활용",
+    "resources": {
+      "co2": {
+        "title": "CO₂ (이산화탄소) 공급",
+        "description": "수소 개질 공정 등에서 포집된 CO₂는 스마트팜의 '성장 촉진제'가 됩니다."
+      },
+      "heat": {
+        "title": "열(Heat) 공급",
+        "description": "수소 생산 시 발생하는 폐열(廢熱)은 스마트팜의 '난방 에너지'로 재사용됩니다."
+      },
+      "fertilizer": {
+        "title": "바이오 비료 공급",
+        "description": "슬러지 처리 후 남은 최종 케이크(Final Cake)는 '친환경 유기농 비료'로 공급됩니다."
+      },
+      "water": {
+        "title": "물(Water) 공급",
+        "description": "공정에서 발생한 폐수는 고도 처리(Anammox 등)를 거쳐 '깨끗한 농업용수'로 재탄생합니다."
+      }
+    }
+  },
+  "benefits": {
+    "title": "무엇을 만들어 내는가?",
+    "subtitle": "투입된 자원으로 얻는 구체적인 결과",
+    "productivity": {
+      "title": "생산성 극대화",
+      "co2Concentration": "일반 대기(400PPM) 대비 2배 높은 800-1,000PPM의 CO₂ 농도 유지",
+      "result": "식물 성장 촉진, 수확량 2배 증가"
+    },
+    "quality": {
+      "title": "고품질 생산물",
+      "description": "친환경 비료와 깨끗한 물로 딸기, 토마토 등 고부가가치 작물 재배"
+    },
+    "oxygen": {
+      "title": "산소 생산",
+      "description": "탄소 소비 + 1mol의 CO₂ 당 1mol의 산소(O₂) 생산"
+    }
+  },
+  "summary": {
+    "title": "KGH 스마트팜은 'Waste-to-Resource' 모델의 완성이자, 'Net-Zero 2050'을 앞당기는 핵심 솔루션입니다.",
+    "cta": {
+      "viewTechnology": "KGH 전체 기술 플로우 보기",
+      "learnBiogas": "바이오가스 솔루션 알아보기"
+    }
+  },
+  "navigation": {
+    "otherServices": "다른 사업 분야",
+    "backToServices": "전체 서비스로 돌아가기"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "title": "KGH goes beyond capturing carbon - we cultivate the future with carbon utilization.",
+    "subtitle": "Zero-Waste Completion: KGH's Resource Circulation Hub, Smart Farm",
+    "description": "KGH's Smart Farm is the core of our decarbonization solution, utilizing all byproducts from biogas plants (carbon dioxide, heat, fertilizer, water) to produce high-value crops and oxygen (O₂)."
+  },
+  "resourceCycle": {
+    "title": "Circulation of 4 Resources",
+    "subtitle": "Transforming 'byproducts' from biogas/hydrogen processes into 'resources'",
+    "resources": {
+      "co2": {
+        "title": "CO₂ (Carbon Dioxide) Supply",
+        "description": "CO₂ captured from hydrogen reforming processes becomes the 'growth accelerator' for our smart farm."
+      },
+      "heat": {
+        "title": "Heat Supply",
+        "description": "Waste heat generated during hydrogen production is reused as 'heating energy' for the smart farm."
+      },
+      "fertilizer": {
+        "title": "Bio Fertilizer Supply",
+        "description": "Final cake remaining after sludge treatment is supplied as 'eco-friendly organic fertilizer'."
+      },
+      "water": {
+        "title": "Water Supply",
+        "description": "Wastewater from processes undergoes advanced treatment (Anammox, etc.) to be reborn as 'clean agricultural water'."
+      }
+    }
+  },
+  "benefits": {
+    "title": "What Do We Produce?",
+    "subtitle": "Concrete results from invested resources",
+    "productivity": {
+      "title": "Productivity Maximization",
+      "co2Concentration": "Maintaining 2x higher CO₂ concentration of 800-1,000PPM compared to normal atmosphere (400PPM)",
+      "result": "Plant growth acceleration, 2x increase in harvest yield"
+    },
+    "quality": {
+      "title": "High-Quality Produce",
+      "description": "Cultivating high-value crops like strawberries and tomatoes using eco-friendly fertilizer and clean water"
+    },
+    "oxygen": {
+      "title": "Oxygen Production",
+      "description": "Carbon consumption + 1mol of oxygen (O₂) production per 1mol of CO₂"
+    }
+  },
+  "summary": {
+    "title": "KGH Smart Farm is the completion of the 'Waste-to-Resource' model and a core solution accelerating 'Net-Zero 2050'.",
+    "cta": {
+      "viewTechnology": "View Complete KGH Technology Flow",
+      "learnBiogas": "Learn About Biogas Solutions"
+    }
+  },
+  "navigation": {
+    "otherServices": "Other Business Areas",
+    "backToServices": "Back to All Services"
+  }
+}
