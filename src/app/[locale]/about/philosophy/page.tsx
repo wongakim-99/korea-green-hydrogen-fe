@@ -14,6 +14,7 @@ interface TeamMember {
   position: string;
   bio: string;
   image: string;
+  detailedBio?: string;
 }
 
 export default function OurTeamPage({params: {locale}}: {params: {locale: string}}) {
