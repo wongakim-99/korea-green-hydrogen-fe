@@ -154,6 +154,17 @@ export default function Services() {
                             />
                             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
                           </div>
+                        ) : area.id === 'smart-farm' ? (
+                          <div className="w-full h-full relative">
+                            <Image
+                              src="/images/services/smart-farm/smart-farm.jpg"
+                              alt={area.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-110"
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
+                          </div>
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
                             <div className="text-center transform transition-transform duration-500 group-hover:scale-110">

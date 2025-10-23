@@ -43,7 +43,7 @@ export default function OtherServicesNavigation() {
     {
       id: 'smart-farm',
       href: '/services/smart-farm',
-      image: '/images/services/smart-farm/smart-farm-main.jpg', // TODO: 이미지 추가 필요
+      image: '/images/services/smart-farm/smart-farm.jpg',
       titleKey: 'smartFarm.title',
       descriptionKey: 'smartFarm.description',
       delay: '0.3s',
@@ -92,7 +92,7 @@ export default function OtherServicesNavigation() {
                   <div className="absolute inset-0 bg-sky-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   
                   {/* Placeholder 아이콘 (이미지가 없는 서비스에만 표시) */}
-                  {(service.id === 'ccus' || service.id === 'smart-farm') && (
+                  {service.id === 'ccus' && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-sky-400 transition-transform duration-500 group-hover:scale-110">
                         <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
