@@ -50,15 +50,33 @@
     "productivity": {
       "title": "Productivity Maximization",
       "co2Concentration": "Maintaining 2x higher CO₂ concentration of 800-1,000PPM compared to normal atmosphere (400PPM)",
-      "result": "Plant growth acceleration, 2x increase in harvest yield"
+      "result": "Plant growth acceleration, 2x increase in harvest yield",
+      "stats": {
+        "co2Label": "CO₂ Concentration",
+        "co2Subtext": "Compared to normal atmosphere",
+        "harvestLabel": "Harvest Yield",
+        "harvestSubtext": "Increase"
+      },
+      "overlay": {
+        "co2Optimization": "CO₂ Concentration Optimization"
+      }
     },
     "quality": {
       "title": "High-Quality Produce",
-      "description": "Cultivating high-value crops like strawberries and tomatoes using eco-friendly fertilizer and clean water"
+      "description": "Cultivating high-value crops like strawberries and tomatoes using eco-friendly fertilizer and clean water",
+      "crops": ["Strawberries", "Tomatoes", "High-value crops"],
+      "overlay": {
+        "highValueCrops": "High-value Crops",
+        "cropExamples": "Strawberries, Tomatoes, etc."
+      }
     },
     "oxygen": {
       "title": "Oxygen Production",
-      "description": "Carbon consumption + 1mol of oxygen (O₂) production per 1mol of CO₂"
+      "description": "Carbon consumption + 1mol of oxygen (O₂) production per 1mol of CO₂",
+      "overlay": {
+        "conversion": "1mol CO₂ → 1mol O₂",
+        "carbonNeutral": "Carbon Neutrality Realization"
+      }
     }
   },
   "summary": {

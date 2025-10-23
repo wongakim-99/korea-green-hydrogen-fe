@@ -50,15 +50,33 @@
     "productivity": {
       "title": "생산성 극대화",
       "co2Concentration": "일반 대기(400PPM) 대비 2배 높은 800-1,000PPM의 CO₂ 농도 유지",
-      "result": "식물 성장 촉진, 수확량 2배 증가"
+      "result": "식물 성장 촉진, 수확량 2배 증가",
+      "stats": {
+        "co2Label": "CO₂ 농도",
+        "co2Subtext": "일반 대기 대비",
+        "harvestLabel": "수확량",
+        "harvestSubtext": "증가"
+      },
+      "overlay": {
+        "co2Optimization": "CO₂ 농도 최적화"
+      }
     },
     "quality": {
       "title": "고품질 생산물",
-      "description": "친환경 비료와 깨끗한 물로 딸기, 토마토 등 고부가가치 작물 재배"
+      "description": "친환경 비료와 깨끗한 물로 딸기, 토마토 등 고부가가치 작물 재배",
+      "crops": ["딸기", "토마토", "고부가가치 작물"],
+      "overlay": {
+        "highValueCrops": "고부가가치 작물",
+        "cropExamples": "딸기, 토마토 등"
+      }
     },
     "oxygen": {
       "title": "산소 생산",
-      "description": "탄소 소비 + 1mol의 CO₂ 당 1mol의 산소(O₂) 생산"
+      "description": "탄소 소비 + 1mol의 CO₂ 당 1mol의 산소(O₂) 생산",
+      "overlay": {
+        "conversion": "1mol CO₂ → 1mol O₂",
+        "carbonNeutral": "탄소 중립 실현"
+      }
     }
   },
   "summary": {
