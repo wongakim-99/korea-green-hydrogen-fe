@@ -19,24 +19,28 @@
     }
   },
   "resourceCycle": {
-    "title": "Circulation of 4 Resources",
-    "subtitle": "Transforming 'byproducts' from biogas/hydrogen processes into 'resources'",
+    "title": "Smart Farm Resource Circulation System",
+    "subtitle": "Building a sustainable agricultural ecosystem connected to biogas plants",
     "resources": {
       "co2": {
-        "title": "CO₂ (Carbon Dioxide) Supply",
-        "description": "CO₂ captured from hydrogen reforming processes becomes the 'growth accelerator' for our smart farm."
+        "title": "CO₂ Supply",
+        "description": "Utilizing CO₂ generated from biogas plants as a carbon source for crop growth, simultaneously achieving greenhouse gas reduction and improved crop productivity.",
+        "metric": "100% Utilization"
       },
       "heat": {
         "title": "Heat Supply",
-        "description": "Waste heat generated during hydrogen production is reused as 'heating energy' for the smart farm."
+        "description": "Utilizing waste heat from biogas plants for greenhouse heating to maximize energy efficiency and provide stable year-round crop production environment.",
+        "metric": "95% Efficiency"
       },
       "fertilizer": {
-        "title": "Bio Fertilizer Supply",
-        "description": "Final cake remaining after sludge treatment is supplied as 'eco-friendly organic fertilizer'."
+        "title": "Bio Fertilizer",
+        "description": "Converting biogas plant byproducts into natural fertilizers to realize eco-friendly agriculture and improve soil health.",
+        "metric": "80% Savings"
       },
       "water": {
         "title": "Water Supply",
-        "description": "Wastewater from processes undergoes advanced treatment (Anammox, etc.) to be reborn as 'clean agricultural water'."
+        "description": "Supporting sustainable agriculture through efficient water management via circulation systems and water-saving irrigation systems.",
+        "metric": "70% Savings"
       }
     }
   },
