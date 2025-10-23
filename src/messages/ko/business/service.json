@@ -32,6 +32,11 @@
       "imagePlaceholder": "이미지 영역",
       "imageNote": "(고객 자료 제공 후 업데이트)"
     },
+    "OtherServices": {
+      "title": "다른 사업 분야",
+      "subtitle": "KGH의 다양한 솔루션을 확인해보세요",
+      "backToServices": "전체 서비스로 돌아가기"
+    },
     "CTA": {
       "title": "지속가능한 미래를 함께 만들어가세요",
       "description": "Korea Green Hydrogen의 통합 순환경제 솔루션으로 환경과 경제를 동시에 살리는 사업에 참여하세요.",

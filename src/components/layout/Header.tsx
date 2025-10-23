@@ -71,7 +71,8 @@ const Header = () => {
         { href: '/services/biogas', label: t('biogas') },
         { href: '/services/fertilizer', label: t('fertilizer') },
         { href: '/services/ccus', label: t('ccus') },
-        { href: '/services/smart-farm', label: t('smartFarm') }
+        { href: '/services/smart-farm', label: t('smartFarm') },
+        { href: '/services/solar', label: t('solar') }
       ]
     },
     { 

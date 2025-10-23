@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "title": "KGH, 탄소로 미래를 재배합니다",
+    "subtitle": "폐기물 제로의 완성, 스마트팜",
+    "description": "바이오가스 플랜트의 모든 부산물을 활용하여 고부가가치 작물과 산소를 생산하는 탈탄소 솔루션입니다.",
+    "benefits": {
+      "productivity": {
+        "title": "2배 생산성",
+        "subtitle": "CO₂ 농도 최적화"
+      },
+      "quality": {
+        "title": "고품질 작물",
+        "subtitle": "딸기, 토마토 등"
+      },
+      "oxygen": {
+        "title": "산소 생산",
+        "subtitle": "탄소 중립 실현"
+      }
+    }
+  },
+  "resourceCycle": {
+    "title": "스마트팜 자원 순환 시스템",
+    "subtitle": "바이오가스 플랜트와 연계된 지속가능한 농업 생태계를 구축합니다",
+    "resources": {
+      "co2": {
+        "title": "CO₂ 공급",
+        "description": "바이오가스 플랜트에서 발생하는 CO₂를 작물 성장에 필요한 탄소원으로 활용하여 온실가스 저감과 작물 생산성 향상을 동시에 실현합니다.",
+        "metric": "100% 활용"
+      },
+      "heat": {
+        "title": "열 공급",
+        "description": "바이오가스 플랜트의 폐열을 온실 난방에 활용하여 에너지 효율을 극대화하고 연중 안정적인 작물 생산 환경을 제공합니다.",
+        "metric": "95% 효율"
+      },
+      "fertilizer": {
+        "title": "바이오비료",
+        "description": "바이오가스 플랜트의 부산물을 천연 비료로 변환하여 친환경 농업을 실현하고 토양 건강을 개선합니다.",
+        "metric": "80% 절약"
+      },
+      "water": {
+        "title": "물 공급",
+        "description": "순환 시스템을 통한 물의 효율적 관리와 절약형 관수 시스템으로 지속가능한 농업을 지원합니다.",
+        "metric": "70% 절약"
+      }
+    }
+  },
+  "benefits": {
+    "title": "무엇을 만들어 내는가?",
+    "subtitle": "투입된 자원으로 얻는 구체적인 결과",
+    "productivity": {
+      "title": "생산성 극대화",
+      "co2Concentration": "일반 대기(400PPM) 대비 2배 높은 800-1,000PPM의 CO₂ 농도 유지",
+      "result": "식물 성장 촉진, 수확량 2배 증가",
+      "stats": {
+        "co2Label": "CO₂ 농도",
+        "co2Subtext": "일반 대기 대비",
+        "harvestLabel": "수확량",
+        "harvestSubtext": "증가"
+      },
+      "overlay": {
+        "co2Optimization": "CO₂ 농도 최적화"
+      }
+    },
+    "quality": {
+      "title": "고품질 생산물",
+      "description": "친환경 비료와 깨끗한 물로 딸기, 토마토 등 고부가가치 작물 재배",
+      "crops": ["딸기", "토마토", "고부가가치 작물"],
+      "overlay": {
+        "highValueCrops": "고부가가치 작물",
+        "cropExamples": "딸기, 토마토 등"
+      }
+    },
+    "oxygen": {
+      "title": "산소 생산",
+      "description": "탄소 소비 + 1mol의 CO₂ 당 1mol의 산소(O₂) 생산",
+      "overlay": {
+        "conversion": "1mol CO₂ → 1mol O₂",
+        "carbonNeutral": "탄소 중립 실현"
+      }
+    }
+  },
+  "summary": {
+    "title": "KGH 스마트팜은 'Waste-to-Resource' 모델의 완성입니다.",
+    "cta": {
+      "viewTechnology": "전체 기술 플로우 보기",
+      "learnBiogas": "바이오가스 솔루션 보기"
+    },
+    "features": {
+      "sustainability": {
+        "title": "지속가능한 농업",
+        "description": "친환경 기술로 미래를 준비합니다"
+      },
+      "productivity": {
+        "title": "높은 생산성",
+        "description": "2배 향상된 수확량을 달성합니다"
+      },
+      "carbonNeutral": {
+        "title": "탄소 중립",
+        "description": "Net-Zero 2050을 앞당깁니다"
+      }
+    }
+  },
+  "navigation": {
+    "otherServices": "다른 사업 분야",
+    "backToServices": "전체 서비스로 돌아가기"
+  }
+}
