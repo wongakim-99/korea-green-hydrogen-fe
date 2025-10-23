@@ -48,6 +48,14 @@ export default function OtherServicesNavigation() {
       descriptionKey: 'smartFarm.description',
       delay: '0.3s',
     },
+    {
+      id: 'solar',
+      href: '/services/solar',
+      image: '/images/services/solar/solar-main.jpg', // TODO: 이미지 추가 필요
+      titleKey: 'solar.title',
+      descriptionKey: 'solar.description',
+      delay: '0.4s',
+    },
   ];
 
   // 현재 페이지를 제외한 나머지 서비스만 필터링

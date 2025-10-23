@@ -50,6 +50,16 @@ export default function Services() {
       color: 'from-purple-500 to-purple-600',
       bgColor: 'from-purple-50 to-purple-100',
       href: '/services/smart-farm'
+    },
+    {
+      id: 'solar',
+      title: '태양광 에너지',
+      description: '친환경 태양광 에너지 솔루션',
+      detailDescription: '지속가능한 태양광 에너지 시스템을 통한 청정 에너지 생산 및 탄소 중립 실현',
+      icon: '☀️',
+      color: 'from-yellow-500 to-orange-600',
+      bgColor: 'from-yellow-50 to-orange-100',
+      href: '/services/solar'
     }
   ];
 
