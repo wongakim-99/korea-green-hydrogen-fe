@@ -11,6 +11,8 @@ export default function OtherServicesNavigation() {
   const locale = useLocale();
   const pathname = usePathname();
   const t = useTranslations('ServicePage.BusinessAreas');
+  const tOther = useTranslations('ServicePage.OtherServices');
+  const tCommon = useTranslations('ServicePage.Common');
 
   // 전체 서비스 목록
   const allServices = [
@@ -56,8 +58,8 @@ export default function OtherServicesNavigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 헤더 */}
         <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">다른 사업 분야</h2>
-          <p className="text-base md:text-lg text-gray-600">KGH의 다양한 솔루션을 확인해보세요</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{tOther('title')}</h2>
+          <p className="text-base md:text-lg text-gray-600">{tOther('subtitle')}</p>
         </div>
 
         {/* 서비스 카드 그리드 */}
@@ -110,7 +112,7 @@ export default function OtherServicesNavigation() {
                   
                   {/* CTA */}
                   <div className="flex items-center text-sky-600 text-sm md:text-base font-medium">
-                    자세히 보기
+                    {tCommon('viewDetails')}
                     <svg
                       className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
                       fill="none"
@@ -135,7 +137,7 @@ export default function OtherServicesNavigation() {
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            전체 서비스로 돌아가기
+            {tOther('backToServices')}
           </Link>
         </div>
       </div>

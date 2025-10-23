@@ -32,6 +32,11 @@
       "imagePlaceholder": "Image Area",
       "imageNote": "(To be updated after client material provided)"
     },
+    "OtherServices": {
+      "title": "Other Business Areas",
+      "subtitle": "Explore KGH's diverse solutions",
+      "backToServices": "Back to All Services"
+    },
     "CTA": {
       "title": "Create a Sustainable Future Together",
       "description": "Join the business that saves both the environment and economy with Korea Green Hydrogen's integrated circular economy solution.",

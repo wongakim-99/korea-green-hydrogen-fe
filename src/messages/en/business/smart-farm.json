@@ -80,10 +80,24 @@
     }
   },
   "summary": {
-    "title": "KGH Smart Farm is the completion of the 'Waste-to-Resource' model and a core solution accelerating 'Net-Zero 2050'.",
+    "title": "KGH Smart Farm is the completion of the 'Waste-to-Resource' model.",
     "cta": {
-      "viewTechnology": "View Complete KGH Technology Flow",
-      "learnBiogas": "Learn About Biogas Solutions"
+      "viewTechnology": "View Complete Technology Flow",
+      "learnBiogas": "View Biogas Solutions"
+    },
+    "features": {
+      "sustainability": {
+        "title": "Sustainable Agriculture",
+        "description": "Preparing for the future with eco-friendly technology"
+      },
+      "productivity": {
+        "title": "High Productivity",
+        "description": "Achieving 2x improved harvest yield"
+      },
+      "carbonNeutral": {
+        "title": "Carbon Neutral",
+        "description": "Accelerating Net-Zero 2050"
+      }
     }
   },
   "navigation": {

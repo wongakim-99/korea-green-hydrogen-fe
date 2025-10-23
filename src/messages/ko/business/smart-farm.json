@@ -80,10 +80,24 @@
     }
   },
   "summary": {
-    "title": "KGH 스마트팜은 'Waste-to-Resource' 모델의 완성이자, 'Net-Zero 2050'을 앞당기는 핵심 솔루션입니다.",
+    "title": "KGH 스마트팜은 'Waste-to-Resource' 모델의 완성입니다.",
     "cta": {
-      "viewTechnology": "KGH 전체 기술 플로우 보기",
-      "learnBiogas": "바이오가스 솔루션 알아보기"
+      "viewTechnology": "전체 기술 플로우 보기",
+      "learnBiogas": "바이오가스 솔루션 보기"
+    },
+    "features": {
+      "sustainability": {
+        "title": "지속가능한 농업",
+        "description": "친환경 기술로 미래를 준비합니다"
+      },
+      "productivity": {
+        "title": "높은 생산성",
+        "description": "2배 향상된 수확량을 달성합니다"
+      },
+      "carbonNeutral": {
+        "title": "탄소 중립",
+        "description": "Net-Zero 2050을 앞당깁니다"
+      }
     }
   },
   "navigation": {

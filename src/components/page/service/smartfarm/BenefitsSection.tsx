@@ -103,7 +103,7 @@ export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
       textColor: 'text-sky-700',
       stats: [
         { label: t('benefits.productivity.stats.co2Label'), value: `${co2Count}PPM`, subtext: t('benefits.productivity.stats.co2Subtext') },
-        { label: t('benefits.productivity.stats.harvestLabel'), value: `${harvestCount.toFixed(1)}배`, subtext: t('benefits.productivity.stats.harvestSubtext') }
+        { label: t('benefits.productivity.stats.harvestLabel'), value: `${harvestCount.toFixed(1)}X`, subtext: t('benefits.productivity.stats.harvestSubtext') }
       ]
     },
     {
@@ -115,10 +115,7 @@ export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
       ),
       color: 'from-sky-600 to-sky-700',
       bgColor: 'bg-sky-50',
-      textColor: 'text-sky-700',
-      crops: Array.isArray(t('benefits.quality.crops', { returnObjects: true }))
-        ? (t('benefits.quality.crops', { returnObjects: true }) as string[])
-        : ['딸기', '토마토', '고부가가치 작물']
+      textColor: 'text-sky-700'
     },
     {
       id: 'oxygen',
@@ -201,15 +198,6 @@ export default function BenefitsSection({ imageUrls }: BenefitsSectionProps) {
 
                   {benefit.id === 'quality' && (
                     <div className="space-y-4">
-                      {/* 작물 태그 */}
-                      <div className="flex flex-wrap justify-center gap-2">
-                        {benefit.crops?.map((crop, cropIndex) => (
-                          <span key={cropIndex} className="bg-white/50 px-3 py-1 rounded-full text-sm font-medium text-gray-700">
-                            {crop}
-                          </span>
-                        ))}
-                      </div>
-
                       {/* 설명 텍스트 */}
                       <p className="text-gray-600 leading-relaxed">
                         {t('benefits.quality.description')}
