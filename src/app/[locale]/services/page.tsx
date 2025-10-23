@@ -50,6 +50,16 @@ export default function Services() {
       color: 'from-purple-500 to-purple-600',
       bgColor: 'from-purple-50 to-purple-100',
       href: '/services/smart-farm'
+    },
+    {
+      id: 'solar',
+      title: '태양광 에너지',
+      description: '친환경 태양광 에너지 솔루션',
+      detailDescription: '지속가능한 태양광 에너지 시스템을 통한 청정 에너지 생산 및 탄소 중립 실현',
+      icon: '☀️',
+      color: 'from-yellow-500 to-orange-600',
+      bgColor: 'from-yellow-50 to-orange-100',
+      href: '/services/solar'
     }
   ];
 
@@ -147,6 +157,17 @@ export default function Services() {
                           <div className="w-full h-full relative">
                             <Image
                               src="/images/services/fertilizer/fer-banner.jpg"
+                              alt={area.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-110"
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
+                          </div>
+                        ) : area.id === 'smart-farm' ? (
+                          <div className="w-full h-full relative">
+                            <Image
+                              src="/images/services/smart-farm/smart-farm.jpg"
                               alt={area.title}
                               fill
                               className="object-cover transition-transform duration-500 group-hover:scale-110"

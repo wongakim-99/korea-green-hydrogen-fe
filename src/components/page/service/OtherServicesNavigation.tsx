@@ -10,7 +10,9 @@ export default function OtherServicesNavigation() {
   const [ref, isVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
   const locale = useLocale();
   const pathname = usePathname();
-  const t = useTranslations('OtherServices');
+  const t = useTranslations('ServicePage.BusinessAreas');
+  const tOther = useTranslations('ServicePage.OtherServices');
+  const tCommon = useTranslations('ServicePage.Common');
 
   // 전체 서비스 목록
   const allServices = [
@@ -41,10 +43,18 @@ export default function OtherServicesNavigation() {
     {
       id: 'smart-farm',
       href: '/services/smart-farm',
-      image: '/images/services/smart-farm/smart-farm-main.jpg', // TODO: 이미지 추가 필요
+      image: '/images/services/smart-farm/smart-farm.jpg',
       titleKey: 'smartFarm.title',
       descriptionKey: 'smartFarm.description',
       delay: '0.3s',
+    },
+    {
+      id: 'solar',
+      href: '/services/solar',
+      image: '/images/services/solar/solar-main.jpg', // TODO: 이미지 추가 필요
+      titleKey: 'solar.title',
+      descriptionKey: 'solar.description',
+      delay: '0.4s',
     },
   ];
 
@@ -56,8 +66,8 @@ export default function OtherServicesNavigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 헤더 */}
         <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t('title')}</h2>
-          <p className="text-base md:text-lg text-gray-600">{t('subtitle')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{tOther('title')}</h2>
+          <p className="text-base md:text-lg text-gray-600">{tOther('subtitle')}</p>
         </div>
 
         {/* 서비스 카드 그리드 */}
@@ -90,7 +100,7 @@ export default function OtherServicesNavigation() {
                   <div className="absolute inset-0 bg-sky-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   
                   {/* Placeholder 아이콘 (이미지가 없는 서비스에만 표시) */}
-                  {(service.id === 'ccus' || service.id === 'smart-farm') && (
+                  {service.id === 'ccus' && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-sky-400 transition-transform duration-500 group-hover:scale-110">
                         <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +120,7 @@ export default function OtherServicesNavigation() {
                   
                   {/* CTA */}
                   <div className="flex items-center text-sky-600 text-sm md:text-base font-medium">
-                    {t('viewDetails')}
+                    {tCommon('viewDetails')}
                     <svg
                       className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
                       fill="none"
@@ -135,7 +145,7 @@ export default function OtherServicesNavigation() {
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            {t('backButton')}
+            {tOther('backToServices')}
           </Link>
         </div>
       </div>

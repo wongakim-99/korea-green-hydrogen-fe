@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "title": "KGH: Cultivating the Future with Carbon",
+    "subtitle": "Zero-Waste Completion, Smart Farm",
+    "description": "A decarbonization solution that utilizes all byproducts from biogas plants to produce high-value crops and oxygen.",
+    "benefits": {
+      "productivity": {
+        "title": "2x Productivity",
+        "subtitle": "CO₂ Concentration Optimization"
+      },
+      "quality": {
+        "title": "High-Quality Crops",
+        "subtitle": "Strawberries, Tomatoes, etc."
+      },
+      "oxygen": {
+        "title": "Oxygen Production",
+        "subtitle": "Carbon Neutrality Realization"
+      }
+    }
+  },
+  "resourceCycle": {
+    "title": "Smart Farm Resource Circulation System",
+    "subtitle": "Building a sustainable agricultural ecosystem connected to biogas plants",
+    "resources": {
+      "co2": {
+        "title": "CO₂ Supply",
+        "description": "Utilizing CO₂ generated from biogas plants as a carbon source for crop growth, simultaneously achieving greenhouse gas reduction and improved crop productivity.",
+        "metric": "100% Utilization"
+      },
+      "heat": {
+        "title": "Heat Supply",
+        "description": "Utilizing waste heat from biogas plants for greenhouse heating to maximize energy efficiency and provide stable year-round crop production environment.",
+        "metric": "95% Efficiency"
+      },
+      "fertilizer": {
+        "title": "Bio Fertilizer",
+        "description": "Converting biogas plant byproducts into natural fertilizers to realize eco-friendly agriculture and improve soil health.",
+        "metric": "80% Savings"
+      },
+      "water": {
+        "title": "Water Supply",
+        "description": "Supporting sustainable agriculture through efficient water management via circulation systems and water-saving irrigation systems.",
+        "metric": "70% Savings"
+      }
+    }
+  },
+  "benefits": {
+    "title": "What Do We Produce?",
+    "subtitle": "Concrete results from invested resources",
+    "productivity": {
+      "title": "Productivity Maximization",
+      "co2Concentration": "Maintaining 2x higher CO₂ concentration of 800-1,000PPM compared to normal atmosphere (400PPM)",
+      "result": "Plant growth acceleration, 2x increase in harvest yield",
+      "stats": {
+        "co2Label": "CO₂ Concentration",
+        "co2Subtext": "Compared to normal atmosphere",
+        "harvestLabel": "Harvest Yield",
+        "harvestSubtext": "Increase"
+      },
+      "overlay": {
+        "co2Optimization": "CO₂ Concentration Optimization"
+      }
+    },
+    "quality": {
+      "title": "High-Quality Produce",
+      "description": "Cultivating high-value crops like strawberries and tomatoes using eco-friendly fertilizer and clean water",
+      "crops": ["Strawberries", "Tomatoes", "High-value crops"],
+      "overlay": {
+        "highValueCrops": "High-value Crops",
+        "cropExamples": "Strawberries, Tomatoes, etc."
+      }
+    },
+    "oxygen": {
+      "title": "Oxygen Production",
+      "description": "Carbon consumption + 1mol of oxygen (O₂) production per 1mol of CO₂",
+      "overlay": {
+        "conversion": "1mol CO₂ → 1mol O₂",
+        "carbonNeutral": "Carbon Neutrality Realization"
+      }
+    }
+  },
+  "summary": {
+    "title": "KGH Smart Farm is the completion of the 'Waste-to-Resource' model.",
+    "cta": {
+      "viewTechnology": "View Complete Technology Flow",
+      "learnBiogas": "View Biogas Solutions"
+    },
+    "features": {
+      "sustainability": {
+        "title": "Sustainable Agriculture",
+        "description": "Preparing for the future with eco-friendly technology"
+      },
+      "productivity": {
+        "title": "High Productivity",
+        "description": "Achieving 2x improved harvest yield"
+      },
+      "carbonNeutral": {
+        "title": "Carbon Neutral",
+        "description": "Accelerating Net-Zero 2050"
+      }
+    }
+  },
+  "navigation": {
+    "otherServices": "Other Business Areas",
+    "backToServices": "Back to All Services"
+  }
+}
