@@ -1,0 +1,43 @@
+{
+  "SolarPage": {
+    "Hero": {
+      "label": "Solar Lighting Solution",
+      "title": "Sustainable Solar Lighting Solutions for the Future",
+      "description": "KGH Global delivers both economic efficiency and superior quality through pure renewable energy systems that require no fossil fuels."
+    },
+    "Advantages": {
+      "sectionTitle": "Our Advantages",
+      "sectionSubtitle": "Why Choose Our Solar Lighting Solutions",
+      "advantage1_title": "Eco-Friendly Energy",
+      "advantage1_description": "Uses 100% pure renewable energy with no fossil fuel requirements. Contributing to global climate crisis response.",
+      "advantage2_title": "High Quality & Long Lifespan",
+      "advantage2_description": "Guaranteed long lifespan and high quality with minimal maintenance requirements.",
+      "advantage3_title": "Outstanding Economic Efficiency",
+      "advantage3_description": "Significantly reduced operational costs compared to diesel-powered lighting systems.",
+      "advantage4_title": "Global Service Network",
+      "advantage4_description": "Equipped with a service network supporting stable operations anywhere in the world."
+    },
+    "Applications": {
+      "sectionTitle": "Applications",
+      "sectionSubtitle": "Proven Solar Lighting Solutions for Various Environments",
+      "application1_title": "Street Lighting",
+      "application1_description": "Optimized solutions for street and road lighting systems in both urban and rural areas.",
+      "application2_title": "Outdoor Sports Facilities",
+      "application2_description": "Reliable lighting for various sports facilities including soccer fields, baseball stadiums, basketball courts, and tennis courts.",
+      "application3_title": "Golf Courses",
+      "application3_description": "Efficient and eco-friendly lighting solutions for expansive golf course areas.",
+      "application4_title": "Other Outdoor Facilities & Parks",
+      "application4_description": "Customized lighting systems for parks, plazas, industrial complexes, and various outdoor spaces."
+    },
+    "Technology": {
+      "sectionTitle": "Trusted Technology",
+      "sectionSubtitle": "Global Quality with Verified Partners",
+      "madeInKorea_title": "Made in Korea Quality",
+      "madeInKorea_description": "Manufactured in our production facility in Icheon, South Korea, with rigorous quality control.",
+      "partners_title": "Trusted Components",
+      "partners_description": "Only using components from verified partners such as Samsung LED and Korea Cast Steel.",
+      "globalNetwork_title": "Global Supply Chain",
+      "globalNetwork_description": "Built a supply chain ensuring stable quality and service anywhere in the world."
+    }
+  }
+}

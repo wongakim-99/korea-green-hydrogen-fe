@@ -25,6 +25,11 @@
         "title": "Smart Farm",
         "description": "Building smart agricultural systems utilizing advanced technology",
         "detailDescription": "Provide optimal cultivation environments with intelligent agricultural systems utilizing IoT, AI, and big data technology. Increase productivity and optimize resource usage through automated management systems."
+      },
+      "solar": {
+        "title": "Solar Energy",
+        "description": "Eco-friendly Solar Energy Solutions",
+        "detailDescription": "KGH Global provides 100% pure renewable energy systems that require no fossil fuels. Dramatically reduce operational costs and achieve carbon neutrality with solar lighting optimized for various outdoor environments including street lights, sports facilities, and golf courses."
       }
     },
     "Common": {
