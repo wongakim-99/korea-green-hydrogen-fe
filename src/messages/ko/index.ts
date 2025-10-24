@@ -8,6 +8,7 @@ import biogas from './business/biogas.json';
 import fertilizer from './business/fertilizer.json';
 import service from './business/service.json';
 import smartFarm from './business/smart-farm.json';
+import solar from './business/solar.json';
 
 export default {
   ...common,
@@ -20,6 +21,7 @@ export default {
   ...fertilizer,
   ...service,
   ...smartFarm,
+  ...solar,
 };
 
 
