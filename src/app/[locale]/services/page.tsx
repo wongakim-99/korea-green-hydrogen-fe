@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import CTASection from '@/components/page/home/CTASection';
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState('biogas');
@@ -230,24 +231,8 @@ export default function Services() {
             </section>
           ))}
 
-
       {/* CTA Section */}
-      <section className="bg-sky-600 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 break-keep">
-            {t('CTA.title')}
-          </h2>
-          <p className="text-xl text-sky-100 mb-8 max-w-2xl mx-auto break-keep">
-            {t('CTA.description')}
-          </p>
-          <Link
-            href={`/${locale}/contact`}
-            className="bg-white text-sky-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
-          >
-            {t('CTA.button')}
-          </Link>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

@@ -51,7 +51,7 @@ export default function OtherServicesNavigation() {
     {
       id: 'solar',
       href: '/services/solar',
-      image: '/images/services/solar/solar-main.jpg', // TODO: 이미지 추가 필요
+      image: '/images/services/solar/solar-energy.jpg', // TODO: 이미지 추가 필요
       titleKey: 'solar.title',
       descriptionKey: 'solar.description',
       delay: '0.4s',
