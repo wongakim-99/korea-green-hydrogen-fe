@@ -1,0 +1,43 @@
+{
+  "SolarPage": {
+    "Hero": {
+      "label": "태양광 조명 솔루션",
+      "title": "지속 가능한 미래를 밝히는 태양광 조명 솔루션",
+      "description": "Mica Global Energy는 화석 연료가 필요 없는 순수 재생 에너지 시스템을 통해 경제성과 품질을 동시에 제공합니다."
+    },
+    "Advantages": {
+      "sectionTitle": "핵심 장점",
+      "sectionSubtitle": "왜 우리의 태양광 조명 솔루션을 선택해야 하는가",
+      "advantage1_title": "친환경 에너지",
+      "advantage1_description": "화석 에너지가 전혀 필요 없는 100% 순수 재생 에너지를 사용합니다. 글로벌 기후 위기 대응에 기여합니다.",
+      "advantage2_title": "높은 품질과 긴 수명",
+      "advantage2_description": "긴 수명과 높은 품질을 보장하여 유지보수 부담이 적습니다.",
+      "advantage3_title": "탁월한 경제성",
+      "advantage3_description": "디젤 발전 조명 시스템과 비교하여 운영 비용이 획기적으로 절감됩니다.",
+      "advantage4_title": "글로벌 서비스 네트워크",
+      "advantage4_description": "전 세계 어디서나 안정적인 운영을 지원하는 서비스망을 갖추고 있습니다."
+    },
+    "Applications": {
+      "sectionTitle": "적용 분야",
+      "sectionSubtitle": "다양한 환경에서 검증된 태양광 조명 솔루션",
+      "application1_title": "가로등 및 도로 조명",
+      "application1_description": "도시와 농촌 지역의 가로등과 도로 조명 시스템에 최적화된 솔루션을 제공합니다.",
+      "application2_title": "야외 스포츠 시설",
+      "application2_description": "축구장, 야구장, 농구장, 테니스 코트 등 다양한 스포츠 시설에 안정적인 조명을 제공합니다.",
+      "application3_title": "골프 코스",
+      "application3_description": "넓은 면적의 골프 코스에 효율적이고 친환경적인 조명 솔루션을 제공합니다.",
+      "application4_title": "기타 옥외 시설 및 공원",
+      "application4_description": "공원, 광장, 산업단지 등 다양한 옥외 공간에 맞춤형 조명 시스템을 구축합니다."
+    },
+    "Technology": {
+      "sectionTitle": "신뢰할 수 있는 기술력",
+      "sectionSubtitle": "검증된 파트너와 함께하는 글로벌 품질",
+      "madeInKorea_title": "Made in Korea 품질",
+      "madeInKorea_description": "대한민국 이천의 생산 시설에서 엄격한 품질 관리를 거쳐 제조됩니다.",
+      "partners_title": "신뢰할 수 있는 부품",
+      "partners_description": "삼성(Samsung) LED, Korea Cast Steel 등 검증된 파트너사의 부품만을 사용합니다.",
+      "globalNetwork_title": "글로벌 공급망",
+      "globalNetwork_description": "전 세계 어디서나 안정적인 품질과 서비스를 보장하는 공급망을 구축하고 있습니다."
+    }
+  }
+}
