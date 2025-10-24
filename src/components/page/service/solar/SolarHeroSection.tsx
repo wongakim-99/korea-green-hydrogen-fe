@@ -8,16 +8,16 @@ export default function SolarHeroSection() {
   
   return (
     <section className="relative bg-gray-900 min-h-[60vh] md:min-h-[70vh] lg:min-h-[87vh] flex items-center overflow-hidden">
-      {/* 배경 이미지 - TODO: 실제 이미지로 교체 필요 */}
+      {/* 배경 이미지 */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/40 to-blue-900/40">
-          {/* 임시 배경 패턴 - 이미지가 들어오면 Image 컴포넌트로 교체 */}
-          <div className="absolute inset-0 opacity-20" style={{
-            backgroundImage: 'linear-gradient(45deg, #0ea5e9 25%, transparent 25%), linear-gradient(-45deg, #0ea5e9 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #0ea5e9 75%), linear-gradient(-45deg, transparent 75%, #0ea5e9 75%)',
-            backgroundSize: '20px 20px',
-            backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-          }}></div>
-        </div>
+        <Image
+          src="/images/services/solar/solar-hero.jpg"
+          alt="태양광 조명 솔루션"
+          fill
+          className="object-cover opacity-40"
+          sizes="100vw"
+          priority
+        />
       </div>
       
       {/* 그라데이션 오버레이 */}

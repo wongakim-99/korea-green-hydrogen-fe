@@ -53,9 +53,9 @@ export default function Services() {
     },
     {
       id: 'solar',
-      title: '태양광 에너지',
-      description: '친환경 태양광 에너지 솔루션',
-      detailDescription: '지속가능한 태양광 에너지 시스템을 통한 청정 에너지 생산 및 탄소 중립 실현',
+      title: t('BusinessAreas.solar.title'),
+      description: t('BusinessAreas.solar.description'),
+      detailDescription: t('BusinessAreas.solar.detailDescription'),
       icon: '☀️',
       color: 'from-yellow-500 to-orange-600',
       bgColor: 'from-yellow-50 to-orange-100',
@@ -168,6 +168,17 @@ export default function Services() {
                           <div className="w-full h-full relative">
                             <Image
                               src="/images/services/smart-farm/smart-farm.jpg"
+                              alt={area.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-110"
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
+                          </div>
+                        ) : area.id === 'solar' ? (
+                          <div className="w-full h-full relative">
+                            <Image
+                              src="/images/services/solar/solar-energy.jpg"
                               alt={area.title}
                               fill
                               className="object-cover transition-transform duration-500 group-hover:scale-110"

@@ -68,17 +68,17 @@ export default function AdvantagesSection() {
                   }}
                 >
                   {/* 아이콘 */}
-                  <div className={`${advantage.bgColor} ${advantage.color} w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-4 md:mb-6`}>
+                  <div className={`${advantage.bgColor} ${advantage.color} w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto`}>
                     <Icon className="w-7 h-7 md:w-8 md:h-8" />
                   </div>
                   
                   {/* 제목 */}
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 break-keep">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 break-keep text-center">
                     {advantage.title}
                   </h3>
                   
                   {/* 설명 */}
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep text-center">
                     {advantage.description}
                   </p>
                 </div>

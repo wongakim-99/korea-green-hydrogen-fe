@@ -5,6 +5,32 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Factory, Shield, Network } from 'lucide-react';
 
+// 나라 배지 컴포넌트
+function CountryBadge({ countryCode, name }: { countryCode: string; name: string }) {
+  return (
+    <div className="inline-flex flex-col items-center space-y-3 group">
+      {/* 원형 배지 */}
+      <div 
+        className="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center bg-white border-4 md:border-[5px] border-white/50 group-hover:border-sky-400 transition-all duration-300 group-hover:scale-110 shadow-xl relative"
+      >
+        <div className="relative w-[72px] h-[72px] md:w-[90px] md:h-[90px]">
+          <Image
+            src={`https://flagcdn.com/w160/${countryCode}.png`}
+            alt={`${name} flag`}
+            fill
+            className="object-contain rounded-sm"
+            unoptimized
+          />
+        </div>
+      </div>
+      {/* 나라 이름 */}
+      <span className="text-base md:text-lg font-bold text-white group-hover:text-sky-300 transition-colors duration-300">
+        {name}
+      </span>
+    </div>
+  );
+}
+
 export default function TechnologySection() {
   const [ref, isVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
   const t = useTranslations('SolarPage.Technology');
@@ -101,7 +127,7 @@ export default function TechnologySection() {
             }`}
             style={{ transitionDelay: '400ms' }}
           >
-            <div className="flex flex-col md:flex-row md:items-center md:space-x-6">
+            <div className="flex flex-col md:flex-row md:items-center md:space-x-6 mb-8">
               <div className="bg-sky-500/20 text-sky-400 w-14 h-14 md:w-16 md:h-16 rounded-lg flex items-center justify-center flex-shrink-0 mb-4 md:mb-0">
                 <Network className="w-7 h-7 md:w-8 md:h-8" />
               </div>
@@ -112,6 +138,28 @@ export default function TechnologySection() {
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed break-keep">
                   {t('globalNetwork_description')}
                 </p>
+              </div>
+            </div>
+
+            {/* 나라 이름 흐르는 애니메이션 */}
+            <div className="relative overflow-hidden py-6">
+              <div className="flex animate-scroll-countries">
+                {/* 첫 번째 세트 */}
+                <div className="flex space-x-12 md:space-x-16 pr-12 md:pr-16">
+                  <CountryBadge countryCode="kr" name="Korea" />
+                  <CountryBadge countryCode="id" name="Indonesia" />
+                  <CountryBadge countryCode="nz" name="New Zealand" />
+                  <CountryBadge countryCode="us" name="USA" />
+                  <CountryBadge countryCode="br" name="Brazil" />
+                </div>
+                {/* 두 번째 세트 (끊김 없는 효과) */}
+                <div className="flex space-x-12 md:space-x-16 pr-12 md:pr-16">
+                  <CountryBadge countryCode="kr" name="Korea" />
+                  <CountryBadge countryCode="id" name="Indonesia" />
+                  <CountryBadge countryCode="nz" name="New Zealand" />
+                  <CountryBadge countryCode="us" name="USA" />
+                  <CountryBadge countryCode="br" name="Brazil" />
+                </div>
               </div>
             </div>
           </div>

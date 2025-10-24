@@ -277,3 +277,28 @@ body {
 .scroll-fade-in.delay-300 {
   animation-delay: 0.3s;
 }
+
+/* 나라 배지 무한 스크롤 애니메이션 */
+@keyframes scrollCountries {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-countries {
+  animation: scrollCountries 15s linear infinite; /* 모바일: 15초 */
+}
+
+/* 데스크톱에서는 조금 느리게 */
+@media (min-width: 768px) {
+  .animate-scroll-countries {
+    animation: scrollCountries 20s linear infinite; /* 데스크톱: 20초 */
+  }
+}
+
+.animate-scroll-countries:hover {
+  animation-play-state: paused;
+}

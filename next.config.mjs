@@ -7,6 +7,13 @@ const nextConfig = {
   // 이미지 최적화 설정
   images: {
     formats: ['image/webp', 'image/avif'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+        pathname: '/**',
+      },
+    ],
   },
   
   // 성능 최적화

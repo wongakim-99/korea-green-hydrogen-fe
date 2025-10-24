@@ -12,25 +12,25 @@ export default function ApplicationsSection() {
     {
       title: t('application1_title'),
       description: t('application1_description'),
-      // TODO: 실제 이미지로 교체
+      image: '/images/services/solar/solar-light.jpg',
       imagePlaceholder: '가로등 이미지 영역'
     },
     {
       title: t('application2_title'),
       description: t('application2_description'),
-      // TODO: 실제 이미지로 교체
+      image: '/images/services/solar/solar-stadium.jpg',
       imagePlaceholder: '스포츠 시설 이미지 영역'
     },
     {
       title: t('application3_title'),
       description: t('application3_description'),
-      // TODO: 실제 이미지로 교체
+      image: '/images/services/solar/solar-golf.jpg',
       imagePlaceholder: '골프 코스 이미지 영역'
     },
     {
       title: t('application4_title'),
       description: t('application4_description'),
-      // TODO: 실제 이미지로 교체
+      image: '/images/services/solar/solar-park.jpg',
       imagePlaceholder: '공원 이미지 영역'
     }
   ];
@@ -63,22 +63,38 @@ export default function ApplicationsSection() {
               >
                 {/* 이미지 영역 */}
                 <div className="relative rounded-xl overflow-hidden shadow-lg aspect-[16/10] mb-6 bg-gradient-to-br from-sky-100 to-blue-100">
-                  {/* TODO: 실제 이미지로 교체 */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 bg-sky-200 rounded-full flex items-center justify-center">
-                        <svg className="w-8 h-8 md:w-10 md:h-10 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
+                  {application.image ? (
+                    <>
+                      {/* 실제 이미지 */}
+                      <Image
+                        src={application.image}
+                        alt={application.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                      />
+                      {/* 호버 효과 */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </>
+                  ) : (
+                    <>
+                      {/* 이미지 플레이스홀더 */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center p-6">
+                          <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 bg-sky-200 rounded-full flex items-center justify-center">
+                            <svg className="w-8 h-8 md:w-10 md:h-10 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                          </div>
+                          <p className="text-sm text-gray-600 font-medium break-keep">
+                            {application.imagePlaceholder}
+                          </p>
+                        </div>
                       </div>
-                      <p className="text-sm text-gray-600 font-medium break-keep">
-                        {application.imagePlaceholder}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* 호버 효과 */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      {/* 호버 효과 */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </>
+                  )}
                 </div>
 
                 {/* 텍스트 영역 */}
