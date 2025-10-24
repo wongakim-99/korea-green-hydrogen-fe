@@ -61,6 +61,19 @@ export default function OtherServicesNavigation() {
   // 현재 페이지를 제외한 나머지 서비스만 필터링
   const services = allServices.filter(service => !pathname.includes(service.href));
 
+  // 동적 그리드: 카드 개수에 따라 최적의 레이아웃 선택
+  const getGridColumns = (count: number) => {
+    if (count <= 3) return "md:grid-cols-3";
+    if (count === 4) return "md:grid-cols-2"; // 4개일 때는 2x2로
+    return "md:grid-cols-3"; // 5개 이상은 3열로
+  };
+
+  // 이미지 높이: 2열일 때는 더 크게
+  const getImageHeight = (count: number) => {
+    if (count === 4) return "h-56 md:h-64"; // 2열일 때 더 큼
+    return "h-48"; // 기본 높이
+  };
+
   return (
     <section ref={ref} className="py-16 md:py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,8 +83,8 @@ export default function OtherServicesNavigation() {
           <p className="text-base md:text-lg text-gray-600">{tOther('subtitle')}</p>
         </div>
 
-        {/* 서비스 카드 그리드 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {/* 서비스 카드 그리드 - 동적 레이아웃 */}
+        <div className={`grid grid-cols-1 ${getGridColumns(services.length)} gap-6 md:gap-8`}>
           {services.map((service) => (
             <Link
               key={service.href}
@@ -83,7 +96,7 @@ export default function OtherServicesNavigation() {
             >
               <div className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden h-full">
                 {/* 이미지 영역 */}
-                <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-sky-100 to-sky-50">
+                <div className={`relative ${getImageHeight(services.length)} w-full overflow-hidden bg-gradient-to-br from-sky-100 to-sky-50`}>
                   <Image
                     src={service.image}
                     alt={t(service.titleKey)}
