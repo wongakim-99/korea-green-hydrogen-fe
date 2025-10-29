@@ -52,9 +52,10 @@ export default function ValueCards() {
         objectFit="cover"
         quality={95}
         priority
-        className={`transition-all duration-1000 ease-in-out ${isCardsVisible ? 'opacity-50 scale-100' : 'opacity-0 scale-105'}`}
+        className={`transition-all duration-1000 ease-in-out ${isCardsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
+        style={{ filter: 'brightness(0.8)' }}
       />
-      <div className="absolute inset-0 bg-gray/20 z-10"></div>
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-shadow-strong">
