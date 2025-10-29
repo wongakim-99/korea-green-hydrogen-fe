@@ -43,7 +43,7 @@ export default function ResourceCirculationSection() {
         objectFit="cover"
         quality={95}
         className={`transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
-        style={{ filter: 'brightness(0.7)' }}
+        style={{ filter: 'brightness(0.8)' }}
       />
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       <div 

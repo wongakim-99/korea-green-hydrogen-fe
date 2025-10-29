@@ -53,7 +53,7 @@ export default function ValueCards() {
         quality={95}
         priority
         className={`transition-all duration-1000 ease-in-out ${isCardsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
-        style={{ filter: 'brightness(0.7)' }}
+        style={{ filter: 'brightness(0.8)' }}
       />
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">

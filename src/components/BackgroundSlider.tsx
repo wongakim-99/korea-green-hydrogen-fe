@@ -95,7 +95,7 @@ export default function BackgroundSlider({
             priority={index === 0}
             quality={95}
             sizes="100vw"
-            style={{ filter: 'brightness(0.75)' }}
+            style={{ filter: 'brightness(0.85)' }}
           />
         </div>
       ))}
