@@ -1,0 +1,84 @@
+{
+  "CCUSPage": {
+    "Hero": {
+      "label": "Solution",
+      "title": "CCUS",
+      "subtitle": "Carbon Capture, Utilization & Storage",
+      "description": "Leading the carbon-neutral era with carbon capture, utilization, and storage technology.",
+      "stat1_value": "90%",
+      "stat1_label": "CO₂ Capture Efficiency",
+      "stat2_value": "100+",
+      "stat2_label": "bar Compression"
+    },
+    "WhatIsCCUS": {
+      "title": "What is CCUS?",
+      "subtitle": "Key Technology for Carbon Neutrality",
+      "description": "CCUS is a technology that captures carbon dioxide emitted from industrial facilities and power plants, then utilizes or safely stores it.",
+      "capture_title": "Carbon Capture",
+      "capture_subtitle": "CO₂ Separation",
+      "capture_description": "Technology to separate and capture CO₂ from emission sources using various methods such as amine scrubbing and oxy-fuel combustion.",
+      "utilization_title": "Utilization",
+      "utilization_subtitle": "Carbon Conversion",
+      "utilization_description": "Converting captured CO₂ into useful products such as fuels, chemicals, and building materials.",
+      "storage_title": "Storage",
+      "storage_subtitle": "Carbon Sequestration",
+      "storage_description": "Long-term storage of captured CO₂ in geologically stable formations to prevent atmospheric release."
+    },
+    "TechnologyProcess": {
+      "title": "CCUS Technology Process",
+      "subtitle": "Achieving Carbon Neutrality with Integrated Systems",
+      "step1_title": "Capture",
+      "step1_description": "CO₂ Separation\nfrom Sources",
+      "step2_title": "Compression",
+      "step2_description": "High-pressure\n100+ bar",
+      "step3_title": "Transport",
+      "step3_description": "Pipeline/Ship\nSafe Delivery",
+      "step4_title": "Storage/Use",
+      "step4_description": "Underground Storage\nor Industrial Use",
+      "applications_title": "Key Application Areas",
+      "app1_title": "Power Plants",
+      "app1_description": "Efficiently capturing large amounts of CO₂ from coal and gas-fired power generation.",
+      "app2_title": "Industrial Facilities",
+      "app2_description": "Applied to carbon-intensive industries such as cement, steel, and petrochemicals.",
+      "app3_title": "Biogas Facilities",
+      "app3_description": "Capturing CO₂ from biogas production to produce pure methane."
+    },
+    "KGHSolution": {
+      "title": "KGH's CCUS Solution",
+      "subtitle": "Optimized Integrated System",
+      "description1": "Korea Green Hydrogen provides integrated CCUS solutions covering the entire process from capture to storage/utilization.",
+      "description2": "Supporting carbon neutrality goals with proven technology and economic viability.",
+      "advantage1_title": "High Capture Efficiency",
+      "advantage1_description": "Achieving over 90% CO₂ capture rate with state-of-the-art capture technology.",
+      "advantage2_title": "Energy Optimization",
+      "advantage2_description": "Efficient system minimizing energy loss and reducing operational costs.",
+      "advantage3_title": "Proven Stability",
+      "advantage3_description": "Reliable technology ensuring long-term safe storage and utilization.",
+      "feature1_title": "Integrated Design",
+      "feature1_description": "Full project lifecycle support",
+      "feature2_title": "Customized Solutions",
+      "feature2_description": "Industry-specific optimization",
+      "feature3_title": "Economic Viability",
+      "feature3_description": "Reduced operating costs"
+    }
+  },
+  "OtherServices": {
+    "title": "Other Services",
+    "subtitle": "Explore KGH's Integrated Solutions",
+    "backButton": "Back to All Services",
+    "viewDetails": "View Details",
+    "biogas": {
+      "title": "Biogas Production",
+      "description": "Eco-friendly biogas production from organic waste"
+    },
+    "fertilizer": {
+      "title": "Fertilizer Production",
+      "description": "Enhancing agricultural productivity with eco-friendly fertilizers"
+    },
+    "smartFarm": {
+      "title": "Smart Farm",
+      "description": "Realizing future agriculture with smart farming systems"
+    }
+  }
+}
+
