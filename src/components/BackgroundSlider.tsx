@@ -95,12 +95,13 @@ export default function BackgroundSlider({
             priority={index === 0}
             quality={95}
             sizes="100vw"
+            style={{ filter: 'brightness(0.75)' }}
           />
         </div>
       ))}
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sky-900/50 to-blue-900/30 z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-900/60 to-blue-900/40 z-10 pointer-events-none"></div>
 
       {/* 텍스트 오버레이 */}
       <div className="absolute inset-0 z-30 flex items-center">
