@@ -3,6 +3,7 @@ import BiogasHeroSection from '@/components/page/service/biogas/BiogasHeroSectio
 import VisionSection from '@/components/page/service/biogas/VisionSection';
 import ThpTechnologySection from '@/components/page/service/biogas/ThpTechnologySection';
 import ProcessAndEffectsSection from '@/components/page/service/biogas/ProcessAndEffectsSection';
+import KeyResultsSection from '@/components/page/service/biogas/KeyResultsSection';
 import OtherServicesNavigation from '@/components/page/service/OtherServicesNavigation';
 import Breadcrumb from '@/components/Breadcrumb';
 import { getTranslations } from 'next-intl/server';
@@ -33,6 +34,7 @@ export default async function BiogasPage({params: {locale}}: {params: {locale: s
       <VisionSection />
       <ThpTechnologySection />
       <ProcessAndEffectsSection />
+      <KeyResultsSection />
       <OtherServicesNavigation />
     </div>
   );
