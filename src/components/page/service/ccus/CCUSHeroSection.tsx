@@ -7,28 +7,27 @@ export default function CCUSHeroSection() {
   const t = useTranslations('CCUSPage.Hero');
   return (
     <section className="relative bg-gray-900 min-h-[60vh] md:min-h-[70vh] lg:min-h-[87vh] flex items-center overflow-hidden">
-      {/* 배경 이미지 - 고객사에서 제공 예정 */}
+      {/* 배경 이미지 */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-gray-900/70 to-cyan-900/80"></div>
-        {/* TODO: 고객사 이미지로 교체 */}
-        {/* <Image
+        <Image
           src="/images/services/ccus/ccus-hero.jpg"
           alt="CCUS 시설"
           fill
-          className="object-cover opacity-30"
+          className="object-cover"
           sizes="100vw"
           priority
-        /> */}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/60 via-gray-900/50 to-blue-900/60"></div>
       </div>
       
       {/* 심플한 오버레이 */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/75 via-gray-900/60 to-gray-900/45"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 via-gray-900/30 to-transparent"></div>
       
       <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mr-auto">
           {/* 작은 라벨 */}
           <div className="inline-block mb-6 md:mb-8">
-            <span className="text-sm md:text-base font-medium text-cyan-400 tracking-wide uppercase">
+            <span className="text-sm md:text-base font-medium text-sky-400 tracking-wide uppercase">
               {t('label')}
             </span>
           </div>
@@ -39,7 +38,7 @@ export default function CCUSHeroSection() {
           </h1>
           
           {/* 서브타이틀 */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-cyan-300 mb-4 md:mb-6 font-semibold">
+          <p className="text-xl sm:text-2xl md:text-3xl text-sky-300 mb-4 md:mb-6 font-semibold">
             {t('subtitle')}
           </p>
           

@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import CCUSHeroSection from '@/components/page/service/ccus/CCUSHeroSection';
 import WhatIsCCUSSection from '@/components/page/service/ccus/WhatIsCCUSSection';
 import TechnologyProcessSection from '@/components/page/service/ccus/TechnologyProcessSection';
+import ApplicationAreasSection from '@/components/page/service/ccus/ApplicationAreasSection';
 import KGHSolutionSection from '@/components/page/service/ccus/KGHSolutionSection';
 import OtherServicesNavigation from '@/components/page/service/OtherServicesNavigation';
 
@@ -33,6 +34,9 @@ export default async function CCUSPage({params: {locale}}: {params: {locale: str
 
       {/* Technology Process Section */}
       <TechnologyProcessSection />
+
+      {/* Application Areas Section */}
+      <ApplicationAreasSection />
 
       {/* KGH Solution Section */}
       <KGHSolutionSection />
