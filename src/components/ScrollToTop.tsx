@@ -1,24 +1,33 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useLayoutEffect } from 'react';
-
-const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+import { useEffect } from 'react';
 
 export default function ScrollToTop() {
   const pathname = usePathname();
 
-  useIsomorphicLayoutEffect(() => {
-    // 즉시 스크롤을 상단으로 이동 (smooth 없이)
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
-    
-    // 추가 보장을 위해 약간의 딜레이 후 한 번 더
-    const timer = setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
-    }, 0);
+  useEffect(() => {
+    // 페이지 전환 시 즉시 스크롤 상단으로 이동
+    const scrollToTop = () => {
+      // 여러 방법으로 확실하게 스크롤 초기화
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
 
-    return () => clearTimeout(timer);
+    // 즉시 실행
+    scrollToTop();
+
+    // 추가 보장을 위해 여러 번 시도
+    const timers = [
+      setTimeout(scrollToTop, 0),
+      setTimeout(scrollToTop, 50),
+      setTimeout(scrollToTop, 100),
+    ];
+
+    return () => {
+      timers.forEach(timer => clearTimeout(timer));
+    };
   }, [pathname]);
 
   return null;
