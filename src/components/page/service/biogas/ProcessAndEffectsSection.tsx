@@ -77,50 +77,6 @@ export default function ProcessAndEffectsSection() {
             </div>
           </div>
 
-          {/* 핵심 성과 데이터 */}
-          <div className="mb-16 md:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-12 md:mb-16 break-keep">
-              {t('effects_title')}
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              {/* 수소 생산량 카드 */}
-              <div className={`bg-white border-2 border-gray-100 p-8 md:p-10 rounded-lg hover:border-sky-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer ${isVisible ? 'animate-fade-in-up-1' : ''}`}>
-                <div className="space-y-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-sky-600 break-keep">{t('stat1_title')}</h3>
-                  <div className="flex items-baseline space-x-3">
-                    <span className="text-5xl md:text-6xl font-bold text-gray-900">{t('stat1_value')}</span>
-                    <span className="text-2xl md:text-3xl font-medium text-gray-600">{t('stat1_unit')}</span>
-                  </div>
-                  <div className="pt-4 border-t border-gray-100">
-                    <p className="text-base text-gray-600 break-keep">
-                      {t.rich('stat1_description', {
-                        strong: (chunks) => <strong>{chunks}</strong>
-                      })}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* 연간 매출 카드 */}
-              <div className={`bg-white border-2 border-gray-100 p-8 md:p-10 rounded-lg hover:border-sky-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer ${isVisible ? 'animate-fade-in-up-2' : ''}`}>
-                <div className="space-y-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-sky-600 break-keep">{t('stat2_title')}</h3>
-                  <div className="flex items-baseline space-x-3">
-                    <span className="text-5xl md:text-6xl font-bold text-gray-900">{t('stat2_value')}</span>
-                    <span className="text-2xl md:text-3xl font-medium text-gray-600 break-keep">{t('stat2_unit')}</span>
-                  </div>
-                  <div className="pt-4 border-t border-gray-100">
-                    <p className="text-base text-gray-600 break-keep">
-                      {t.rich('stat2_description', {
-                        strong: (chunks) => <strong>{chunks}</strong>
-                      })}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

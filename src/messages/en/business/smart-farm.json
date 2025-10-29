@@ -85,6 +85,11 @@
       "viewTechnology": "View Complete Technology Flow",
       "learnBiogas": "View Biogas Solutions"
     },
+    "stats": {
+      "productionIncrease": "Production Increase",
+      "energyCostReduction": "Energy Cost Reduction",
+      "circularResourceRate": "Circular Resource Rate"
+    },
     "features": {
       "sustainability": {
         "title": "Sustainable Agriculture",

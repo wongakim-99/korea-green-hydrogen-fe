@@ -85,6 +85,11 @@
       "viewTechnology": "전체 기술 플로우 보기",
       "learnBiogas": "바이오가스 솔루션 보기"
     },
+    "stats": {
+      "productionIncrease": "생산량 증가",
+      "energyCostReduction": "에너지 비용 절감",
+      "circularResourceRate": "순환 자원화율"
+    },
     "features": {
       "sustainability": {
         "title": "지속가능한 농업",

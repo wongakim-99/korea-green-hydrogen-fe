@@ -47,6 +47,7 @@
       "step4_title": "Hydrogen Conversion",
       "step4_description": "Clean hydrogen\nfinal production",
       "effects_title": "Key Performance",
+      "effects_subtitle": "Core Performance Indicators of Biogas Plant",
       "stat1_title": "Daily Hydrogen Production",
       "stat1_value": "7,085",
       "stat1_unit": "kg",
@@ -54,7 +55,12 @@
       "stat2_title": "Annual Revenue Projection",
       "stat2_value": "111",
       "stat2_unit": "hundred million KRW",
-      "stat2_description": "Building a sustainable <strong>revenue model</strong>"
+      "stat2_description": "Building a sustainable <strong>revenue model</strong>",
+      "additional_stats": {
+        "co2_reduction": "CO₂ Emission Reduction",
+        "energy_efficiency": "Energy Efficiency",
+        "continuous_production": "24/7 Production"
+      }
     },
     "Vision": {
       "title": "Transforming the Paradigm of Waste Treatment",

@@ -47,6 +47,7 @@
       "step4_title": "수소 전환",
       "step4_description": "청정 수소\n최종 생산",
       "effects_title": "핵심 성과",
+      "effects_subtitle": "바이오가스 플랜트의 핵심 성과 지표",
       "stat1_title": "일일 수소 생산량",
       "stat1_value": "7,085",
       "stat1_unit": "kg",
@@ -54,7 +55,12 @@
       "stat2_title": "연간 예상 매출",
       "stat2_value": "111",
       "stat2_unit": "억 원",
-      "stat2_description": "지속가능한 <strong>수익 모델</strong> 구축"
+      "stat2_description": "지속가능한 <strong>수익 모델</strong> 구축",
+      "additional_stats": {
+        "co2_reduction": "CO₂ 배출 감축",
+        "energy_efficiency": "에너지 효율",
+        "continuous_production": "연중무휴 생산"
+      }
     },
     "Vision": {
       "title": "폐기물 처리의 패러다임을 바꾸다",
