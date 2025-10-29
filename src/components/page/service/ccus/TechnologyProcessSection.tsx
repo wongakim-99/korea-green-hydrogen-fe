@@ -24,54 +24,54 @@ export default function TechnologyProcessSection() {
       <div ref={stepRef} className="relative">
         {/* 연결선 (마지막 제외) - 번호 뱃지 중앙에서 시작 */}
         {!isLast && (
-          <div className="hidden lg:block absolute left-[20.1%] top-full h-12 md:h-16 w-0.5 bg-gradient-to-b from-gray-300 to-transparent"></div>
+          <div className="hidden md:block absolute md:left-[25%] lg:left-[20.1%] top-full h-8 md:h-12 lg:h-16 w-0.5 bg-gradient-to-b from-gray-300 to-transparent"></div>
         )}
 
         <div className={`transition-all duration-1000 ease-out ${stepVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-            {/* 텍스트 영역 - 항상 왼쪽 (5/12) */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="flex flex-col items-center space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-8 items-center">
+            {/* 텍스트 영역 - 모바일: 전체 / 태블릿: 1/2 / 데스크톱: 5/12 */}
+            <div className="md:col-span-1 lg:col-span-5 space-y-6">
+              <div className="flex flex-col items-center space-y-4 md:space-y-5 lg:space-y-6">
                 {/* 번호 뱃지 - 중앙 정렬 */}
-                <div className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 ${isLast ? 'bg-gradient-to-br from-sky-500 to-sky-600' : 'bg-gradient-to-br from-gray-700 to-gray-900'} rounded-2xl flex items-center justify-center shadow-xl`}>
-                  <span className="text-3xl md:text-4xl font-bold text-white">{`0${step.number}`}</span>
+                <div className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 ${isLast ? 'bg-gradient-to-br from-sky-500 to-sky-600' : 'bg-gradient-to-br from-gray-700 to-gray-900'} rounded-xl md:rounded-2xl flex items-center justify-center shadow-xl`}>
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{`0${step.number}`}</span>
                 </div>
                 
                 {/* 제목과 설명 */}
                 <div className="text-center w-full">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 break-keep">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4 break-keep">
                     {step.title}
                   </h3>
-                  <p className="text-base md:text-lg text-gray-600 leading-relaxed whitespace-pre-line break-keep">
+                  <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed whitespace-pre-line break-keep">
                     {step.description}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* 이미지 영역 - 항상 오른쪽 (7/12) */}
-            <div className="lg:col-span-7">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-200 to-gray-300 aspect-[4/3] lg:aspect-[16/9] flex items-center justify-center">
+            {/* 이미지 영역 - 모바일: 전체 / 태블릿: 1/2 / 데스크톱: 7/12 */}
+            <div className="md:col-span-1 lg:col-span-7">
+              <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl bg-gradient-to-br from-gray-200 to-gray-300 aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/9] flex items-center justify-center">
                 {/* TODO: 고객사 이미지로 교체 */}
-                <div className="p-8 text-center">
-                  <div className={`w-20 h-20 md:w-24 md:h-24 ${isLast ? 'bg-gradient-to-br from-sky-500 to-sky-600' : 'bg-gradient-to-br from-gray-600 to-gray-800'} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl`}>
+                <div className="p-6 md:p-8 text-center">
+                  <div className={`w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 ${isLast ? 'bg-gradient-to-br from-sky-500 to-sky-600' : 'bg-gradient-to-br from-gray-600 to-gray-800'} rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-xl`}>
                     {step.number === 1 && (
-                      <svg className="w-10 h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                       </svg>
                     )}
                     {step.number === 2 && (
-                      <svg className="w-10 h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
                     )}
                     {step.number === 3 && (
-                      <svg className="w-10 h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
                     )}
                     {step.number === 4 && (
-                      <svg className="w-10 h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                       </svg>
                     )}
