@@ -1,0 +1,84 @@
+{
+  "CCUSPage": {
+    "Hero": {
+      "label": "Solution",
+      "title": "CCUS",
+      "subtitle": "Carbon Capture, Utilization & Storage",
+      "description": "탄소 포집, 활용 및 저장 기술로 탄소중립 시대를 선도합니다.",
+      "stat1_value": "90%",
+      "stat1_label": "CO₂ 포집 효율",
+      "stat2_value": "100+",
+      "stat2_label": "bar 압축"
+    },
+    "WhatIsCCUS": {
+      "title": "CCUS란 무엇인가?",
+      "subtitle": "탄소중립을 위한 핵심 기술",
+      "description": "CCUS는 산업 시설과 발전소에서 발생하는 이산화탄소를 포집하여 활용하거나 안전하게 저장하는 기술입니다.",
+      "capture_title": "Carbon Capture",
+      "capture_subtitle": "탄소 포집",
+      "capture_description": "배출원에서 CO₂를 분리하고 포집하는 기술로, 아민 스크러빙, 옥시연료 연소 등 다양한 방법을 활용합니다.",
+      "utilization_title": "Utilization",
+      "utilization_subtitle": "탄소 활용",
+      "utilization_description": "포집된 CO₂를 유용한 제품으로 전환하여 연료, 화학물질, 건축자재 등을 생산합니다.",
+      "storage_title": "Storage",
+      "storage_subtitle": "탄소 저장",
+      "storage_description": "포집된 CO₂를 지질학적으로 안정적인 지층에 장기간 저장하여 대기 방출을 차단합니다."
+    },
+    "TechnologyProcess": {
+      "title": "CCUS 기술 프로세스",
+      "subtitle": "통합 시스템으로 탄소중립 실현",
+      "step1_title": "포집",
+      "step1_description": "배출원에서\nCO₂ 분리",
+      "step2_title": "압축",
+      "step2_description": "100 bar 이상\n고압 압축",
+      "step3_title": "수송",
+      "step3_description": "파이프라인/선박\n안전 운송",
+      "step4_title": "저장/활용",
+      "step4_description": "지하 저장 또는\n산업적 활용",
+      "applications_title": "주요 적용 분야",
+      "app1_title": "화력발전소",
+      "app1_description": "석탄 및 가스 발전에서 발생하는 대량의 CO₂를 효율적으로 포집합니다.",
+      "app2_title": "산업 시설",
+      "app2_description": "시멘트, 철강, 석유화학 등 탄소 배출이 많은 산업 공정에 적용됩니다.",
+      "app3_title": "바이오가스 설비",
+      "app3_description": "바이오가스 생산 과정의 CO₂를 포집하여 순수 메탄을 생산합니다."
+    },
+    "KGHSolution": {
+      "title": "KGH의 CCUS 솔루션",
+      "subtitle": "최적화된 통합 시스템",
+      "description1": "(주)한국그린수소는 포집부터 저장/활용까지 전 과정을 아우르는 통합 CCUS 솔루션을 제공합니다.",
+      "description2": "검증된 기술력과 경제성을 바탕으로 탄소중립 목표 달성을 지원합니다.",
+      "advantage1_title": "높은 포집 효율",
+      "advantage1_description": "최신 포집 기술로 90% 이상의 CO₂ 포집률을 실현합니다.",
+      "advantage2_title": "에너지 최적화",
+      "advantage2_description": "에너지 손실을 최소화하고 운영 비용을 절감하는 효율적인 시스템입니다.",
+      "advantage3_title": "검증된 안정성",
+      "advantage3_description": "장기간 안전한 저장과 활용을 보장하는 신뢰할 수 있는 기술입니다.",
+      "feature1_title": "통합 설계",
+      "feature1_description": "프로젝트 전주기 지원",
+      "feature2_title": "맞춤형 솔루션",
+      "feature2_description": "산업별 최적화 적용",
+      "feature3_title": "경제성 확보",
+      "feature3_description": "운영 비용 절감"
+    }
+  },
+  "OtherServices": {
+    "title": "다른 사업 분야",
+    "subtitle": "KGH의 통합 솔루션을 확인해보세요",
+    "backButton": "전체 서비스로 돌아가기",
+    "viewDetails": "자세히 보기",
+    "biogas": {
+      "title": "바이오가스 생산",
+      "description": "유기폐기물을 활용한 친환경 바이오가스 생산"
+    },
+    "fertilizer": {
+      "title": "비료화",
+      "description": "친환경 비료 생산으로 농업 생산성 향상"
+    },
+    "smartFarm": {
+      "title": "Smart Farm",
+      "description": "스마트 농업 시스템으로 미래 농업 구현"
+    }
+  }
+}
+

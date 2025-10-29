@@ -9,6 +9,7 @@ import fertilizer from './business/fertilizer.json';
 import service from './business/service.json';
 import smartFarm from './business/smart-farm.json';
 import solar from './business/solar.json';
+import ccus from './business/ccus.json';
 
 export default {
   ...common,
@@ -22,6 +23,7 @@ export default {
   ...service,
   ...smartFarm,
   ...solar,
+  ...ccus,
 };
 
 
