@@ -16,7 +16,7 @@ export default function WhatIsCCUSSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 break-keep">
               {t('title')}
             </h2>
-            <p className="text-lg sm:text-xl text-cyan-600 font-semibold mb-4">
+            <p className="text-lg sm:text-xl text-sky-600 font-semibold mb-4">
               {t('subtitle')}
             </p>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto break-keep">
@@ -27,7 +27,7 @@ export default function WhatIsCCUSSection() {
           {/* 3단 카드 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
             {/* Carbon Capture */}
-            <div className={`bg-gradient-to-br from-blue-50 to-cyan-50 p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 border-transparent hover:border-cyan-500 ${isVisible ? 'animate-fade-in-up-1' : ''}`}>
+            <div className={`bg-gradient-to-br from-blue-50 to-sky-50 p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 border-transparent hover:border-sky-500 ${isVisible ? 'animate-fade-in-up-1' : ''}`}>
               <div className="space-y-4">
                 {/* 아이콘 영역 - 고객사 이미지로 교체 가능 */}
                 <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
@@ -49,10 +49,10 @@ export default function WhatIsCCUSSection() {
             </div>
 
             {/* Utilization */}
-            <div className={`bg-gradient-to-br from-cyan-50 to-blue-50 p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 border-transparent hover:border-cyan-500 ${isVisible ? 'animate-fade-in-up-2' : ''}`}>
+            <div className={`bg-gradient-to-br from-sky-50 to-blue-50 p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 border-transparent hover:border-sky-500 ${isVisible ? 'animate-fade-in-up-2' : ''}`}>
               <div className="space-y-4">
                 {/* 아이콘 영역 - 고객사 이미지로 교체 가능 */}
-                <div className="w-16 h-16 bg-cyan-600 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-sky-600 rounded-lg flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
@@ -61,7 +61,7 @@ export default function WhatIsCCUSSection() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   {t('utilization_title')}
                 </h3>
-                <p className="text-lg font-semibold text-cyan-600 mb-3">
+                <p className="text-lg font-semibold text-sky-600 mb-3">
                   {t('utilization_subtitle')}
                 </p>
                 <p className="text-base text-gray-700 leading-relaxed break-keep">
@@ -71,7 +71,7 @@ export default function WhatIsCCUSSection() {
             </div>
 
             {/* Storage */}
-            <div className={`bg-gradient-to-br from-blue-50 to-cyan-50 p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 border-transparent hover:border-cyan-500 ${isVisible ? 'animate-fade-in-up-1 delay-200' : ''}`}>
+            <div className={`bg-gradient-to-br from-blue-50 to-sky-50 p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 border-transparent hover:border-sky-500 ${isVisible ? 'animate-fade-in-up-1 delay-200' : ''}`}>
               <div className="space-y-4">
                 {/* 아이콘 영역 - 고객사 이미지로 교체 가능 */}
                 <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
