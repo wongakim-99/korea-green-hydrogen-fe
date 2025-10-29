@@ -176,6 +176,17 @@ export default function Services() {
                             />
                             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
                           </div>
+                        ) : area.id === 'ccus' ? (
+                          <div className="w-full h-full relative">
+                            <Image
+                              src="/images/services/ccus/ccus-main-service.jpg"
+                              alt={area.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-110"
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
+                          </div>
                         ) : area.id === 'solar' ? (
                           <div className="w-full h-full relative">
                             <Image

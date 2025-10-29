@@ -2,7 +2,7 @@
 
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useTranslations } from 'next-intl';
-import { useRef } from 'react';
+import Image from 'next/image';
 
 export default function TechnologyProcessSection() {
   const [ref, isVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
@@ -52,40 +52,14 @@ export default function TechnologyProcessSection() {
             {/* 이미지 영역 - 모바일: 전체 / 태블릿: 1/2 / 데스크톱: 7/12 */}
             <div className="md:col-span-1 lg:col-span-7">
               <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl bg-gradient-to-br from-gray-200 to-gray-300 aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/9] flex items-center justify-center">
-                {/* TODO: 고객사 이미지로 교체 */}
-                <div className="p-6 md:p-8 text-center">
-                  <div className={`w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 ${isLast ? 'bg-gradient-to-br from-sky-500 to-sky-600' : 'bg-gradient-to-br from-gray-600 to-gray-800'} rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-xl`}>
-                    {step.number === 1 && (
-                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
-                      </svg>
-                    )}
-                    {step.number === 2 && (
-                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                      </svg>
-                    )}
-                    {step.number === 3 && (
-                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                    )}
-                    {step.number === 4 && (
-                      <svg className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-                      </svg>
-                    )}
-                  </div>
-                  <p className="text-gray-500 text-sm font-medium">이미지 영역</p>
-                  <p className="text-gray-400 text-xs mt-1">Step {step.number} - {step.title}</p>
-                </div>
-                {/* <Image
-                  src={`/images/services/ccus/process-step-${step.number}.jpg`}
+                {/* 모든 step - 실제 이미지 */}
+                <Image
+                  src={`/images/services/ccus/ccus-process-${step.number}.jpg`}
                   alt={step.title}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                /> */}
+                />
               </div>
             </div>
           </div>

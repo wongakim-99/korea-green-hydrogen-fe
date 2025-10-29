@@ -7,22 +7,21 @@ export default function CCUSHeroSection() {
   const t = useTranslations('CCUSPage.Hero');
   return (
     <section className="relative bg-gray-900 min-h-[60vh] md:min-h-[70vh] lg:min-h-[87vh] flex items-center overflow-hidden">
-      {/* 배경 이미지 - 고객사에서 제공 예정 */}
+      {/* 배경 이미지 */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 via-gray-900/70 to-blue-900/80"></div>
-        {/* TODO: 고객사 이미지로 교체 */}
-        {/* <Image
+        <Image
           src="/images/services/ccus/ccus-hero.jpg"
           alt="CCUS 시설"
           fill
-          className="object-cover opacity-30"
+          className="object-cover"
           sizes="100vw"
           priority
-        /> */}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/60 via-gray-900/50 to-blue-900/60"></div>
       </div>
       
       {/* 심플한 오버레이 */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/75 via-gray-900/60 to-gray-900/45"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 via-gray-900/30 to-transparent"></div>
       
       <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mr-auto">
