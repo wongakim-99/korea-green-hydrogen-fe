@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Heart, TrendingUp, Globe, Zap, Leaf, DollarSign } from 'lucide-react';
+import { Heart, TrendingUp, Globe, Zap, Leaf } from 'lucide-react';
 
 export default function SummarySection() {
   const [ref, isVisible] = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
@@ -72,7 +72,7 @@ export default function SummarySection() {
                   +40%
                 </div>
                 <div className="text-sm md:text-base text-gray-300 break-keep">
-                  생산량 증가
+                  {t('summary.stats.productionIncrease')}
                 </div>
               </div>
               <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10 hover:border-sky-500/50 transition-all duration-300">
@@ -85,7 +85,7 @@ export default function SummarySection() {
                   -60%
                 </div>
                 <div className="text-sm md:text-base text-gray-300 break-keep">
-                  에너지 비용 절감
+                  {t('summary.stats.energyCostReduction')}
                 </div>
               </div>
               <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10 hover:border-sky-500/50 transition-all duration-300">
@@ -98,7 +98,7 @@ export default function SummarySection() {
                   100%
                 </div>
                 <div className="text-sm md:text-base text-gray-300 break-keep">
-                  순환 자원화율
+                  {t('summary.stats.circularResourceRate')}
                 </div>
               </div>
             </div>
