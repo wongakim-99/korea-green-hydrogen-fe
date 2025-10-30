@@ -27,7 +27,11 @@
     "socialMedia": "Social Media",
     "copyright": "© {currentYear} Korea Green Hydrogen. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "privacyModalTitle": "Privacy Policy (Summary)",
+    "privacyModalBody": "We collect and use only the minimum personal data necessary to provide services and respond to inquiries, and securely delete it without delay after the statutory retention period. See the full policy for details.",
+    "privacyModalViewFull": "View full policy",
+    "privacyModalClose": "Close"
   }
 }
 

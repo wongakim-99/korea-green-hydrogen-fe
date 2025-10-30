@@ -13,18 +13,18 @@
     "description": "We'll respond to your inquiry as soon as possible.",
     "address": {
       "title": "Headquarters Address",
-      "line1": "123 Teheran-ro, Gangnam-gu, Seoul",
-      "line2": "Korea Green Hydrogen Building 10F"
+      "line1": "Sugarman Work, Elegance-2, 701, Dolma-ro 86, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea",
+      "line2": ""
     },
     "phone": {
       "title": "Phone Number",
-      "main": "Main: 02-1234-5678",
-      "support": "Tech Support: 02-1234-5679"
+      "main": "+82-10-8925-2285",
+      "support": ""
     },
     "email": {
       "title": "Email",
-      "general": "General: info@koreagreenhyd.com",
-      "tech": "Technical: tech@koreagreenhyd.com"
+      "general": "koreagreenhydrogen@gmail.com",
+      "tech": ""
     },
     "hours": {
       "title": "Business Hours",
