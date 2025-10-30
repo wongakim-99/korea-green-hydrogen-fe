@@ -115,9 +115,9 @@ function ContactInfoItem({ icon, title, content }: ContactInfoItemProps) {
       </div>
       
       {/* 텍스트 정보 */}
-      <div>
+      <div className="flex-1 min-w-0">
         <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-600 leading-relaxed break-words">
           {content}
         </p>
       </div>

@@ -2,13 +2,16 @@
 
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+import { useState } from 'react';
 
 const Footer = () => {
   const t = useTranslations('Footer');
   const locale = useLocale();
   const currentYear = new Date().getFullYear();
+  const [openPrivacy, setOpenPrivacy] = useState(false);
 
   return (
+    <>
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -82,9 +85,13 @@ const Footer = () => {
               {t('copyright', {currentYear})}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href={`/${locale}/privacy`} className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
+              <button
+                type="button"
+                onClick={() => setOpenPrivacy(true)}
+                className="text-gray-400 hover:text-sky-400 text-sm transition-colors underline underline-offset-2"
+              >
                 {t('privacyPolicy')}
-              </Link>
+              </button>
               <Link href={`/${locale}/terms`} className="text-gray-400 hover:text-sky-400 text-sm transition-colors">
                 {t('termsOfService')}
               </Link>
@@ -93,6 +100,33 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    {/* Privacy Modal */}
+    {openPrivacy && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/50" onClick={() => setOpenPrivacy(false)}></div>
+        <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-[92%] md:w-[640px] mx-auto p-6 md:p-8 z-10">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">{t('privacyModalTitle')}</h3>
+          <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line">{t('privacyModalBody')}</p>
+          <div className="flex justify-end gap-3">
+            <button
+              type="button"
+              onClick={() => setOpenPrivacy(false)}
+              className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50"
+            >
+              {t('privacyModalClose')}
+            </button>
+            <Link
+              href={`/${locale}/privacy`}
+              className="px-4 py-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700"
+              onClick={() => setOpenPrivacy(false)}
+            >
+              {t('privacyModalViewFull')}
+            </Link>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 };
 

@@ -13,18 +13,18 @@
     "description": "언제든지 연락주시면 빠르게 답변드리겠습니다.",
     "address": {
       "title": "본사 주소",
-      "line1": "서울특별시 강남구 테헤란로 123",
-      "line2": "Korea Green Hydrogen 빌딩 10층"
+      "line1": "경기도 성남시 분당구 돌마로 86, 엘레강스-2 701호(슈가맨워크)",
+      "line2": ""
     },
     "phone": {
       "title": "전화번호",
-      "main": "대표전화: 02-1234-5678",
-      "support": "기술지원: 02-1234-5679"
+      "main": "+82-10-8925-2285",
+      "support": ""
     },
     "email": {
       "title": "이메일",
-      "general": "일반문의: info@koreagreenhyd.com",
-      "tech": "기술문의: tech@koreagreenhyd.com"
+      "general": "koreagreenhydrogen@gmail.com",
+      "tech": ""
     },
     "hours": {
       "title": "운영시간",
